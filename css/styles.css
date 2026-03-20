@@ -196,3 +196,21 @@ h4 {
 .media-card:hover img {
   transform: scale(1.04);
 }
+
+.logo-panel {
+  width: calc(50vw - (min(100vw, 1280px) / 2) + 100px);
+}
+
+/* 768px to 1279px: +200px offset */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .logo-panel {
+    width: calc(50vw - (min(100vw, 1280px) / 2) + 200px);
+  }
+}
+
+/* 1280px and above: +100px offset */
+@media (min-width: 1280px) {
+  .logo-panel {
+    width: calc(50vw - (1280px / 2) + 100px);
+  }
+}

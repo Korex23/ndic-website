@@ -29,7 +29,7 @@
     .map(
       (slide, i) => `
         <div
-          class="w-full flex-shrink-0 h-[436px]"
+          class="w-full flex-shrink-0 h-[526px]"
           aria-label="Slide ${i + 1} of ${slides.length}"
         >
           <img

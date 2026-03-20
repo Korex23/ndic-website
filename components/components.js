@@ -18,10 +18,9 @@ class NavBar extends HTMLElement {
         <!-- Full header wrapper: white on left, accent+nav on right -->
         <div class="relative">
 
-          <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-start pl-6"
-            style="width: calc(50vw - (min(100vw, 1280px) / 2) + 100px);">
+          <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-start pl-6 logo-panel">
             <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[200px] h-auto object-contain"/>
+              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[120px] md:w-[200px] h-auto object-contain"/>
             </a>
           </div>
  
