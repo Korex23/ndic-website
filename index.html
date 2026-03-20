@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nigeria Deposit Insurance Corporation — Protecting Depositors, Strengthening Confidence."
+    />
+    <title>NDIC — Nigeria Deposit Insurance Corporation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: "#2C2E81",
+                mid: "#393CA7",
+                dark: "#1B2735",
+                overlay: "#181612",
+              },
+              surface: {
+                light: "#F5F5F5",
+                blue: "#E8F9FF",
+                cream: "#FCFBFC",
+              },
+              ndic: {
+                text: "#141313",
+                secondary: "#525252",
+                muted: "#777776",
+                dark: "#292929",
+              },
+              accent: {
+                gold: "#817F2C",
+                orange: "#FE9239",
+              },
+              "ndic-border": "#D9D9D9",
+            },
+            fontFamily: {
+              heading: ["Oxygen", "sans-serif"],
+              body: ['"Nunito Sans"', "sans-serif"],
+            },
+            maxWidth: {
+              content: "1280px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="font-body text-ndic-text bg-white antialiased">
+    <!-- ── Navbar ── -->
+    <nav-bar active="home"></nav-bar>
+
+    <main>
+      <!-- ════════════════════════════════════════════════════
+         Section 1 — Hero Carousel
+    ════════════════════════════════════════════════════ -->
+      <section id="hero" class="bg-white overflow-hidden">
+        <div
+          class="max-w-content mx-auto flex flex-col px-6"
+          style="min-height: 520px"
+        >
+          <!-- Text Panel -->
+          <div
+            class="flex flex-col md:flex-row py-8 md:py-14 justify-center items-center md:justify-between text-center md:text-start gap-4 md:gap-0"
+          >
+            <h1
+              id="hero-title"
+              class="font-heading font-normal text-[1.6rem] sm:text-[2rem] lg:text-[4rem] text-ndic-text leading-[1.15] md:max-w-[40%] lg:max-w-none"
+            ></h1>
+
+            <!-- Divider: hidden on mobile, visible on md+ -->
+            <div
+              class="hidden xl:block w-24 h-[2px] bg-black flex-shrink-0 mt-1"
+            ></div>
+
+            <div class="flex gap-4 md:max-w-[45%] lg:max-w-none">
+              <p
+                id="hero-subtext"
+                class="font-body text-[16px] sm:text-[18px] lg:text-[20px] text-ndic-secondary leading-relaxed"
+              ></p>
+            </div>
+          </div>
+
+          <!-- CTA + Dots -->
+          <div class="flex gap-5 items-center justify-center md:justify-start">
+            <a
+              href="#"
+              class="inline-block self-start font-body font-semibold text-sm text-white bg-brand-primary hover:bg-brand-dark rounded-md px-16 py-2.5 transition-colors"
+            >
+              Report Failed Bank
+            </a>
+
+            <div
+              id="hero-dots"
+              class="flex gap-2"
+              role="tablist"
+              aria-label="Carousel slides"
+            ></div>
+          </div>
+
+          <!-- Carousel -->
+          <div
+            id="hero-carousel"
+            class="relative overflow-hidden rounded-2xl my-4 lg:my-8"
+            style="height: clamp(160px, 30vw, 420px)"
+          >
+            <div
+              id="hero-track"
+              class="carousel-track flex h-full transition-transform duration-500"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+         Section 2 — About Strip
+    ════════════════════════════════════════════════════ -->
+      <section id="about" class="bg-[#F5F5F5] py-16 px-6 lg:px-8">
+        <div
+          class="max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
+          <!-- Text -->
+          <div>
+            <h2
+              class="font-heading font-normal text-[1.5rem] lg:text-[2.5rem] text-ndic-text leading-tight"
+            >
+              At <span class="text-brand-primary font-bold">NDIC</span>, We
+              safeguard deposits and support a stable, reliable financial
+              system.
+            </h2>
+            <p
+              class="font-body text-[15px] text-ndic-secondary leading-relaxed mt-5 max-w-md"
+            >
+              As Nigeria's deposit insurer, the Corporation ensures that
+              depositors are paid if a bank fails.
+            </p>
+            <a
+              href="#"
+              aria-label="Learn About NDIC"
+              class="mt-8 inline-block font-body font-semibold text-sm text-white bg-brand-primary hover:bg-brand-dark rounded-md px-16 py-2.5 transition-colors"
+            >
+              Learn About NDIC
+            </a>
+          </div>
+
+          <!-- Image -->
+          <div
+            class="relative h-72 lg:h-80 rounded-lg overflow-hidden order-first lg:order-last bg-surface-blue flex items-center justify-center"
+          >
+            <img
+              src="assets/images/shield-protection.png"
+              alt="A glowing digital shield held in a human hand, representing financial protection and deposit insurance"
+              class="w-full h-full object-cover"
+              width="580"
+              height="400"
+              loading="lazy"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <!-- Fallback -->
+            <div
+              class="hidden w-full h-full bg-surface-blue items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#2C2E81"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <polyline points="9 12 11 14 15 10" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+         Section 3 — How We Help
+    ════════════════════════════════════════════════════ -->
+      <section id="how-we-help" class="bg-white py-14 px-6 lg:px-8">
+        <div
+          class="bg-[#393CA7] py-14 px-6 lg:px-8 rounded-2xl max-w-content mx-auto"
+        >
+          <div class="gap-10 items-center">
+            <!-- Left heading -->
+            <div>
+              <h2
+                class="font-heading font-normal text-[1.5rem] lg:text-[4rem] text-white leading-snug"
+              >
+                How we help protect<br />your funds.
+              </h2>
+            </div>
+
+            <div
+              class="flex lg:flex-row flex-col gap-10 mt-5 justify-between items-center"
+            >
+              <div class="w-72 h-[2px] bg-white"></div>
+              <div
+                class="flex flex-col lg:flex-row gap-4 justify-center lg:justify-end lg:-translate-x-20"
+              >
+                <!-- MANDATE -->
+                <div
+                  class="flex flex-col items-center justify-center bg-white gap-3 rounded-xl border-2 border-accent-gold p-6 w-[230px] h-[230px]"
+                >
+                  <svg
+                    width="79"
+                    height="96"
+                    viewBox="0 0 79 96"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.44355 16.5056H24.1947V14.3661C24.1947 12.1286 26.0227 10.2963 28.2613 10.2963H32.581C29.9083 5.04258 34.3238 -0.019143 39.5053 5.44338e-05C44.9231 0.0853763 49.0236 5.17483 46.419 10.2963H50.7388C52.9773 10.2963 54.7989 12.1286 54.7989 14.3661V16.5056H71.5564C75.6527 16.5056 79 19.8609 79 23.967V88.5322C79 92.6447 75.6527 96 71.5564 96H7.44355C3.34726 96 0 92.6447 0 88.5322V23.967C0 19.863 3.34726 16.5056 7.44355 16.5056ZM20.3091 45.9715C21.7093 45.9715 21.7093 48.1067 20.3091 48.1067H6.78602C5.38583 48.1067 5.38583 45.9715 6.78602 45.9715H20.3091ZM20.3091 55.5723C21.7093 55.5723 21.7093 57.7075 20.3091 57.7075H6.78602C5.38583 57.7075 5.38583 55.5723 6.78602 55.5723H20.3091ZM58.6845 48.1045C57.2801 48.1045 57.2801 45.9694 58.6845 45.9694H72.2076C73.6078 45.9694 73.6078 48.1045 72.2076 48.1045H58.6845ZM58.6845 57.7075C57.2801 57.7075 57.2801 55.5723 58.6845 55.5723H72.2076C73.6078 55.5723 73.6078 57.7075 72.2076 57.7075H58.6845ZM6.70729 86.5421C5.3071 86.5421 5.3071 84.4069 6.70729 84.4069H72.2863C73.6865 84.4069 73.6865 86.5421 72.2863 86.5421H6.70729ZM20.3091 74.8487C21.7093 74.8487 21.7093 76.9839 20.3091 76.9839H6.78602C5.38583 76.9839 5.38583 74.8487 6.78602 74.8487H20.3091ZM58.6845 76.9839C57.2801 76.9839 57.2801 74.8487 58.6845 74.8487H72.2076C73.6078 74.8487 73.6078 76.9839 72.2076 76.9839H58.6845ZM20.3091 65.1689C21.7093 65.1689 21.7093 67.3041 20.3091 67.3041H6.78602C5.38583 67.3041 5.38583 65.1689 6.78602 65.1689H20.3091ZM58.6845 67.302C57.2801 67.302 57.2801 65.1668 58.6845 65.1668H72.2076C73.6078 65.1668 73.6078 67.302 72.2076 67.302H58.6845ZM45.0763 21.9491C46.0232 22.252 46.9212 22.6253 47.7958 23.0796L51.2516 19.6092C51.6367 19.2231 52.2475 19.1911 52.6688 19.5238V14.3661C52.6688 13.3017 51.7942 12.4315 50.7324 12.4315H44.4358V12.4251C43.5676 12.4251 43.042 11.4033 43.6101 10.6952C45.0635 8.88207 45.5827 6.99432 44.6124 5.1087C43.6825 3.28921 41.5652 2.12884 39.4968 2.12884C35.5878 2.12884 31.7766 6.19229 35.2856 10.5757C35.4792 10.8125 35.6176 10.998 35.6176 11.3628C35.6176 11.9558 35.1409 12.4336 34.5557 12.4336H28.2591C27.1973 12.4336 26.3227 13.3039 26.3227 14.3683V19.526C26.7398 19.1932 27.3484 19.2231 27.7335 19.6113L31.1957 23.0818C32.0703 22.6274 32.9683 22.2541 33.9152 21.9513V17.0474C33.9152 16.4544 34.3919 15.9766 34.9771 15.9766H44.0123C44.5975 15.9766 45.0742 16.4544 45.0742 17.0474V21.9491H45.0763ZM54.7691 21.6228L59.1484 26.0126C59.5655 26.4306 59.5655 27.1068 59.1484 27.5249L55.6926 30.989C56.1395 31.8657 56.514 32.7658 56.814 33.715H61.7062C62.2978 33.715 62.7744 34.1928 62.7744 34.7794V43.8363C62.7744 44.4293 62.2978 44.9071 61.7062 44.9071H56.814C56.5119 45.8499 56.1395 46.7522 55.6926 47.6289L59.1484 51.0993C59.5655 51.511 59.5655 52.1872 59.1484 52.6053L53.8519 57.9144V74.9404C53.8519 75.6529 53.1518 76.1797 52.4645 75.9493L45.7572 73.7608L40.2012 79.9893C39.7671 80.3818 39.0967 80.3392 38.7052 79.904L33.2343 73.7608L26.5929 75.9323C25.8269 76.2096 25.1332 75.6486 25.1332 74.9404V57.9144L19.8431 52.6053C19.426 52.1872 19.426 51.511 19.8431 51.0993L23.2989 47.6289C22.852 46.7522 22.4775 45.852 22.1775 44.9071H17.2853C16.6937 44.9071 16.2171 44.4293 16.2171 43.8363V34.7794C16.2171 34.1928 16.6937 33.715 17.2853 33.715H22.1775C22.4796 32.7658 22.852 31.8657 23.2989 30.989L19.8431 27.5249C19.426 27.1068 19.426 26.4306 19.8431 26.0126L24.2224 21.6228C24.1628 21.1087 24.1926 19.2593 24.1926 18.6365H7.44143C4.52189 18.6365 2.12156 21.0426 2.12156 23.9691V88.5322C2.12156 91.4651 4.52189 93.8648 7.44143 93.8648H71.5501C74.4696 93.8648 76.8699 91.4651 76.8699 88.5322V23.967C76.8699 21.0404 74.4696 18.6344 71.5501 18.6344H54.7925C54.7946 19.2572 54.8308 21.1087 54.7691 21.6228ZM51.7304 59.286C51.5559 59.2369 51.392 59.1473 51.2537 59.0087L47.7979 55.5446C46.9233 55.9926 46.0253 56.3658 45.0784 56.6687V61.5726C45.0784 62.1656 44.6018 62.6434 44.0166 62.6434H34.9813C34.3961 62.6434 33.9195 62.1656 33.9195 61.5726V56.6687C32.9725 56.3658 32.0745 55.9926 31.1999 55.5446L27.7378 59.0087C27.6058 59.1473 27.442 59.2391 27.2675 59.286V73.4707L33.2385 71.5233C33.679 71.3782 34.1365 71.5361 34.4089 71.8795L39.4989 77.6003L44.6443 71.8262C44.9273 71.4998 45.3742 71.3974 45.7594 71.5233L51.7304 73.4707V59.286ZM45.6444 24.4213C45.0465 24.1739 44.4379 23.9627 43.8293 23.7921C43.3292 23.7003 42.9547 23.2652 42.9547 22.7405V18.1096H36.041V22.7405C36.041 23.2055 35.7282 23.6364 35.2579 23.7686C34.1067 24.0822 32.6044 24.6752 31.5723 25.2916C31.1616 25.5582 30.6126 25.5028 30.2573 25.1466L26.9887 21.8702L22.103 26.7677L25.3672 30.044C25.6992 30.3768 25.7843 30.8973 25.5417 31.326C24.9991 32.2752 24.2501 33.9326 24.016 34.965C23.9309 35.4662 23.4904 35.8417 22.9733 35.8417H18.3535V42.7719H22.9733C23.4372 42.7719 23.867 43.0855 23.9926 43.559C24.3118 44.7194 24.9034 46.2189 25.5183 47.2535C25.7779 47.6651 25.729 48.2155 25.3736 48.5717L22.1051 51.848L26.9909 56.7455L30.2594 53.4734C30.585 53.1407 31.1106 53.0554 31.5383 53.2985C32.4788 53.8425 34.1386 54.5933 35.1686 54.8279C35.6686 54.9132 36.0432 55.3548 36.0432 55.8731V60.504H42.9526V55.8752C42.9526 55.4102 43.2654 54.9794 43.7357 54.8535C44.8869 54.5336 46.3892 53.9406 47.4213 53.3241C47.832 53.0639 48.381 53.1129 48.7364 53.4692L52.0049 56.7455L56.8906 51.848L53.6221 48.576C53.2965 48.2432 53.2114 47.7163 53.454 47.2876C53.9966 46.3448 54.7393 44.681 54.9797 43.6486C55.0649 43.1473 55.499 42.7719 56.0224 42.7719H60.6422V35.8417H56.0224C55.5585 35.8417 55.1287 35.5281 55.0032 35.0546C54.684 33.9006 54.0924 32.3947 53.4774 31.3601C53.2178 30.9484 53.2668 30.3981 53.6221 30.0419L56.8906 26.7655L52.0049 21.8681L48.7364 25.1444C48.4044 25.4772 47.8852 25.5625 47.4575 25.3129C46.8744 24.978 46.2637 24.6815 45.6444 24.4213ZM39.4968 29.1609C45.0891 29.1609 49.6194 33.7022 49.6194 39.3079C49.6194 44.9135 45.0891 49.4548 39.4968 49.4548C33.9046 49.4548 29.3742 44.9135 29.3742 39.3079C29.3742 33.7022 33.9046 29.1609 39.4968 29.1609ZM45.1486 33.6425C42.0291 30.5112 36.9624 30.5112 33.845 33.6425C30.7212 36.7695 30.7212 41.8483 33.845 44.9732C36.9646 48.1045 42.0312 48.1045 45.1486 44.9732C48.2725 41.8462 48.2725 36.7674 45.1486 33.6425ZM39.4968 5.21749C40.3778 5.21749 41.0949 5.93633 41.0949 6.81941C41.0949 7.70249 40.3778 8.42133 39.4968 8.42133C38.6158 8.42133 37.8987 7.70249 37.8987 6.81941C37.8987 5.93633 38.6158 5.21749 39.4968 5.21749Z"
+                      fill="#525252"
+                    />
+                  </svg>
+
+                  <span
+                    class="font-body font-bold text-lg text-brand-overlay tracking-widest uppercase"
+                    >Mandate</span
+                  >
+                </div>
+
+                <!-- PROTECTION -->
+                <div
+                  class="flex flex-col items-center bg-white justify-center gap-3 rounded-xl border-2 border-accent-gold p-6 w-[230px] h-[230px]"
+                  style="border: 1.5px solid rgba(255, 255, 255, 0.3)"
+                >
+                  <svg
+                    width="75"
+                    height="88"
+                    viewBox="0 0 75 88"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M37.5 87.79C37.2383 87.79 36.9805 87.7275 36.75 87.6025C14.062 75.2905 0 52.3686 0 27.6496V11.2275C0 10.79 0.17969 10.3721 0.5 10.0752C0.82031 9.77842 1.25 9.62994 1.6875 9.66509L2.8125 9.75884C14.8355 10.6768 26.7965 7.32524 36.5935 0.29004C37.1365 -0.09668 37.863 -0.09668 38.406 0.29004C48.2029 7.32124 60.164 10.673 72.187 9.75884L73.312 9.66509C73.7495 9.62993 74.1792 9.77837 74.4995 10.0752C74.8198 10.3721 74.9995 10.7901 74.9995 11.2275V27.6496C74.9995 52.3686 60.9375 75.2906 38.2495 87.5715C38.0229 87.7083 37.7656 87.7822 37.5 87.79ZM3.125 12.915V27.6491C3.125 50.9461 16.281 72.618 37.5 84.415C58.719 72.618 71.875 50.9461 71.875 27.6491V12.915C59.676 13.7041 47.566 10.3565 37.5 3.41505C27.434 10.3565 15.324 13.704 3.125 12.915Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M50.5943 64.3522H24.4063C22.1485 64.3443 20.3204 62.5163 20.3125 60.2584V40.3204C20.3203 38.0626 22.1484 36.2345 24.4063 36.2266H50.5943C52.8521 36.2344 54.6802 38.0625 54.6881 40.3204V60.2584C54.6803 62.5162 52.8522 64.3443 50.5943 64.3522ZM24.4063 39.3522C23.8711 39.3522 23.4375 39.7858 23.4375 40.3209V60.2589C23.4375 60.7941 23.8711 61.2277 24.4063 61.2277H50.5943C51.1295 61.2277 51.5631 60.7941 51.5631 60.2589V40.3209C51.5631 39.7858 51.1295 39.3522 50.5943 39.3522H24.4063Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M48.4375 39.3535H26.5625C25.6992 39.3535 25 38.6543 25 37.791V31.541C25 24.6387 30.5977 19.041 37.5 19.041C44.4023 19.041 50 24.6387 50 31.541V37.791C50 38.2051 49.8359 38.6035 49.543 38.8965C49.25 39.1895 48.8516 39.3535 48.4375 39.3535ZM28.1255 36.2285H46.8755V31.541C46.8755 26.3652 42.6763 22.166 37.5005 22.166C32.3247 22.166 28.1255 26.3652 28.1255 31.541V36.2285Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M37.5001 56.5412C34.9728 56.5412 32.6915 55.0178 31.7267 52.6818C30.758 50.3459 31.2931 47.6584 33.0822 45.8732C34.8674 44.0841 37.5549 43.549 39.8908 44.5177C42.2267 45.4826 43.7502 47.7638 43.7502 50.2911C43.7502 51.9473 43.0901 53.5372 41.9182 54.7091C40.7464 55.881 39.1564 56.5412 37.5001 56.5412ZM37.5001 47.1662C36.2345 47.1662 35.0978 47.9279 34.6134 49.0959C34.129 50.2639 34.3986 51.6076 35.2892 52.5021C36.1837 53.3927 37.5275 53.6623 38.6954 53.1779C39.8634 52.6935 40.6251 51.5568 40.6251 50.2912C40.6251 49.4631 40.297 48.6662 39.711 48.0803C39.1251 47.4944 38.3282 47.1662 37.5001 47.1662Z"
+                      fill="black"
+                    />
+                  </svg>
+
+                  <span
+                    class="font-body font-bold text-lg text-brand-overlay tracking-widest uppercase"
+                    >Protection</span
+                  >
+                </div>
+
+                <!-- INSTITUTION -->
+                <div
+                  class="flex flex-col items-center bg-white justify-center gap-3 rounded-xl border-2 border-accent-gold p-6 w-[230px] h-[230px]"
+                  style="border: 1.5px solid rgba(255, 255, 255, 0.3)"
+                >
+                  <svg
+                    width="90"
+                    height="82"
+                    viewBox="0 0 90 82"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 66.0249C24.2 66.0249 23.5 65.3249 23.5 64.5249V26.5249C23.5 25.7249 24.2 25.0249 25 25.0249C25.8 25.0249 26.5 25.7249 26.5 26.5249V64.5249C26.5 65.3249 25.8 66.0249 25 66.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M15 66.0249C14.2 66.0249 13.5 65.3249 13.5 64.5249V26.5249C13.5 25.7249 14.2 25.0249 15 25.0249C15.8 25.0249 16.5 25.7249 16.5 26.5249V64.5249C16.5 65.3249 15.8 66.0249 15 66.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M45 66.0249C44.2 66.0249 43.5 65.3249 43.5 64.5249V26.5249C43.5 25.7249 44.2 25.0249 45 25.0249C45.8 25.0249 46.5 25.7249 46.5 26.5249V64.5249C46.5 65.3249 45.8 66.0249 45 66.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M35 66.0249C34.2 66.0249 33.5 65.3249 33.5 64.5249V26.5249C33.5 25.7249 34.2 25.0249 35 25.0249C35.8 25.0249 36.5 25.7249 36.5 26.5249V64.5249C36.5 65.3249 35.8 66.0249 35 66.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M65 66.0249C64.2 66.0249 63.5 65.3249 63.5 64.5249V26.5249C63.5 25.7249 64.2 25.0249 65 25.0249C65.8 25.0249 66.5 25.7249 66.5 26.5249V64.5249C66.5 65.3249 65.8 66.0249 65 66.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M75 66.0249C74.2 66.0249 73.5 65.3249 73.5 64.5249V26.5249C73.5 25.7249 74.2 25.0249 75 25.0249C75.8 25.0249 76.5 25.7249 76.5 26.5249V64.5249C76.5 65.3249 75.8 66.0249 75 66.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M55 66.0249C54.2 66.0249 53.5 65.3249 53.5 64.5249V26.5249C53.5 25.7249 54.2 25.0249 55 25.0249C55.8 25.0249 56.5 25.7249 56.5 26.5249V64.5249C56.5 65.3249 55.8 66.0249 55 66.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M78.5 23.025H11.5C10.8 23.025 10.2 22.525 10.1 21.925C9.90003 21.225 10.2 20.625 10.8 20.225L44.3 0.225C44.8 -0.075 45.4 -0.075 45.8 0.225L79.2 20.125C79.7 20.325 80.1 20.925 80.1 21.525C80 22.325 79.3 23.025 78.5 23.025ZM16.9 20.025H73L45 3.225L16.9 20.025Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M78.5 71.0249H11.5C10.7 71.0249 10 70.3249 10 69.5249C10 68.7249 10.7 68.0249 11.5 68.0249H78.5C79.3 68.0249 80 68.7249 80 69.5249C80 70.3249 79.3 71.0249 78.5 71.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M83.5 76.0249H6.5C5.7 76.0249 5 75.3249 5 74.5249C5 73.7249 5.7 73.0249 6.5 73.0249H83.5C84.3 73.0249 85 73.7249 85 74.5249C85 75.3249 84.3 76.0249 83.5 76.0249Z"
+                      fill="#525252"
+                    />
+                    <path
+                      d="M88.5 81.0249H1.5C0.7 81.0249 0 80.3249 0 79.5249C0 78.7249 0.7 78.0249 1.5 78.0249H88.5C89.3 78.0249 90 78.7249 90 79.5249C90 80.3249 89.3 81.0249 88.5 81.0249Z"
+                      fill="#525252"
+                    />
+                  </svg>
+
+                  <span
+                    class="font-body font-bold text-lg text-brand-overlay tracking-widest uppercase"
+                    >Institution</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+         Section 4 — News & Publications
+    ════════════════════════════════════════════════════ -->
+      <section id="news" class="bg-surface-light py-16 px-6 lg:px-8">
+        <div class="max-w-content mx-auto">
+          <!-- Header -->
+          <div class="flex items-center justify-between gap-8 mb-6">
+            <div>
+              <p
+                class="font-body font-semibold text-[18px] text-ndic-muted uppercase"
+              >
+                News &amp; Publications
+              </p>
+              <h2
+                class="font-heading font-normal text-[1.5rem] lg:text-[4rem] text-ndic-text mt-1 leading-tight"
+              >
+                Updates You<br />Should Know
+              </h2>
+            </div>
+
+            <div class="flex items-center gap-6 flex-1 max-w-[600px]">
+              <div class="flex-1 h-px bg-black"></div>
+
+              <a
+                href="#"
+                class="font-body font-extrabold text-[18px] text-brand-primary tracking-widest uppercase hover:underline whitespace-nowrap"
+              >
+                View All
+              </a>
+            </div>
+          </div>
+          <hr class="border-ndic-border" />
+
+          <!-- Accordion -->
+          <div id="news-accordion" class="divide-y divide-ndic-border"></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+         Section 5 — Events & Media
+    ════════════════════════════════════════════════════ -->
+      <section id="events" class="bg-brand-primary py-16 px-6 lg:px-8">
+        <div class="max-w-content mx-auto">
+          <div class="flex items-center justify-between gap-8 mb-6">
+            <div>
+              <p
+                class="font-body font-semibold text-[18px] text-white uppercase"
+              >
+                Events &amp; Media
+              </p>
+              <h2
+                class="font-heading font-normal text-[1.5rem] lg:text-[4rem] text-white mt-1 leading-tight"
+              >
+                The NDIC<br />Story in Motion
+              </h2>
+            </div>
+
+            <div class="flex items-center gap-6 flex-1 max-w-[600px]">
+              <div class="flex-1 h-px bg-white"></div>
+
+              <a
+                href="#"
+                class="font-body font-extrabold text-[18px] text-white tracking-widest uppercase hover:underline whitespace-nowrap"
+              >
+                View All
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <!-- Column 1: tall + short -->
+            <div
+              class="grid gap-3"
+              style="
+                grid-template-rows: 3fr 2fr;
+                height: clamp(500px, 60vw, 800px);
+              "
+            >
+              <div class="relative overflow-hidden bg-slate-200">
+                <img
+                  src="assets/images/event-award.png"
+                  class="w-full h-full object-cover"
+                />
+                <div class="media-card-overlay absolute inset-0"></div>
+                <div class="absolute bottom-3 left-3">
+                  <p class="font-body font-semibold text-xs text-white">
+                    Award Night NDIC
+                  </p>
+                  <p class="font-body text-[11px] text-[#D9D9D9]">
+                    Nov 27 2025
+                  </p>
+                </div>
+              </div>
+              <div class="relative overflow-hidden bg-slate-200">
+                <img
+                  src="assets/images/event-signing.png"
+                  class="w-full h-full object-cover"
+                />
+                <div class="media-card-overlay absolute inset-0"></div>
+                <div class="absolute bottom-3 left-3">
+                  <p class="font-body font-semibold text-xs text-white">
+                    Partnership Signing
+                  </p>
+                  <p class="font-body text-[11px] text-[#D9D9D9]">Nov 2025</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: tall + short -->
+            <div
+              class="grid gap-3"
+              style="
+                grid-template-rows: 2fr 1fr;
+                height: clamp(500px, 60vw, 800px);
+              "
+            >
+              <div class="relative overflow-hidden bg-slate-200">
+                <img
+                  src="assets/images/event-group-women.png"
+                  class="w-full h-full object-cover"
+                />
+                <div class="media-card-overlay absolute inset-0"></div>
+                <div class="absolute bottom-3 left-3">
+                  <p class="font-body font-semibold text-xs text-white">
+                    Staff Recognition
+                  </p>
+                  <p class="font-body text-[11px] text-[#D9D9D9]">Nov 2025</p>
+                </div>
+              </div>
+              <div class="relative overflow-hidden bg-slate-200">
+                <img
+                  src="assets/images/event-office-group.png"
+                  class="w-full h-full object-cover"
+                />
+                <div class="media-card-overlay absolute inset-0"></div>
+                <div class="absolute bottom-3 left-3">
+                  <p class="font-body font-semibold text-xs text-white">
+                    Internal Meeting
+                  </p>
+                  <p class="font-body text-[11px] text-[#D9D9D9]">Nov 2025</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3: short + tall (hidden on mobile, shown at lg) -->
+            <div
+              class="grid gap-3"
+              style="
+                grid-template-rows: 2fr 3fr;
+                height: clamp(500px, 60vw, 800px);
+              "
+            >
+              <div class="relative overflow-hidden bg-slate-200">
+                <img
+                  src="assets/images/event-banner.png"
+                  class="w-full h-full object-cover"
+                />
+                <div class="media-card-overlay absolute inset-0"></div>
+                <div class="absolute bottom-3 left-3">
+                  <p class="font-body font-semibold text-xs text-white">
+                    NDIC Appointment Ceremony
+                  </p>
+                  <p class="font-body text-[11px] text-[#D9D9D9]">Nov 2025</p>
+                </div>
+              </div>
+              <div class="relative overflow-hidden bg-slate-200">
+                <img
+                  src="assets/images/event-speaker.png"
+                  class="w-full h-full object-cover"
+                />
+                <div class="media-card-overlay absolute inset-0"></div>
+                <div class="absolute bottom-3 left-3">
+                  <p class="font-body font-semibold text-xs text-white">
+                    Management Address
+                  </p>
+                  <p class="font-body text-[11px] text-[#D9D9D9]">Nov 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer-bar></footer-bar>
+
+    <!-- Web Components (must be defined before upgrade occurs) -->
+    <script src="components/components.js"></script>
+    <!-- App JS (carousel + accordion interactions) -->
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
