@@ -129,7 +129,7 @@ const accordionData = [
     content: `
       <div class="accordion-expanded-inner">
         <p class="font-body text-[13px] text-ndic-secondary leading-relaxed">
-          Full publication details go here. You can add anything.
+          NDIC announces disbursement of ₦54.6 billion to 691,418 depositors...
         </p>
         <a href="#" class="font-body font-bold text-[13px] text-brand-primary uppercase mt-2 inline-block hover:underline">
           Read More
@@ -165,13 +165,27 @@ const accordionData = [
     title:
       "Announcement of 100% liquidation dividend to depositors of 20 failed banks",
     open: false,
-    content: `<div class="accordion-expanded-inner"><p>More structured HTML here</p></div>`,
+    content: `<div class="accordion-expanded-inner">
+        <p class="font-body text-[13px] text-ndic-secondary leading-relaxed">
+          NDIC announces disbursement of ₦54.6 billion to 691,418 depositors...
+        </p>
+        <a href="#" class="font-body font-bold text-[13px] text-brand-primary uppercase mt-2 inline-block hover:underline">
+          Read More
+        </a>
+      </div>`,
   },
   {
     label: "Article",
     title: "NDIC engaged judiciary stakeholders in a sensitization seminar...",
     open: false,
-    content: `<div class="accordion-expanded-inner"><p>Article content here</p></div>`,
+    content: `<div class="accordion-expanded-inner">
+        <p class="font-body text-[13px] text-ndic-secondary leading-relaxed">
+          NDIC announces disbursement of ₦54.6 billion to 691,418 depositors...
+        </p>
+        <a href="#" class="font-body font-bold text-[13px] text-brand-primary uppercase mt-2 inline-block hover:underline">
+          Read More
+        </a>
+      </div>`,
   },
 ];
 
@@ -179,14 +193,13 @@ const accordionData = [
   const container = document.getElementById("news-accordion");
 
   const PLUS_SVG = `<svg width="20" height="20" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4.33289 13H21.6662" stroke="#141313" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13 4.33423V21.6676" stroke="#141313" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-`;
+    <path d="M4.33289 13H21.6662" stroke="#141313" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 4.33423V21.6676" stroke="#141313" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+
   const MINUS_SVG = `<svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.66602 20H33.3327" stroke="#141313" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-`;
+    <path d="M6.66602 20H33.3327" stroke="#141313" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
 
   container.innerHTML = accordionData
     .map(
@@ -195,11 +208,11 @@ const accordionData = [
           <button class="accordion-trigger w-full py-5 text-left" aria-expanded="${item.open}">
             <div class="label-col">
               <span class="active bg-brand-primary w-3 h-3 rounded-sm border-2 flex-shrink-0"></span>
-              <span class="font-body font-bold text-[20px] text-ndic-text tracking-wider uppercase px-2">
+              <span class="font-body font-bold text-[18px] sm:text-[20px] text-ndic-text tracking-wider uppercase px-2">
                 ${item.label}
               </span>
             </div>
-            <span class="text-col font-body text-lg text-ndic-text leading-relaxed">
+            <span class="text-col font-body text-sm sm:text-base lg:text-lg text-ndic-text leading-relaxed">
               ${item.title}
             </span>
             <div class="icon-col text-brand-primary">
@@ -207,31 +220,35 @@ const accordionData = [
             </div>
           </button>
           <div class="accordion-content ${item.open ? "open" : ""}">
-            ${item.content}
+            <div class="accordion-expanded-inner">
+              ${item.content}
+            </div>
           </div>
         </div>
-    `,
+      `,
     )
     .join("");
 
   document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
     trigger.addEventListener("click", () => {
       const content = trigger.nextElementSibling;
-      const icon = trigger.querySelector(".accordion-icon");
       const isOpen = content.classList.contains("open");
 
+      // Close all others
       document.querySelectorAll(".accordion-content.open").forEach((c) => {
         if (c !== content) {
           c.classList.remove("open");
           const t = c.previousElementSibling;
           t?.setAttribute("aria-expanded", "false");
-          const ic = t?.querySelector(".accordion-icon");
+          const ic = t?.querySelector(".icon-col");
           if (ic) ic.innerHTML = PLUS_SVG;
         }
       });
 
+      // Toggle current
       content.classList.toggle("open", !isOpen);
       trigger.setAttribute("aria-expanded", String(!isOpen));
+      const icon = trigger.querySelector(".icon-col");
       if (icon) icon.innerHTML = isOpen ? PLUS_SVG : MINUS_SVG;
     });
   });

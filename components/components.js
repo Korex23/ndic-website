@@ -13,59 +13,62 @@ class NavBar extends HTMLElement {
 
   _template(active) {
     return `
-      <header class="sticky top-0 z-50 bg-[#F5F5F5] border-b-2 border-brand-primary font-body">
+      <header class="sticky top-0 z-50 font-body" style="background: #F5F5F5;">
 
-        <!-- Accent bar -->
-        <div class="w-full h-4 bg-brand-primary"></div>
+        <!-- Full header wrapper: white on left, accent+nav on right -->
+        <div class="relative">
 
-        <!-- Main nav -->
-        <nav class="relative h-24 flex items-center"
-             role="navigation" aria-label="Main navigation">
+          <!-- White logo panel: covers full height (accent bar + nav), flush to left edge -->
+          <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-end pr-6"
+       style="width: clamp(180px, calc(50vw - 340px), 320px);">
+    <a href="index.html" class="flex items-center" aria-label="NDIC Home">
+      <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[140px] md:w-[180px] h-auto object-contain"/>
+    </a>
+  </div>
 
-          <!-- Logo white panel: flush left, fixed width -->
-          <div class="absolute left-0 top-0 h-full bg-white flex items-center justify-end pr-6"
-               style="width: calc(50vw - (var(--content-width, 1280px) / 2) + 280px);">
-            <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[200px] h-auto object-contain"/>
-            </a>
-          </div>
+          <!-- Accent bar (sits on top of gray area only — logo side is white) -->
+          <div class="w-full h-4 bg-brand-primary"></div>
 
-          <!-- Nav content: inside max-w-content, padded to clear the logo -->
-          <div class="max-w-content mx-auto w-full px-6 lg:px-0 flex items-center justify-between"
-               style="padding-left: 300px;">
+          <!-- Main nav row -->
+          <nav class="h-20 flex items-center border-b-2 border-brand-primary"
+               role="navigation" aria-label="Main navigation">
 
-            <!-- Desktop links -->
-            <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
-              <li><a href="index.html" class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("home", active)}">About Us</a></li>
-              <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("protection", active)}">Your Protection</a></li>
-              <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("media", active)}">Media</a></li>
-              <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("tools", active)}">Tools</a></li>
-            </ul>
+            <div class="max-w-content mx-auto w-full px-6 lg:px-0 flex items-center justify-between"
+                 style="padding-left: 320px;">
 
-            <!-- Right actions -->
-            <div class="hidden md:flex items-center gap-3">
-              <button aria-label="Search" class="text-ndic-secondary hover:text-brand-primary transition-colors border border-brand-primary rounded-md px-2 py-1.5">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.4995 15.5288C15.8395 15.1912 16.3851 15.1912 16.7251 15.5288L18.9722 17.3432H19.0112C19.4656 17.8027 19.4657 18.5479 19.0112 19.0073C18.5567 19.4668 17.8194 19.4667 17.3647 19.0073L15.4995 16.8696C15.3234 16.6921 15.2241 16.4511 15.2241 16.1997C15.2241 15.9481 15.3232 15.7064 15.4995 15.5288ZM9.3042 1.75926C11.3051 1.75926 13.2242 2.56269 14.6392 3.99266C16.0541 5.42279 16.849 7.36274 16.8491 9.38524C16.8491 13.5971 13.4713 17.0122 9.3042 17.0122C5.13723 17.0121 1.75928 13.5971 1.75928 9.38524C1.75946 5.17357 5.13735 1.75938 9.3042 1.75926Z" fill="#2C2E81" fill-opacity="0.5"/>
+              <!-- Desktop links -->
+              <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+                <li><a href="index.html" class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("home", active)}">About Us</a></li>
+                <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("protection", active)}">Your Protection</a></li>
+                <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("media", active)}">Media</a></li>
+                <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("tools", active)}">Tools</a></li>
+              </ul>
+
+              <!-- Right actions -->
+              <div class="hidden md:flex items-center gap-3">
+                <button aria-label="Search" class="text-ndic-secondary hover:text-brand-primary transition-colors border border-brand-primary rounded-md px-2 py-1.5">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.4995 15.5288C15.8395 15.1912 16.3851 15.1912 16.7251 15.5288L18.9722 17.3432H19.0112C19.4656 17.8027 19.4657 18.5479 19.0112 19.0073C18.5567 19.4668 17.8194 19.4667 17.3647 19.0073L15.4995 16.8696C15.3234 16.6921 15.2241 16.4511 15.2241 16.1997C15.2241 15.9481 15.3232 15.7064 15.4995 15.5288ZM9.3042 1.75926C11.3051 1.75926 13.2242 2.56269 14.6392 3.99266C16.0541 5.42279 16.849 7.36274 16.8491 9.38524C16.8491 13.5971 13.4713 17.0122 9.3042 17.0122C5.13723 17.0121 1.75928 13.5971 1.75928 9.38524C1.75946 5.17357 5.13735 1.75938 9.3042 1.75926Z" fill="#2C2E81" fill-opacity="0.5"/>
+                  </svg>
+                </button>
+                <a href="#" class="font-body font-semibold text-[13px] text-white border border-brand-primary rounded-md px-4 py-1.5 bg-brand-primary hover:bg-brand-dark transition-colors">
+                  Contact Care Center
+                </a>
+              </div>
+
+              <!-- Mobile hamburger -->
+              <button id="ndic-hamburger" aria-label="Open menu" aria-expanded="false" class="md:hidden text-brand-primary ml-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <line x1="3" y1="12" x2="21" y2="12"/>
+                  <line x1="3" y1="18" x2="21" y2="18"/>
                 </svg>
               </button>
-              <a href="#" class="font-body font-semibold text-[13px] text-white border border-brand-primary rounded-md px-4 py-1.5 bg-brand-primary hover:text-white transition-colors">
-                Contact Care Center
-              </a>
+
             </div>
-
-            <!-- Mobile hamburger -->
-            <button id="ndic-hamburger" aria-label="Open menu" aria-expanded="false" class="md:hidden text-brand-primary ml-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
-              </svg>
-            </button>
-
-          </div>
-        </nav>
+          </nav>
+        </div>
 
         <!-- Mobile drawer -->
         <div id="ndic-drawer"

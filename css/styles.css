@@ -70,14 +70,53 @@ h4 {
   width: 50%;
   padding: 0 1rem 1.25rem;
 }
+
+/* ── Collapse/expand ── */
 .accordion-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
 }
-
 .accordion-content.open {
-  max-height: 600px;
+  max-height: 800px;
+}
+
+/* ── Tablet: loosen the columns ── */
+@media (max-width: 1024px) {
+  .accordion-trigger {
+    grid-template-columns: 30% 55% 15%;
+  }
+  .accordion-expanded-inner {
+    margin-left: 30%;
+    width: 55%;
+  }
+}
+
+/* ── Mobile: stack vertically ── */
+@media (max-width: 640px) {
+  .accordion-trigger {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .accordion-trigger .label-col {
+    width: 100%;
+  }
+  .accordion-trigger .text-col {
+    flex: 1;
+    padding: 0;
+    font-size: 0.875rem;
+  }
+  .accordion-trigger .icon-col {
+    flex-shrink: 0;
+    padding-top: 0;
+  }
+  .accordion-expanded-inner {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 0 1.25rem;
+  }
 }
 
 /* ── Mobile nav drawer ── */
