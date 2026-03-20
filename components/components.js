@@ -18,23 +18,24 @@ class NavBar extends HTMLElement {
         <!-- Full header wrapper: white on left, accent+nav on right -->
         <div class="relative">
 
-          <!-- White logo panel: covers full height (accent bar + nav), flush to left edge -->
-          <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-end pr-6"
-       style="width: clamp(180px, calc(50vw - 340px), 320px);">
-    <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-      <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[140px] md:w-[180px] h-auto object-contain"/>
-    </a>
-  </div>
+          <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-start pl-6"
+            style="width: calc(50vw - (min(100vw, 1280px) / 2) + 100px);">
+            <a href="index.html" class="flex items-center" aria-label="NDIC Home">
+              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[200px] h-auto object-contain"/>
+            </a>
+          </div>
+ 
 
           <!-- Accent bar (sits on top of gray area only — logo side is white) -->
           <div class="w-full h-4 bg-brand-primary"></div>
 
           <!-- Main nav row -->
-          <nav class="h-20 flex items-center border-b-2 border-brand-primary"
+          <nav class="h-12 lg:h-20 flex items-center border-b-2 border-brand-primary"
                role="navigation" aria-label="Main navigation">
 
-            <div class="max-w-content mx-auto w-full px-6 lg:px-0 flex items-center justify-between"
-                 style="padding-left: 320px;">
+            <div class="max-w-8xl mx-auto w-full px-6 flex items-center justify-between">
+
+            <div class="xl:w-[350px]"></div>
 
               <!-- Desktop links -->
               <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
@@ -162,7 +163,7 @@ class FooterBar extends HTMLElement {
     return `
       <footer class="font-body bg-[#525252] text-white">
 
-        <div class="max-w-content mx-auto px-6 lg:px-0 py-14">
+        <div class="max-w-8xl mx-auto px-6 py-14">
 
           <!-- Top Section -->
           <div class="grid lg:grid-cols-6 gap-10">
