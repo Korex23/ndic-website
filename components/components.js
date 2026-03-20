@@ -17,20 +17,19 @@ class NavBar extends HTMLElement {
 
         <!-- Full header wrapper: white on left, accent+nav on right -->
         <div class="relative">
-
-       
- 
-
-          <!-- Accent bar (sits on top of gray area only — logo side is white) -->
           <div class="w-full h-4 bg-brand-primary"></div>
 
           <!-- Main nav row -->
           <nav class="h-12 lg:h-20 flex items-center border-b-2 border-brand-primary"
                role="navigation" aria-label="Main navigation">
 
-            <div class="max-w-[1360px] mx-auto w-full px-6 flex items-center justify-between">
+            <div class="sm:max-w-[540px] 
+            md:max-w-[720px] 
+            lg:max-w-[960px] 
+            xl:max-w-[1140px] 
+            2xl:max-w-[1320px] mx-auto w-full px-6 lg:px-0 flex items-center justify-between">
 
-                        <a href="index.html" class="flex items-center" aria-label="NDIC Home">
+            <a href="index.html" class="flex items-center" aria-label="NDIC Home">
               <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[100px] md:w-[150px] h-auto object-contain"/>
             </a>
 
@@ -160,7 +159,11 @@ class FooterBar extends HTMLElement {
     return `
       <footer class="font-body bg-[#525252] text-white">
 
-        <div class="max-w-[1360px] mx-auto px-6 py-14">
+        <div class="sm:max-w-[540px] 
+            md:max-w-[720px] 
+            lg:max-w-[960px] 
+            xl:max-w-[1140px] 
+            2xl:max-w-[1320px] mx-auto px-6 lg:px-0 py-14">
 
           <!-- Top Section -->
           <div class="grid lg:grid-cols-6 gap-10">
