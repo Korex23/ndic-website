@@ -220,9 +220,7 @@ const accordionData = [
             </div>
           </button>
           <div class="accordion-content ${item.open ? "open" : ""}">
-            <div class="accordion-expanded-inner">
               ${item.content}
-            </div>
           </div>
         </div>
       `,
