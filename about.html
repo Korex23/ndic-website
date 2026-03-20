@@ -1,180 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About NDIC — Nigeria Deposit Insurance Corporation. Learn about our mandate, governance, and mission." />
-  <title>About Us — NDIC</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About NDIC — Nigeria Deposit Insurance Corporation. Learn about our mandate, governance, and mission."
+    />
+    <title>About Us — NDIC</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tailwind CDN must load FIRST, then config is applied -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              primary: '#2C2E81',
-              mid:     '#393CA7',
-              dark:    '#1B2735',
-              overlay: '#181612',
+    <!-- Tailwind CDN must load FIRST, then config is applied -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: "#2C2E81",
+                mid: "#393CA7",
+                dark: "#1B2735",
+                overlay: "#181612",
+              },
+              surface: {
+                light: "#F5F5F5",
+                blue: "#E8F9FF",
+                cream: "#FCFBFC",
+              },
+              ndic: {
+                text: "#141313",
+                secondary: "#525252",
+                muted: "#777776",
+                dark: "#292929",
+              },
+              accent: {
+                gold: "#817F2C",
+                orange: "#FE9239",
+              },
+              "ndic-border": "#D9D9D9",
             },
-            surface: {
-              light: '#F5F5F5',
-              blue:  '#E8F9FF',
-              cream: '#FCFBFC',
+            fontFamily: {
+              heading: ["Oxygen", "sans-serif"],
+              body: ['"Nunito Sans"', "sans-serif"],
             },
-            ndic: {
-              text:      '#141313',
-              secondary: '#525252',
-              muted:     '#777776',
-              dark:      '#292929',
+            maxWidth: {
+              content: "1280px",
             },
-            accent: {
-              gold:   '#817F2C',
-              orange: '#FE9239',
-            },
-            'ndic-border': '#D9D9D9',
-          },
-          fontFamily: {
-            heading: ['Oxygen', 'sans-serif'],
-            body:    ['"Nunito Sans"', 'sans-serif'],
-          },
-          maxWidth: {
-            content: '1280px',
           },
         },
-      },
-    }
-  </script>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body class="font-body text-ndic-text bg-white antialiased">
+      };
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="font-body text-ndic-text bg-white antialiased">
+    <nav-bar active="about"></nav-bar>
 
-  <nav-bar active="about"></nav-bar>
-
-  <main>
-
-    <!-- Page Hero -->
-    <section class="bg-brand-primary py-20 px-6 lg:px-8">
-      <div class="max-w-content mx-auto">
-        <p class="font-body font-semibold text-[11px] text-white/60 tracking-[0.15em] uppercase mb-2">
-          About Us
-        </p>
-        <h1 class="font-heading font-bold text-[2rem] lg:text-[3rem] text-white leading-tight max-w-2xl">
-          Nigeria Deposit Insurance Corporation
-        </h1>
-        <div class="mt-4 w-16 h-[3px] bg-white opacity-50"></div>
-      </div>
-    </section>
-
-    <!-- Mission & Mandate -->
-    <section class="bg-white py-16 px-6 lg:px-8">
-      <div class="max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
-        <div>
-          <h2 class="font-heading font-bold text-[1.75rem] text-ndic-text leading-tight mb-5">
-            Our Mandate
-          </h2>
-          <p class="font-body text-[15px] text-ndic-secondary leading-[1.7] mb-4">
-            The Nigeria Deposit Insurance Corporation (NDIC) was established under the NDIC Act of 2006 to
-            provide deposit insurance and related services for banks in order to promote confidence in the
-            banking system and protect depositors.
+    <main>
+      <!-- Page Hero -->
+      <section class="bg-brand-primary py-20 px-6 lg:px-8">
+        <div class="max-w-[1360px] mx-auto">
+          <p
+            class="font-body font-semibold text-[11px] text-white/60 tracking-[0.15em] uppercase mb-2"
+          >
+            About Us
           </p>
-          <p class="font-body text-[15px] text-ndic-secondary leading-[1.7] mb-4">
-            As Nigeria's deposit insurer, the Corporation ensures that depositors are compensated up to the
-            insured limit in the event of bank failure, fostering stability and trust in the financial system.
-          </p>
-          <p class="font-body text-[15px] text-ndic-secondary leading-[1.7]">
-            The NDIC also acts as a receiver/liquidator of failed financial institutions, helping to wind
-            down insured institutions in an orderly manner and maximising recoveries for all creditors.
-          </p>
+          <h1
+            class="font-heading font-bold text-[2rem] lg:text-[3rem] text-white leading-tight max-w-2xl"
+          >
+            Nigeria Deposit Insurance Corporation
+          </h1>
+          <div class="mt-4 w-16 h-[3px] bg-white opacity-50"></div>
         </div>
+      </section>
 
-        <div class="space-y-6">
-
-          <!-- Stat cards -->
-          <div class="bg-surface-light rounded-lg p-6">
-            <p class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1">Maximum Coverage</p>
-            <p class="font-heading font-bold text-[2rem] text-brand-primary leading-tight">₦5,000,000</p>
-            <p class="font-body text-sm text-ndic-secondary mt-1">Per depositor, per insured institution</p>
+      <!-- Mission & Mandate -->
+      <section class="bg-white py-16 px-6 lg:px-8">
+        <div
+          class="max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+        >
+          <div>
+            <h2
+              class="font-heading font-bold text-[1.75rem] text-ndic-text leading-tight mb-5"
+            >
+              Our Mandate
+            </h2>
+            <p
+              class="font-body text-[15px] text-ndic-secondary leading-[1.7] mb-4"
+            >
+              The Nigeria Deposit Insurance Corporation (NDIC) was established
+              under the NDIC Act of 2006 to provide deposit insurance and
+              related services for banks in order to promote confidence in the
+              banking system and protect depositors.
+            </p>
+            <p
+              class="font-body text-[15px] text-ndic-secondary leading-[1.7] mb-4"
+            >
+              As Nigeria's deposit insurer, the Corporation ensures that
+              depositors are compensated up to the insured limit in the event of
+              bank failure, fostering stability and trust in the financial
+              system.
+            </p>
+            <p class="font-body text-[15px] text-ndic-secondary leading-[1.7]">
+              The NDIC also acts as a receiver/liquidator of failed financial
+              institutions, helping to wind down insured institutions in an
+              orderly manner and maximising recoveries for all creditors.
+            </p>
           </div>
 
-          <div class="bg-surface-light rounded-lg p-6">
-            <p class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1">Established</p>
-            <p class="font-heading font-bold text-[2rem] text-brand-primary leading-tight">1988</p>
-            <p class="font-body text-sm text-ndic-secondary mt-1">Protecting Nigeria's depositors for over 35 years</p>
-          </div>
+          <div class="space-y-6">
+            <!-- Stat cards -->
+            <div class="bg-surface-light rounded-lg p-6">
+              <p
+                class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1"
+              >
+                Maximum Coverage
+              </p>
+              <p
+                class="font-heading font-bold text-[2rem] text-brand-primary leading-tight"
+              >
+                ₦5,000,000
+              </p>
+              <p class="font-body text-sm text-ndic-secondary mt-1">
+                Per depositor, per insured institution
+              </p>
+            </div>
 
-          <div class="bg-surface-light rounded-lg p-6">
-            <p class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1">Insured Banks</p>
-            <p class="font-heading font-bold text-[2rem] text-brand-primary leading-tight">All Licensed</p>
-            <p class="font-body text-sm text-ndic-secondary mt-1">Commercial, microfinance, mortgage and payment banks</p>
-          </div>
+            <div class="bg-surface-light rounded-lg p-6">
+              <p
+                class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1"
+              >
+                Established
+              </p>
+              <p
+                class="font-heading font-bold text-[2rem] text-brand-primary leading-tight"
+              >
+                1988
+              </p>
+              <p class="font-body text-sm text-ndic-secondary mt-1">
+                Protecting Nigeria's depositors for over 35 years
+              </p>
+            </div>
 
+            <div class="bg-surface-light rounded-lg p-6">
+              <p
+                class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1"
+              >
+                Insured Banks
+              </p>
+              <p
+                class="font-heading font-bold text-[2rem] text-brand-primary leading-tight"
+              >
+                All Licensed
+              </p>
+              <p class="font-body text-sm text-ndic-secondary mt-1">
+                Commercial, microfinance, mortgage and payment banks
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- How We Help strip -->
-    <section class="bg-brand-primary py-14 px-6 lg:px-8">
-      <div class="max-w-content mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="font-heading font-bold text-[1.5rem] lg:text-[2rem] text-white leading-snug">
-            How we help protect<br/>your funds.
-          </h2>
-          <div class="mt-5 w-12 h-[3px] bg-white opacity-60"></div>
+      <!-- How We Help strip -->
+      <section class="bg-brand-primary py-14 px-6 lg:px-8">
+        <div
+          class="max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+        >
+          <div>
+            <h2
+              class="font-heading font-bold text-[1.5rem] lg:text-[2rem] text-white leading-snug"
+            >
+              How we help protect<br />your funds.
+            </h2>
+            <div class="mt-5 w-12 h-[3px] bg-white opacity-60"></div>
+          </div>
+          <div
+            class="flex flex-row gap-4 justify-center lg:justify-end flex-wrap"
+          >
+            <div
+              class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
+              style="
+                border: 1.5px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.07);
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              <span
+                class="font-body font-bold text-[11px] text-white tracking-widest uppercase"
+                >Mandate</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
+              style="
+                border: 1.5px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.07);
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <polyline points="9 12 11 14 15 10" />
+              </svg>
+              <span
+                class="font-body font-bold text-[11px] text-white tracking-widest uppercase"
+                >Protection</span
+              >
+            </div>
+            <div
+              class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
+              style="
+                border: 1.5px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.07);
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="3" y1="22" x2="21" y2="22" />
+                <line x1="6" y1="18" x2="6" y2="11" />
+                <line x1="10" y1="18" x2="10" y2="11" />
+                <line x1="14" y1="18" x2="14" y2="11" />
+                <line x1="18" y1="18" x2="18" y2="11" />
+                <polygon points="12 2 20 7 4 7" />
+              </svg>
+              <span
+                class="font-body font-bold text-[11px] text-white tracking-widest uppercase"
+                >Institution</span
+              >
+            </div>
+          </div>
         </div>
-        <div class="flex flex-row gap-4 justify-center lg:justify-end flex-wrap">
-          <div class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
-               style="border: 1.5px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.07);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-            <span class="font-body font-bold text-[11px] text-white tracking-widest uppercase">Mandate</span>
-          </div>
-          <div class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
-               style="border: 1.5px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.07);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <polyline points="9 12 11 14 15 10"/>
-            </svg>
-            <span class="font-body font-bold text-[11px] text-white tracking-widest uppercase">Protection</span>
-          </div>
-          <div class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
-               style="border: 1.5px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.07);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="3" y1="22" x2="21" y2="22"/>
-              <line x1="6" y1="18" x2="6" y2="11"/>
-              <line x1="10" y1="18" x2="10" y2="11"/>
-              <line x1="14" y1="18" x2="14" y2="11"/>
-              <line x1="18" y1="18" x2="18" y2="11"/>
-              <polygon points="12 2 20 7 4 7"/>
-            </svg>
-            <span class="font-body font-bold text-[11px] text-white tracking-widest uppercase">Institution</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-  </main>
+    <footer-bar></footer-bar>
 
-  <footer-bar></footer-bar>
-
-  <script src="components/components.js"></script>
-  <script src="js/app.js" defer></script>
-
-</body>
+    <script src="components/components.js"></script>
+    <script src="js/app.js" defer></script>
+  </body>
 </html>

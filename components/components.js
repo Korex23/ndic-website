@@ -18,11 +18,7 @@ class NavBar extends HTMLElement {
         <!-- Full header wrapper: white on left, accent+nav on right -->
         <div class="relative">
 
-          <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-start pl-6 logo-panel">
-            <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[120px] md:w-[200px] h-auto object-contain"/>
-            </a>
-          </div>
+       
  
 
           <!-- Accent bar (sits on top of gray area only — logo side is white) -->
@@ -32,9 +28,11 @@ class NavBar extends HTMLElement {
           <nav class="h-12 lg:h-20 flex items-center border-b-2 border-brand-primary"
                role="navigation" aria-label="Main navigation">
 
-            <div class="max-w-8xl mx-auto w-full px-6 flex items-center justify-between">
+            <div class="max-w-[1360px] mx-auto w-full px-6 flex items-center justify-between">
 
-            <div class="xl:w-[350px]"></div>
+                        <a href="index.html" class="flex items-center" aria-label="NDIC Home">
+              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[100px] md:w-[150px] h-auto object-contain"/>
+            </a>
 
               <!-- Desktop links -->
               <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
@@ -162,7 +160,7 @@ class FooterBar extends HTMLElement {
     return `
       <footer class="font-body bg-[#525252] text-white">
 
-        <div class="max-w-8xl mx-auto px-6 py-14">
+        <div class="max-w-[1360px] mx-auto px-6 py-14">
 
           <!-- Top Section -->
           <div class="grid lg:grid-cols-6 gap-10">
@@ -172,7 +170,7 @@ class FooterBar extends HTMLElement {
 
               <!-- Logo -->
               <a href="index.html" class="flex items-center gap-2 mb-6" aria-label="NDIC Home">
-                <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-30 h-30 object-contain"/>
+                <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain"/>
               </a>
 
               <!-- Address -->
@@ -272,3 +270,13 @@ class FooterBar extends HTMLElement {
 }
 
 customElements.define("footer-bar", FooterBar);
+
+//  <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-start pl-6 logo-panel">
+//    <a href="index.html" class="flex items-center" aria-label="NDIC Home">
+//      <img
+//        src="./assets/logo/logo.png"
+//        alt="NDIC Logo"
+//        class="w-[120px] md:w-[200px] h-auto object-contain"
+//      />
+//    </a>
+//  </div>;
