@@ -66,25 +66,30 @@
       <!-- ════════════════════════════════════════════════════
           Hero Carousel
     ════════════════════════════════════════════════════ -->
-      <section id="hero" class="bg-white overflow-hidden">
+      <section id="hero" class="bg-white overflow-hidden relative">
+        <!-- Gray half-background at the bottom of the hero -->
         <div
-          class="sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto flex flex-col px-6"
+          class="absolute bottom-0 left-0 right-0 h-2/5 bg-[#F5F5F5] z-0"
+        ></div>
+
+        <div
+          class="relative z-10 sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto flex flex-col px-6"
           style="min-height: 520px"
         >
           <!-- Text Panel -->
           <div
-            class="flex flex-col md:flex-row py-8 md:py-14 justify-center items-center md:justify-between text-center md:text-start gap-4 md:gap-0"
+            class="flex flex-col min-[992px]:flex-row py-8 min-[992px]:py-14 justify-center items-center min-[992px]:justify-between text-center min-[992px]:text-start gap-4 min-[992px]:gap-0"
           >
             <h1
               id="hero-title"
-              class="font-heading font-normal text-[1.6rem] sm:text-[2rem] lg:text-[3rem] xl:text-[4rem] text-ndic-text leading-[1.15] md:max-w-[40%] lg:max-w-none"
+              class="font-heading font-normal text-[1.6rem] sm:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] min-[1400px]:text-[4rem] text-ndic-text leading-[1.15]"
             ></h1>
 
             <div
-              class="hidden xl:block w-24 h-[1px] bg-black flex-shrink-0 mt-1"
+              class="hidden min-[1400px]:block w-24 h-[1px] bg-black flex-shrink-0 mt-1"
             ></div>
 
-            <div class="flex gap-4 md:max-w-[45%] lg:max-w-none">
+            <div class="flex gap-4">
               <p
                 id="hero-subtext"
                 class="font-body text-[16px] sm:text-[18px] lg:text-[20px] text-ndic-secondary leading-relaxed"
@@ -92,7 +97,9 @@
             </div>
           </div>
 
-          <div class="flex gap-5 items-center justify-center md:justify-start">
+          <div
+            class="flex gap-5 items-center justify-center min-[992px]:justify-start"
+          >
             <a
               href="#"
               class="inline-block self-start font-body font-semibold text-sm text-white bg-brand-primary hover:bg-brand-dark rounded-md px-16 py-2.5 transition-colors"
@@ -127,7 +134,7 @@
     ════════════════════════════════════════════════════ -->
       <section id="about" class="bg-[#F5F5F5] py-16 px-6 lg:px-8">
         <div
-          class="sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
           <!-- Text -->
           <div>
@@ -198,7 +205,7 @@
     ════════════════════════════════════════════════════ -->
       <section id="how-we-help" class="bg-white py-14 px-6 lg:px-8">
         <div
-          class="bg-[#393CA7] py-14 px-6 lg:px-8 rounded-2xl sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto"
+          class="bg-[#393CA7] py-14 px-6 lg:px-8 rounded-2xl sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto"
         >
           <div class="gap-10 items-center">
             <!-- Left heading -->
@@ -350,7 +357,7 @@
     ════════════════════════════════════════════════════ -->
       <section id="news" class="bg-surface-light py-16 px-6 lg:px-8">
         <div
-          class="sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto"
+          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto"
         >
           <!-- Header -->
           <div
@@ -392,7 +399,7 @@
     ════════════════════════════════════════════════════ -->
       <section id="events" class="bg-brand-primary py-16 px-6 lg:px-8">
         <div
-          class="sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto"
+          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto"
         >
           <div class="flex items-center justify-between gap-8 mb-6">
             <div>

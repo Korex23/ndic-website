@@ -24,17 +24,17 @@ class NavBar extends HTMLElement {
                role="navigation" aria-label="Main navigation">
 
             <div class="sm:max-w-[540px] 
-            md:max-w-[720px] 
-            lg:max-w-[960px] 
-            xl:max-w-[1140px] 
-            2xl:max-w-[1320px] mx-auto w-full px-6 lg:px-0 flex items-center justify-between">
+            md:max-w-[720px] min-[860px]:max-w-[820px] 
+            min-[992px]:max-w-[960px] 
+            min-[1200px]:max-w-[1140px] 
+            min-[1400px]:max-w-[1320px] mx-auto w-full px-6 lg:px-0 flex items-center justify-between">
 
             <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[100px] md:w-[150px] h-auto object-contain"/>
+              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[100px] lg:w-[150px] h-auto object-contain"/>
             </a>
 
               <!-- Desktop links -->
-              <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+              <ul class="hidden lg:flex items-center gap-8 list-none m-0 p-0">
                 <li><a href="index.html" class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("home", active)}">About Us</a></li>
                 <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("protection", active)}">Your Protection</a></li>
                 <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("media", active)}">Media</a></li>
@@ -42,7 +42,7 @@ class NavBar extends HTMLElement {
               </ul>
 
               <!-- Right actions -->
-              <div class="hidden md:flex items-center gap-3">
+              <div class="hidden lg:flex items-center gap-3">
                 <button aria-label="Search" class="text-ndic-secondary hover:text-brand-primary transition-colors border border-brand-primary rounded-md px-2 py-1.5">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.4995 15.5288C15.8395 15.1912 16.3851 15.1912 16.7251 15.5288L18.9722 17.3432H19.0112C19.4656 17.8027 19.4657 18.5479 19.0112 19.0073C18.5567 19.4668 17.8194 19.4667 17.3647 19.0073L15.4995 16.8696C15.3234 16.6921 15.2241 16.4511 15.2241 16.1997C15.2241 15.9481 15.3232 15.7064 15.4995 15.5288ZM9.3042 1.75926C11.3051 1.75926 13.2242 2.56269 14.6392 3.99266C16.0541 5.42279 16.849 7.36274 16.8491 9.38524C16.8491 13.5971 13.4713 17.0122 9.3042 17.0122C5.13723 17.0121 1.75928 13.5971 1.75928 9.38524C1.75946 5.17357 5.13735 1.75938 9.3042 1.75926Z" fill="#2C2E81" fill-opacity="0.5"/>
@@ -54,7 +54,7 @@ class NavBar extends HTMLElement {
               </div>
 
               <!-- Mobile hamburger -->
-              <button id="ndic-hamburger" aria-label="Open menu" aria-expanded="false" class="md:hidden text-brand-primary ml-auto">
+              <button id="ndic-hamburger" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-brand-primary ml-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="3" y1="6" x2="21" y2="6"/>
@@ -160,10 +160,10 @@ class FooterBar extends HTMLElement {
       <footer class="font-body bg-[#525252] text-white">
 
         <div class="sm:max-w-[540px] 
-            md:max-w-[720px] 
-            lg:max-w-[960px] 
-            xl:max-w-[1140px] 
-            2xl:max-w-[1320px] mx-auto px-6 lg:px-0 py-14">
+            md:max-w-[720px] min-[860px]:max-w-[820px] 
+            min-[992px]:max-w-[960px] 
+            min-[1200px]:max-w-[1140px] 
+            min-[1400px]:max-w-[1320px] mx-auto px-6 lg:px-0 py-14">
 
           <!-- Top Section -->
           <div class="grid lg:grid-cols-6 gap-10">
