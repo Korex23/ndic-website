@@ -1,4 +1,3 @@
-/* ── CSS Custom Properties ── */
 :root {
   --color-brand-primary: #2c2e81;
   --color-brand-mid: #393ca7;
@@ -19,6 +18,7 @@
   --max-width: 1280px;
   --section-px: clamp(1.5rem, 5vw, 3rem);
   --section-py: clamp(2.5rem, 6vw, 4rem);
+  --container-px: 2vw;
 }
 
 /* ── Base ── */
@@ -40,10 +40,34 @@ h4 {
   font-family: var(--font-heading);
 }
 
+/* ── Container ── */
+.ndic-container {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.nav-logo-panel {
+  padding-left: 10%;
+}
+@media (min-width: 1024px) {
+  .ndic-container {
+    padding-left: var(--container-px);
+    padding-right: var(--container-px);
+  }
+  .nav-logo-panel {
+    padding-left: 3%;
+  }
+}
+
 /* ── Carousel ── */
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
+}
+
+#hero-title,
+#hero-subtext {
+  transition: opacity 0.3s ease;
 }
 
 /* ── Accordion ── */
@@ -195,22 +219,4 @@ h4 {
 }
 .media-card:hover img {
   transform: scale(1.04);
-}
-
-.logo-panel {
-  width: calc(50vw - (min(100vw, 1280px) / 2) + 100px);
-}
-
-/* 768px to 1279px: +200px offset */
-@media (min-width: 768px) and (max-width: 1279px) {
-  .logo-panel {
-    width: calc(50vw - (min(100vw, 1280px) / 2) + 200px);
-  }
-}
-
-/* 1280px and above: +100px offset */
-@media (min-width: 1280px) {
-  .logo-panel {
-    width: calc(50vw - (1280px / 2) + 100px);
-  }
 }

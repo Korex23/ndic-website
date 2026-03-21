@@ -69,16 +69,19 @@
       <section id="hero" class="bg-white overflow-hidden relative">
         <!-- Gray half-background at the bottom of the hero -->
         <div
-          class="absolute bottom-0 left-0 right-0 h-2/5 bg-[#F5F5F5] z-0"
+          class="absolute bottom-0 left-0 right-0 h-2/5 z-0"
+          style="
+            background: linear-gradient(to bottom, transparent, #f5f5f5 60%);
+          "
         ></div>
 
         <div
-          class="relative z-10 sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto flex flex-col px-6"
+          class="relative z-10 ndic-container flex flex-col"
           style="min-height: 520px"
         >
           <!-- Text Panel -->
           <div
-            class="flex flex-col min-[992px]:flex-row py-8 min-[992px]:py-14 justify-center items-center min-[992px]:justify-between text-center min-[992px]:text-start gap-4 min-[992px]:gap-0"
+            class="flex flex-col min-[992px]:flex-row px-6 py-8 min-[992px]:py-14 justify-center items-center min-[992px]:justify-between text-center min-[992px]:text-start gap-4 min-[992px]:gap-0"
           >
             <h1
               id="hero-title"
@@ -98,7 +101,7 @@
           </div>
 
           <div
-            class="flex gap-5 items-center justify-center min-[992px]:justify-start"
+            class="flex gap-5 items-center justify-center min-[992px]:justify-start px-6"
           >
             <a
               href="#"
@@ -132,69 +135,72 @@
       <!-- ════════════════════════════════════════════════════
        About
     ════════════════════════════════════════════════════ -->
-      <section id="about" class="bg-[#F5F5F5] py-16 px-6 lg:px-8">
-        <div
-          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-        >
-          <!-- Text -->
-          <div>
-            <h2
-              class="font-heading font-normal text-[1.5rem] lg:text-[2.5rem] text-ndic-text leading-tight"
-            >
-              At <span class="text-brand-primary font-bold">NDIC</span>, We
-              safeguard deposits and support a stable, reliable financial
-              system.
-            </h2>
-            <p
-              class="font-body text-[15px] text-ndic-secondary leading-relaxed mt-5 max-w-md"
-            >
-              As Nigeria's deposit insurer, the Corporation ensures that
-              depositors are paid if a bank fails.
-            </p>
-            <a
-              href="#"
-              aria-label="Learn About NDIC"
-              class="mt-8 inline-block font-body font-semibold text-sm text-white bg-brand-primary hover:bg-brand-dark rounded-md px-16 py-2.5 transition-colors"
-            >
-              Learn About NDIC
-            </a>
-          </div>
-
-          <!-- Image -->
-          <div
-            class="relative h-72 lg:h-80 rounded-lg overflow-hidden order-first lg:order-last bg-surface-blue flex items-center justify-center"
-          >
-            <img
-              src="assets/images/shield-protection.png"
-              alt="A glowing digital shield held in a human hand, representing financial protection and deposit insurance"
-              class="w-full h-full object-cover"
-              width="580"
-              height="400"
-              loading="lazy"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              "
-            />
-            <!-- Fallback -->
-            <div
-              class="hidden w-full h-full bg-surface-blue items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#2C2E81"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
+      <section
+        id="about"
+        class="bg-[#F5F5F5] pt-16 overflow-hidden min-h-[530px] flex flex-col"
+      >
+        <div class="ndic-container flex-1 flex flex-col">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 flex-1">
+            <!-- Text -->
+            <div class="self-start pb-16">
+              <h2
+                class="font-heading font-normal text-[1.5rem] lg:text-[2.5rem] text-ndic-text leading-tight"
               >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <polyline points="9 12 11 14 15 10" />
-              </svg>
+                At <span class="text-brand-primary font-bold">NDIC</span>, We
+                safeguard deposits and support a stable, reliable financial
+                system.
+              </h2>
+              <p
+                class="font-body text-[15px] text-ndic-secondary leading-relaxed mt-5 max-w-md"
+              >
+                As Nigeria's deposit insurer, the Corporation ensures that
+                depositors are paid if a bank fails.
+              </p>
+              <a
+                href="#"
+                aria-label="Learn About NDIC"
+                class="mt-8 inline-block font-body font-semibold text-sm text-white bg-brand-primary hover:bg-brand-dark rounded-md px-16 py-2.5 transition-colors"
+              >
+                Learn About NDIC
+              </a>
+            </div>
+
+            <!-- Image -->
+            <div
+              class="relative h-72 lg:h-80 rounded-t-lg overflow-hidden order-first lg:order-last bg-surface-blue flex items-center justify-center self-end"
+            >
+              <img
+                src="assets/images/shield-protection.png"
+                alt="A glowing digital shield held in a human hand, representing financial protection and deposit insurance"
+                class="w-full h-full object-cover"
+                width="580"
+                height="400"
+                loading="lazy"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <!-- Fallback -->
+              <div
+                class="hidden w-full h-full bg-surface-blue items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#2C2E81"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -203,11 +209,9 @@
       <!-- ════════════════════════════════════════════════════
          How We Help
     ════════════════════════════════════════════════════ -->
-      <section id="how-we-help" class="bg-white py-14 px-6 lg:px-8">
-        <div
-          class="bg-[#393CA7] py-14 px-6 lg:px-8 rounded-2xl sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto"
-        >
-          <div class="gap-10 items-center">
+      <section id="how-we-help" class="bg-white py-14 ndic-container">
+        <div class="bg-[#393CA7] py-14 rounded-2xl ndic-container">
+          <div class="items-center">
             <!-- Left heading -->
             <div>
               <h2
@@ -218,7 +222,7 @@
             </div>
 
             <div
-              class="flex md:flex-row flex-col gap-10 mt-5 justify-between items-center"
+              class="flex md:flex-row flex-col min-[860px]:-mt-5 mt-5 gap-10 justify-between items-center"
             >
               <div class="min-[860px]:block hidden w-72 h-[2px] bg-white"></div>
               <div
@@ -355,13 +359,11 @@
       <!-- ════════════════════════════════════════════════════
         News & Publications
     ════════════════════════════════════════════════════ -->
-      <section id="news" class="bg-surface-light py-16 px-6 lg:px-8">
-        <div
-          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto"
-        >
+      <section id="news" class="bg-surface-light py-16">
+        <div class="ndic-container">
           <!-- Header -->
           <div
-            class="flex flex-row items-center justify-between gap-4 sm:gap-8 mb-6"
+            class="flex flex-row items-center justify-between gap-4 sm:gap-8 mb-6 px-6"
           >
             <div>
               <p
@@ -376,8 +378,10 @@
               </h2>
             </div>
 
-            <div class="flex items-center gap-6 sm:flex-1 sm:max-w-[600px]">
-              <div class="flex-1 h-px bg-black hidden sm:block"></div>
+            <div
+              class="flex items-center gap-6 sm:flex-1 sm:max-w-[700px] pr-[10%]"
+            >
+              <div class="flex-1 w-72 h-px bg-black hidden sm:block"></div>
               <a
                 href="#"
                 class="font-body font-extrabold text-[14px] md:text-[18px] text-brand-primary tracking-widest uppercase hover:underline whitespace-nowrap"
@@ -397,10 +401,8 @@
       <!-- ════════════════════════════════════════════════════
           Events & Media
     ════════════════════════════════════════════════════ -->
-      <section id="events" class="bg-brand-primary py-16 px-6 lg:px-8">
-        <div
-          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] mx-auto"
-        >
+      <section id="events" class="bg-brand-primary py-16">
+        <div class="ndic-container">
           <div
             class="flex flex-row items-center justify-between gap-4 sm:gap-8 mb-6"
           >
@@ -417,7 +419,9 @@
               </h2>
             </div>
 
-            <div class="flex items-center gap-6 sm:flex-1 sm:max-w-[600px]">
+            <div
+              class="flex items-center gap-6 sm:flex-1 sm:max-w-[700px] pr-[10%]"
+            >
               <div class="flex-1 h-px bg-white hidden sm:block"></div>
               <a
                 href="#"
