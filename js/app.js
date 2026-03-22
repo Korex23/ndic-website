@@ -224,7 +224,7 @@ const accordionData = [
   container.innerHTML = accordionData
     .map(
       (item) => `
-        <div class="accordion-item pl-6 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14 pr-6 sm:pr-8 md:pr-10 lg:pr-16 xl:pr-[7%]">
+        <div class="accordion-item">
           <button class="accordion-trigger w-full py-5 text-left" aria-expanded="${item.open}">
             <div class="label-col">
               <span class="active bg-brand-primary w-3 h-3 rounded-sm border-2 flex-shrink-0"></span>
