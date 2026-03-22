@@ -27,26 +27,24 @@ class NavBar extends HTMLElement {
         <!-- Right panel: accent bar + nav links -->
         <div class="flex-1 flex flex-col border-b-2 border-brand-primary" style="background: #F5F5F5;">
 
-          <!-- Accent bar: h-2 on mobile, taller on desktop with social icons -->
+          <!-- Accent bar: h-2 on mobile, taller on desktop with contact info -->
           <div class="h-2 lg:h-8 nav-accent-bar flex items-center justify-end pr-[2%]">
-            <!-- Social icons: desktop only -->
-            <div class="hidden lg:flex items-center gap-4">
-              <!-- Instagram -->
-              <a href="#" aria-label="Instagram" class="text-white/70 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <!-- Contact info: desktop only -->
+            <div class="hidden lg:flex items-center gap-6">
+              <!-- Email -->
+              <a href="mailto:helpdesk@ndic.gov.ng" aria-label="Email NDIC" class="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span class="font-body text-[14px]">helpdesk@ndic.gov.ng</span>
               </a>
-              <!-- X / Twitter -->
-              <a href="#" aria-label="X (Twitter)" class="text-white/70 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <!-- Facebook -->
-              <a href="#" aria-label="Facebook" class="text-white/70 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </a>
-              <!-- LinkedIn -->
-              <a href="#" aria-label="LinkedIn" class="text-white/70 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </a>
+              <!-- Divider -->
+              <span class="w-px h-3 bg-white/30"></span>
+              <!-- Phone -->
+              <div class="flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+                <a href="tel:012719010" aria-label="Call NDIC line 1" class="font-body text-[14px] text-white/80 hover:text-white transition-colors">(01) 2719010</a>
+                <span class="text-white/40 text-[14px]">,</span>
+                <a href="tel:014663400" aria-label="Call NDIC line 2" class="font-body text-[14px] text-white/80 hover:text-white transition-colors">01-4663400</a>
+              </div>
             </div>
           </div>
 
@@ -257,7 +255,7 @@ class FooterBar extends HTMLElement {
           ${links
             .map(
               (l) => `
-              <a href="#" class="block text-[14px] text-gray-300 hover:text-white transition-colors">
+              <a href="#" class="block text-[14px] text-gray-300 hover:text-white transition-colors truncate">
                 ${l}
               </a>
             `,
@@ -278,7 +276,7 @@ class FooterBar extends HTMLElement {
           <div class="grid lg:grid-cols-6 gap-10">
 
             <!-- LEFT: Logo + Address -->
-            <div class="lg:col-span-2">
+            <div class="lg:col-span-2 lg:w-[60%]">
 
               <!-- Logo -->
               <a href="index.html" class="flex items-center gap-2 mb-6" aria-label="NDIC Home">
@@ -297,7 +295,7 @@ class FooterBar extends HTMLElement {
             </div>
 
             <!-- RIGHT: Links -->
-            <div class="lg:col-span-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            <div class="lg:col-span-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:ml-auto xl:w-[85%]">
 
               ${this._col("Corporate", [
                 "Mandate",
