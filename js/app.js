@@ -25,12 +25,22 @@
     },
   ];
 
+  // Switch track to a stacking container
+  track.classList.remove("flex");
+  track.style.position = "relative";
+
   track.innerHTML = slides
     .map(
       (slide, i) => `
         <div
-          class="w-full flex-shrink-0 h-[566px]"
+          class="carousel-slide absolute inset-0 rounded-2xl overflow-hidden"
           aria-label="Slide ${i + 1} of ${slides.length}"
+          style="
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            opacity: ${i === 0 ? "1" : "0.6"};
+            transform: ${i === 0 ? "translate(0,0) scale(1)" : "translate(0%, -3%) scale(0.98)"};
+            z-index: ${slides.length - i};
+          "
         >
           <img
             src="${slide.image}"
@@ -83,15 +93,25 @@
   function goTo(index) {
     current = (index + total) % total;
 
-    track.style.transform = `translateX(-${current * 100}%)`;
+    const slideEls = track.querySelectorAll(".carousel-slide");
+    slideEls.forEach((el, i) => {
+      const offset = (i - current + total) % total;
+      if (offset === 0) {
+        el.style.opacity = "1";
+        el.style.transform = "translate(0,0) scale(1)";
+        el.style.zIndex = total;
+      } else {
+        el.style.opacity = "0.7";
+        el.style.transform = "translate(-0%, -3%) scale(0.98)";
+        el.style.zIndex = total - offset;
+      }
+    });
 
     dots.forEach((dot, i) => {
       const isActive = i === current;
-
       dot.classList.toggle("active", isActive);
       dot.classList.toggle("border-brand-primary", isActive);
       dot.classList.toggle("border-ndic-border", !isActive);
-
       dot.setAttribute("aria-selected", String(isActive));
     });
 
@@ -102,11 +122,11 @@
     dot.addEventListener("click", () => goTo(i));
   });
 
-  let timer = setInterval(() => goTo(current + 1), 10000);
+  let timer = setInterval(() => goTo(current + 1), 5000);
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 10000);
+    timer = setInterval(() => goTo(current + 1), 5000);
   }
 
   carousel?.addEventListener("mouseenter", () => clearInterval(timer));
@@ -219,7 +239,7 @@ const accordionData = [
               ${item.open ? MINUS_SVG : PLUS_SVG}
             </div>
           </button>
-          <div class="accordion-content ${item.open ? "open" : ""}">
+          <div class="accordion-content lg:translate-x-10 ${item.open ? "open" : ""}">
               ${item.content}
           </div>
         </div>

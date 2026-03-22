@@ -26,40 +26,88 @@ class NavBar extends HTMLElement {
 
         <!-- Right panel: accent bar + nav links -->
         <div class="flex-1 flex flex-col border-b-2 border-brand-primary" style="background: #F5F5F5;">
-          <div class="md:h-4 h-2 bg-brand-primary"></div>
+
+          <!-- Accent bar: h-2 on mobile, taller on desktop with social icons -->
+          <div class="h-2 lg:h-8 nav-accent-bar flex items-center justify-end pr-[2%]">
+            <!-- Social icons: desktop only -->
+            <div class="hidden lg:flex items-center gap-4">
+              <!-- Instagram -->
+              <a href="#" aria-label="Instagram" class="text-white/70 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <!-- X / Twitter -->
+              <a href="#" aria-label="X (Twitter)" class="text-white/70 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <!-- Facebook -->
+              <a href="#" aria-label="Facebook" class="text-white/70 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="#" aria-label="LinkedIn" class="text-white/70 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </div>
+          </div>
 
           <nav class="h-12 lg:h-20 flex items-center pr-[2%]"
                role="navigation" aria-label="Main navigation">
 
             <!-- Desktop links (centered) -->
             <ul class="hidden lg:flex items-center gap-8 list-none m-0 p-0 flex-1 justify-center">
-              <li><a href="index.html" class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("home", active)}">About Us</a></li>
-              <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("protection", active)}">Your Protection</a></li>
-              <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("media", active)}">Media</a></li>
-              <li><a href="#"          class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("tools", active)}">Tools</a></li>
+              <li><a href=""   class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("about", active)}">About Us</a></li>
+              <li><a href="#"  class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("protection", active)}">Your Protection</a></li>
+              <li><a href="#"  class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("media", active)}">Media</a></li>
+              <li><a href="#"  class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("tools", active)}">Tools</a></li>
             </ul>
 
-            <!-- Right actions -->
+            <!-- Desktop right actions -->
             <div class="hidden lg:flex items-center gap-3">
-              <button aria-label="Search" class="text-ndic-secondary hover:text-brand-primary transition-colors border border-brand-primary rounded-md px-2 py-1.5">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.4995 15.5288C15.8395 15.1912 16.3851 15.1912 16.7251 15.5288L18.9722 17.3432H19.0112C19.4656 17.8027 19.4657 18.5479 19.0112 19.0073C18.5567 19.4668 17.8194 19.4667 17.3647 19.0073L15.4995 16.8696C15.3234 16.6921 15.2241 16.4511 15.2241 16.1997C15.2241 15.9481 15.3232 15.7064 15.4995 15.5288ZM9.3042 1.75926C11.3051 1.75926 13.2242 2.56269 14.6392 3.99266C16.0541 5.42279 16.849 7.36274 16.8491 9.38524C16.8491 13.5971 13.4713 17.0122 9.3042 17.0122C5.13723 17.0121 1.75928 13.5971 1.75928 9.38524C1.75946 5.17357 5.13735 1.75938 9.3042 1.75926Z" fill="#2C2E81" fill-opacity="0.5"/>
-                </svg>
-              </button>
+              <div class="flex items-center border border-brand-primary rounded-md overflow-hidden">
+                <input
+                  id="desktop-search-input"
+                  type="search"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  class="w-0 opacity-0 pointer-events-none transition-all duration-300 ease-in-out bg-transparent text-sm text-ndic-text outline-none px-0 py-1.5"
+                />
+                <button id="desktop-search-btn" aria-label="Search" class="text-ndic-secondary hover:text-brand-primary transition-colors px-2 py-1.5">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.4995 15.5288C15.8395 15.1912 16.3851 15.1912 16.7251 15.5288L18.9722 17.3432H19.0112C19.4656 17.8027 19.4657 18.5479 19.0112 19.0073C18.5567 19.4668 17.8194 19.4667 17.3647 19.0073L15.4995 16.8696C15.3234 16.6921 15.2241 16.4511 15.2241 16.1997C15.2241 15.9481 15.3232 15.7064 15.4995 15.5288ZM9.3042 1.75926C11.3051 1.75926 13.2242 2.56269 14.6392 3.99266C16.0541 5.42279 16.849 7.36274 16.8491 9.38524C16.8491 13.5971 13.4713 17.0122 9.3042 17.0122C5.13723 17.0121 1.75928 13.5971 1.75928 9.38524C1.75946 5.17357 5.13735 1.75938 9.3042 1.75926Z" fill="#2C2E81" fill-opacity="0.5"/>
+                  </svg>
+                </button>
+              </div>
               <a href="#" class="font-body font-semibold text-[13px] text-white border border-brand-primary rounded-md px-4 py-1.5 bg-brand-primary hover:bg-brand-dark transition-colors">
                 Contact Care Center
               </a>
             </div>
 
-            <!-- Mobile hamburger -->
-            <button id="ndic-hamburger" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-brand-primary ml-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
-              </svg>
-            </button>
+            <!-- Mobile: search + hamburger -->
+            <div class="lg:hidden flex items-center gap-2 ml-auto">
+              <!-- Expandable search -->
+              <div class="flex items-center">
+                <input
+                  id="mobile-search-input"
+                  type="search"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  class="w-0 opacity-0 pointer-events-none transition-all duration-300 ease-in-out border-b border-brand-primary bg-transparent text-sm text-ndic-text outline-none px-0"
+                />
+                <button id="mobile-search-btn" aria-label="Search" class="text-brand-primary p-1">
+                  <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.4995 15.5288C15.8395 15.1912 16.3851 15.1912 16.7251 15.5288L18.9722 17.3432H19.0112C19.4656 17.8027 19.4657 18.5479 19.0112 19.0073C18.5567 19.4668 17.8194 19.4667 17.3647 19.0073L15.4995 16.8696C15.3234 16.6921 15.2241 16.4511 15.2241 16.1997C15.2241 15.9481 15.3232 15.7064 15.4995 15.5288ZM9.3042 1.75926C11.3051 1.75926 13.2242 2.56269 14.6392 3.99266C16.0541 5.42279 16.849 7.36274 16.8491 9.38524C16.8491 13.5971 13.4713 17.0122 9.3042 17.0122C5.13723 17.0121 1.75928 13.5971 1.75928 9.38524C1.75946 5.17357 5.13735 1.75938 9.3042 1.75926Z" fill="#2C2E81" fill-opacity="0.5"/>
+                  </svg>
+                </button>
+              </div>
+              <button id="ndic-hamburger" aria-label="Open menu" aria-expanded="false" class="text-brand-primary p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <line x1="3" y1="12" x2="21" y2="12"/>
+                  <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+              </button>
+            </div>
 
           </nav>
         </div>
@@ -122,7 +170,75 @@ class NavBar extends HTMLElement {
     close?.addEventListener("click", closeDrawer);
     backdrop?.addEventListener("click", closeDrawer);
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeDrawer();
+      if (e.key === "Escape") {
+        closeDrawer();
+        collapseSearch();
+        collapseDesktop();
+      }
+    });
+
+    // Desktop search toggle
+    const desktopSearchBtn = document.getElementById("desktop-search-btn");
+    const desktopSearchInput = document.getElementById("desktop-search-input");
+
+    const expandDesktop = () => {
+      desktopSearchInput.classList.remove(
+        "w-0",
+        "opacity-0",
+        "pointer-events-none",
+        "px-0",
+      );
+      desktopSearchInput.classList.add("w-48", "opacity-100", "px-2");
+      desktopSearchInput.focus();
+    };
+    const collapseDesktop = () => {
+      desktopSearchInput.classList.add(
+        "w-0",
+        "opacity-0",
+        "pointer-events-none",
+        "px-0",
+      );
+      desktopSearchInput.classList.remove("w-48", "opacity-100", "px-2");
+    };
+
+    desktopSearchBtn?.addEventListener("click", () => {
+      desktopSearchInput.classList.contains("w-0")
+        ? expandDesktop()
+        : collapseDesktop();
+    });
+    desktopSearchInput?.addEventListener("blur", () => {
+      if (!desktopSearchInput.value) collapseDesktop();
+    });
+
+    // Mobile search toggle
+    const searchBtn = document.getElementById("mobile-search-btn");
+    const searchInput = document.getElementById("mobile-search-input");
+
+    const expandSearch = () => {
+      searchInput.classList.remove(
+        "w-0",
+        "opacity-0",
+        "pointer-events-none",
+        "px-0",
+      );
+      searchInput.classList.add("w-32", "opacity-100", "px-2");
+      searchInput.focus();
+    };
+    const collapseSearch = () => {
+      searchInput.classList.add(
+        "w-0",
+        "opacity-0",
+        "pointer-events-none",
+        "px-0",
+      );
+      searchInput.classList.remove("w-32", "opacity-100", "px-2");
+    };
+
+    searchBtn?.addEventListener("click", () => {
+      searchInput.classList.contains("w-0") ? expandSearch() : collapseSearch();
+    });
+    searchInput?.addEventListener("blur", () => {
+      if (!searchInput.value) collapseSearch();
     });
   }
 }
