@@ -19,7 +19,7 @@ class NavBar extends HTMLElement {
         <div class="bg-white flex flex-shrink-0 self-stretch">
           <div class="nav-logo-panel flex items-center py-1">
             <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="h-8 lg:h-full w-auto object-contain"/>
+              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="h-8 lg:h-full w-auto object-contain" width="107" height="32"/>
             </a>
           </div>
         </div>
@@ -113,11 +113,11 @@ class NavBar extends HTMLElement {
         <!-- Mobile drawer -->
         <div id="ndic-drawer"
              class="nav-drawer fixed top-0 left-0 h-full w-72 bg-white z-[100] shadow-2xl flex flex-col"
-             aria-hidden="true">
+             aria-hidden="true" inert>
           <div class="h-2 bg-brand-primary w-full"></div>
           <div class="flex items-center justify-between px-6 h-16 border-b border-ndic-border">
             <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-20 h-20 object-contain"/>
+              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-20 h-20 object-contain" width="80" height="24"/>
             </a>
             <button id="ndic-close" aria-label="Close menu" class="text-ndic-secondary">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
@@ -156,12 +156,14 @@ class NavBar extends HTMLElement {
       backdrop.classList.remove("hidden");
       hamburger.setAttribute("aria-expanded", "true");
       drawer.setAttribute("aria-hidden", "false");
+      drawer.removeAttribute("inert");
     };
     const closeDrawer = () => {
       drawer.classList.remove("open");
       backdrop.classList.add("hidden");
       hamburger.setAttribute("aria-expanded", "false");
       drawer.setAttribute("aria-hidden", "true");
+      drawer.setAttribute("inert", "");
     };
 
     hamburger?.addEventListener("click", openDrawer);
@@ -280,7 +282,7 @@ class FooterBar extends HTMLElement {
 
               <!-- Logo -->
               <a href="index.html" class="flex items-center gap-2 mb-6" aria-label="NDIC Home">
-                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain"/>
+                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain" width="100" height="30"/>
               </a>
 
               <!-- Address -->
