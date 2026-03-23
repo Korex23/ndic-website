@@ -63,7 +63,7 @@
           aria-selected="${i === 0}"
           class="carousel-dot ${
             i === 0 ? "active border-brand-primary" : "border-ndic-border"
-          } w-3 h-3 rounded-sm border-2 transition-colors"
+          } w-4 h-4 rounded-sm border-2 transition-colors"
           aria-label="Slide ${i + 1}"
         ></button>
       `,
