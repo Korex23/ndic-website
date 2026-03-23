@@ -282,7 +282,7 @@ class FooterBar extends HTMLElement {
 
               <!-- Logo -->
               <a href="index.html" class="flex items-center gap-2 mb-6" aria-label="NDIC Home">
-                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain" width="100" height="30"/>
+                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain" width="100" height="30" style="aspect-ratio: 10/3"/>
               </a>
 
               <!-- Address -->
