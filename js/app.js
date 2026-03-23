@@ -13,14 +13,14 @@
       title: `Protecting Depositors.<br />Strengthening Confidence.`,
       subtext: `We ensure the safety, stability, and <br />
                 resilience of Nigeria's banking system.`,
-      image: "assets/images/hero-building.png",
+      image: "assets/images/hero-building.webp",
       alt: "NDIC Headquarters building",
     },
     {
       title: `Safeguarding Your Funds.<br />Securing The Future.`,
       subtext: `NDIC protects depositors and promotes <br />
                 financial system stability across Nigeria.`,
-      image: "assets/images/hero-building.png",
+      image: "assets/images/hero-building.webp",
       alt: "NDIC Building exterior",
     },
   ];
@@ -165,7 +165,7 @@ const accordionData = [
     content: `
       <div class="accordion-expanded-inner">
         <div class="relative w-full rounded-md overflow-hidden bg-slate-200 h-72">
-          <img src="assets/images/news-handshake.png"
+          <img src="assets/images/news-handshake.webp"
                class="w-full h-full object-cover"
                alt="news image"/>
         </div>

@@ -15,47 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="assets/images/hero-building.webp" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                primary: "#2C2E81",
-                mid: "#393CA7",
-                dark: "#1B2735",
-                overlay: "#181612",
-              },
-              surface: {
-                light: "#F5F5F5",
-                blue: "#E8F9FF",
-                cream: "#FCFBFC",
-              },
-              ndic: {
-                text: "#141313",
-                secondary: "#525252",
-                muted: "#777776",
-                dark: "#292929",
-              },
-              accent: {
-                gold: "#817F2C",
-                orange: "#FE9239",
-              },
-              "ndic-border": "#D9D9D9",
-            },
-            fontFamily: {
-              heading: ["Oxygen", "sans-serif"],
-              body: ['"Nunito Sans"', "sans-serif"],
-            },
-            maxWidth: {
-              content: "1280px",
-            },
-          },
-        },
-      };
-    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="font-body text-ndic-text bg-white antialiased">
@@ -177,7 +139,7 @@
               "
             >
               <img
-                src="assets/images/shield-protection.png"
+                src="assets/images/shield-protection.webp"
                 alt="A glowing digital shield held in a human hand, representing financial protection and deposit insurance"
                 class="w-full h-full object-cover"
                 width="400"
@@ -456,7 +418,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-award.png"
+                  src="assets/images/event-award.webp"
                   class="w-full h-full object-cover"
                 />
                 <div class="media-card-overlay absolute inset-0"></div>
@@ -473,7 +435,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-signing.png"
+                  src="assets/images/event-signing.webp"
                   class="w-full h-full object-cover"
                 />
                 <div class="media-card-overlay absolute inset-0"></div>
@@ -497,7 +459,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-group-women.png"
+                  src="assets/images/event-group-women.webp"
                   class="w-full h-full object-cover"
                 />
                 <div class="media-card-overlay absolute inset-0"></div>
@@ -512,7 +474,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-office-group.png"
+                  src="assets/images/event-office-group.webp"
                   class="w-full h-full object-cover"
                 />
                 <div class="media-card-overlay absolute inset-0"></div>
@@ -536,7 +498,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-banner.png"
+                  src="assets/images/event-banner.webp"
                   class="w-full h-full object-cover"
                 />
                 <div class="media-card-overlay absolute inset-0"></div>
@@ -551,7 +513,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-speaker.png"
+                  src="assets/images/event-speaker.webp"
                   class="w-full h-full object-cover"
                 />
                 <div class="media-card-overlay absolute inset-0"></div>
@@ -571,7 +533,7 @@
     <!-- ── Footer ── -->
     <footer-bar></footer-bar>
 
-    <script src="components/components.js"></script>
+    <script src="components/components.js" defer></script>
     <script src="js/app.js" defer></script>
   </body>
 </html>

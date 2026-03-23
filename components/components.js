@@ -19,7 +19,7 @@ class NavBar extends HTMLElement {
         <div class="bg-white flex flex-shrink-0 self-stretch">
           <div class="nav-logo-panel flex items-center py-1">
             <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="h-8 lg:h-full w-auto object-contain"/>
+              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="h-8 lg:h-full w-auto object-contain"/>
             </a>
           </div>
         </div>
@@ -117,7 +117,7 @@ class NavBar extends HTMLElement {
           <div class="h-2 bg-brand-primary w-full"></div>
           <div class="flex items-center justify-between px-6 h-16 border-b border-ndic-border">
             <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-20 h-20 object-contain"/>
+              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-20 h-20 object-contain"/>
             </a>
             <button id="ndic-close" aria-label="Close menu" class="text-ndic-secondary">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
@@ -280,7 +280,7 @@ class FooterBar extends HTMLElement {
 
               <!-- Logo -->
               <a href="index.html" class="flex items-center gap-2 mb-6" aria-label="NDIC Home">
-                <img src="./assets/logo/logo.png" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain"/>
+                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain"/>
               </a>
 
               <!-- Address -->
@@ -384,7 +384,7 @@ customElements.define("footer-bar", FooterBar);
 //  <div class="absolute top-0 left-0 h-full bg-white z-10 flex items-center justify-start pl-6 logo-panel">
 //    <a href="index.html" class="flex items-center" aria-label="NDIC Home">
 //      <img
-//        src="./assets/logo/logo.png"
+//        src="./assets/logo/logo.webp"
 //        alt="NDIC Logo"
 //        class="w-[120px] md:w-[200px] h-auto object-contain"
 //      />
