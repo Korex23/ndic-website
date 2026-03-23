@@ -9,11 +9,15 @@
     />
     <title>NDIC — Nigeria Deposit Insurance Corporation</title>
 
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="preload" as="image" href="assets/images/hero-building.webp" />
-
-    <link rel="stylesheet" href="css/tailwind.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preload" as="style" href="css/fonts.css" onload="this.rel='stylesheet'">
+    <link rel="preload" as="style" href="css/tailwind.css" onload="this.rel='stylesheet'">
+    <link rel="preload" as="style" href="css/styles.css" onload="this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="css/fonts.css">
+      <link rel="stylesheet" href="css/tailwind.css">
+      <link rel="stylesheet" href="css/styles.css">
+    </noscript>
+    <link rel="preload" as="image" href="assets/images/hero-building.webp" fetchpriority="high" />
   </head>
   <body class="font-body text-ndic-text bg-white antialiased">
     <!-- ── Navbar ── -->
@@ -76,7 +80,7 @@
           </div>
 
           <!-- Carousel -->
-          <div style="padding-top: 6%; position: relative">
+          <div style="padding-top: 20px; position: relative">
             <div
               id="hero-carousel"
               class="relative rounded-2xl"
@@ -413,7 +417,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-award.webp"
+                  src="assets/images/event-award-c.webp"
                   alt="NDIC Award Night — woman in traditional attire receiving award at gala"
                   class="w-full h-full object-cover"
                 />
@@ -431,7 +435,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-signing.webp"
+                  src="assets/images/event-signing-c.webp"
                   alt="NDIC partnership signing ceremony — officials shaking hands at formal event"
                   class="w-full h-full object-cover"
                 />
@@ -472,7 +476,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-office-group.webp"
+                  src="assets/images/event-office-group-c.webp"
                   alt="NDIC internal meeting — staff gathered in office setting"
                   class="w-full h-full object-cover"
                 />
@@ -497,7 +501,7 @@
                 class="media-card relative overflow-hidden bg-slate-200 cursor-pointer"
               >
                 <img
-                  src="assets/images/event-banner.webp"
+                  src="assets/images/event-banner-c.webp"
                   alt="NDIC appointment ceremony banner with officials in formal attire"
                   class="w-full h-full object-cover"
                 />
