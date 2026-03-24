@@ -176,7 +176,7 @@ class NavBar extends HTMLElement {
         description:
           "Stay informed with official NDIC press releases, in-depth research publications, news coverage, event highlights, and multimedia resources.",
 
-        image: "./assets/images/event-banner.webp",
+        image: "./assets/images/event-banner-c.webp",
         items: [
           {
             icon: I.book,
@@ -222,7 +222,7 @@ class NavBar extends HTMLElement {
         page: "tools",
         description:
           "Interactive tools to help depositors, banks, and researchers understand insurance coverage, verify insured institutions, and access key financial data.",
-        image: "./assets/images/event-signing.webp",
+        image: "./assets/images/event-signing-c.webp",
         items: [
           {
             icon: I.calc,
@@ -572,17 +572,27 @@ class NavBar extends HTMLElement {
     const desktopSearchInput = document.getElementById("desktop-search-input");
 
     const searchIcon = document.getElementById("desktop-search-icon");
-    const closeIcon  = document.getElementById("desktop-close-icon");
+    const closeIcon = document.getElementById("desktop-close-icon");
 
     const expandDesktop = () => {
-      desktopSearchInput.classList.remove("w-0", "opacity-0", "pointer-events-none", "px-0");
+      desktopSearchInput.classList.remove(
+        "w-0",
+        "opacity-0",
+        "pointer-events-none",
+        "px-0",
+      );
       desktopSearchInput.classList.add("w-48", "opacity-100", "px-2");
       searchIcon?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
       desktopSearchInput.focus();
     };
     const collapseDesktop = () => {
-      desktopSearchInput.classList.add("w-0", "opacity-0", "pointer-events-none", "px-0");
+      desktopSearchInput.classList.add(
+        "w-0",
+        "opacity-0",
+        "pointer-events-none",
+        "px-0",
+      );
       desktopSearchInput.classList.remove("w-48", "opacity-100", "px-2");
       searchIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
@@ -669,7 +679,7 @@ class FooterBar extends HTMLElement {
 
               <!-- Logo -->
               <a href="index.html" class="inline-block mb-6" aria-label="NDIC Home">
-                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain" width="100" height="30"/>
+                <img src="./assets/logo/logo_white.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain" width="100" height="30"/>
               </a>
 
               <!-- Address -->

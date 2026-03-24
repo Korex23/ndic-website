@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cwebp -q 90 logo/logo_LR_white.png -o logo/logo_LR_white.webp)",
+      "Bash(cwebp -q 90 images/favicon-01.png -o images/favicon-01.webp)",
+      "Bash(node -e \"require\\(''sharp''\\)\")"
+    ]
+  }
+}
