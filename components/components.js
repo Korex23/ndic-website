@@ -48,7 +48,7 @@ class NavBar extends HTMLElement {
     return [
       {
         label: "About NDIC",
-        href: "",
+        href: "/about.html",
         page: "about",
         description:
           "Established in 1988, NDIC is Nigeria’s statutory deposit insurer, safeguarding depositors and promoting confidence in the financial system through sound regulatory oversight.",
