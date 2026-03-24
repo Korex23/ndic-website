@@ -11,6 +11,346 @@ class NavBar extends HTMLElement {
       : "text-ndic-text hover:text-brand-primary";
   }
 
+  _navConfig() {
+    const I = {
+      // About
+      overview: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+      history: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.88"/></svg>`,
+      values: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+      mandate: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+      governance: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><rect x="2" y="6" width="20" height="16"/><path d="M12 6V2"/><path d="M8 6V2M16 6V2"/></svg>`,
+      orgchart: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><rect x="1" y="16" width="6" height="4" rx="1"/><rect x="9" y="16" width="6" height="4" rx="1"/><rect x="17" y="16" width="6" height="4" rx="1"/><path d="M12 6v4M4 16v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><line x1="12" y1="10" x2="12" y2="11"/></svg>`,
+      // Protection
+      shield: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
+      eye: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+      alerttri: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+      gavel: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 13-8.5 8.5a2.12 2.12 0 0 1-3-3L11 10"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/></svg>`,
+      // Claims
+      fileguide: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="12" y1="12" x2="12" y2="18"/><line x1="9" y1="15" x2="15" y2="15"/></svg>`,
+      complaint: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+      depositor: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>`,
+      creditor: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
+      shareholder: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
+      // Media
+      newspaper: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg>`,
+      book: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+      article: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>`,
+      barChart: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+      gallery: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>`,
+      video: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
+      // Tools
+      calc: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>`,
+      building: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><rect x="6" y="2" width="12" height="20"/><path d="M10 6h4M10 10h4M10 14h4"/></svg>`,
+      lineChart: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+      quote: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>`,
+    };
+
+    return [
+      {
+        label: "About NDIC",
+        href: "",
+        page: "about",
+        description:
+          "Established in 1988, NDIC is Nigeria’s statutory deposit insurer, safeguarding depositors and promoting confidence in the financial system through sound regulatory oversight.",
+
+        image: "./assets/images/hero-building.webp",
+        items: [
+          {
+            icon: I.overview,
+            title: "Overview",
+            desc: "Who we are and what we do",
+            href: "#",
+          },
+          {
+            icon: I.history,
+            title: "Our History",
+            desc: "From 1988 to present day",
+            href: "#",
+          },
+          {
+            icon: I.values,
+            title: "Vision, Mission & Values",
+            desc: "The principles that guide us",
+            href: "#",
+          },
+          {
+            icon: I.mandate,
+            title: "Mandate, Powers & Functions",
+            desc: "Our legal framework & authority",
+            href: "#",
+          },
+          {
+            icon: I.governance,
+            title: "Leadership & Governance",
+            desc: "Board, MD & executive team",
+            href: "#",
+          },
+          {
+            icon: I.orgchart,
+            title: "Organisation Structure",
+            desc: "Departments & reporting lines",
+            href: "#",
+          },
+        ],
+      },
+      {
+        label: "Your Protection",
+        href: "#",
+        page: "protection",
+        description:
+          "NDIC guarantees deposits up to the maximum covered limit per depositor per bank. Understand your coverage, monitor your bank’s status, and know your rights if a bank fails.",
+
+        image: "./assets/images/shield-protection.webp",
+        items: [
+          {
+            icon: I.shield,
+            title: "Deposit Guaranteed",
+            desc: "Coverage limits & eligible deposits",
+            href: "#",
+          },
+          {
+            icon: I.eye,
+            title: "Bank Supervision",
+            desc: "How we monitor insured institutions",
+            href: "#",
+          },
+          {
+            icon: I.alerttri,
+            title: "Failure Resolution",
+            desc: "Steps taken when a bank is in distress",
+            href: "#",
+          },
+          {
+            icon: I.gavel,
+            title: "Bank Liquidation",
+            desc: "Winding up & asset recovery process",
+            href: "#",
+          },
+        ],
+      },
+      {
+        label: "Your Claim",
+        href: "#",
+        page: "claim",
+        description:
+          "If your bank has been closed by the CBN, NDIC will reimburse your insured deposits. Use the guides and forms below to file your claim quickly and correctly.",
+
+        image: "./assets/images/news-handshake.webp",
+        items: [
+          {
+            icon: I.fileguide,
+            title: "Guide to Filing a Claim",
+            desc: "Step-by-step instructions for claimants",
+            href: "#",
+          },
+          {
+            icon: I.complaint,
+            title: "Complaint Form",
+            desc: "Lodge a formal complaint with NDIC",
+            href: "#",
+          },
+          {
+            icon: I.depositor,
+            title: "Depositor’s Form",
+            desc: "Claim form for individual depositors",
+            href: "#",
+          },
+          {
+            icon: I.creditor,
+            title: "Creditor’s Form",
+            desc: "Claim form for institutional creditors",
+            href: "#",
+          },
+          {
+            icon: I.shareholder,
+            title: "Shareholder’s Form",
+            desc: "Claim form for bank shareholders",
+            href: "#",
+          },
+        ],
+      },
+      {
+        label: "Media",
+        href: "#",
+        page: "media",
+        description:
+          "Stay informed with official NDIC press releases, in-depth research publications, news coverage, event highlights, and multimedia resources.",
+
+        image: "./assets/images/event-banner.webp",
+        items: [
+          {
+            icon: I.book,
+            title: "Publications",
+            desc: "Annual reports, research & policy papers",
+            href: "#",
+          },
+          {
+            icon: I.newspaper,
+            title: "News",
+            desc: "Latest NDIC news & press releases",
+            href: "#",
+          },
+          {
+            icon: I.article,
+            title: "Articles",
+            desc: "Expert insights & opinion pieces",
+            href: "#",
+          },
+          {
+            icon: I.barChart,
+            title: "Reports",
+            desc: "Financial stability & sector reports",
+            href: "#",
+          },
+          {
+            icon: I.gallery,
+            title: "Gallery",
+            desc: "Photos from events & ceremonies",
+            href: "#",
+          },
+          {
+            icon: I.video,
+            title: "Videos",
+            desc: "Speeches, seminars & documentaries",
+            href: "#",
+          },
+        ],
+      },
+      {
+        label: "Tools",
+        href: "#",
+        page: "tools",
+        description:
+          "Interactive tools to help depositors, banks, and researchers understand insurance coverage, verify insured institutions, and access key financial data.",
+        image: "./assets/images/event-signing.webp",
+        items: [
+          {
+            icon: I.calc,
+            title: "Premium Calculator",
+            desc: "Estimate your bank’s insurance premium",
+            href: "#",
+          },
+          {
+            icon: I.building,
+            title: "Insured Banks",
+            desc: "Directory of all covered institutions",
+            href: "#",
+          },
+          {
+            icon: I.lineChart,
+            title: "Annual Reports",
+            desc: "Yearly performance & financial data",
+            href: "#",
+          },
+          {
+            icon: I.quote,
+            title: "Get a Quote",
+            desc: "Request a personalised insurance quote",
+            href: "#",
+          },
+        ],
+      },
+    ];
+  }
+
+  _dropdownItem(item) {
+    return `
+    <a href="${item.href}"
+       data-item-title="${item.title}"
+       data-item-desc="${item.desc}"
+       class="dd-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#d8d8ec] transition-colors">
+      <div class="w-7 h-7 rounded-md bg-[#EEF0FF] flex items-center justify-center flex-shrink-0">
+        ${item.icon}
+      </div>
+      <span class="font-semibold text-sm text-[#141313] font-body">${item.title}</span>
+    </a>
+  `;
+  }
+
+  _navItem(item, active) {
+    const CARET = `<svg class="transition-transform duration-200 group-hover:rotate-180" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    return `
+    <li class="nav-item group flex items-center self-stretch">
+      <a href="${item.href}" class="nav-link font-body font-semibold text-sm transition-colors flex items-center gap-1 ${this._isActive(item.page, active)}">
+        ${item.label}
+        ${CARET}
+      </a>
+      <div class="absolute left-0 right-0 top-full z-50 opacity-0 pointer-events-none -translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-200 ease-out">
+        <div class="bg-[#EAEAF2] shadow-xl">
+          <div class="px-6 py-6 grid gap-0" style="grid-template-columns: 260px 1px 1fr 1px 220px;">
+
+            <!-- Col 1: Links -->
+            <div class="flex flex-col gap-0.5 pr-6">
+              ${item.items.map((i) => this._dropdownItem(i)).join("")}
+            </div>
+
+            <!-- Divider -->
+            <div class="bg-gray-300 mx-0"></div>
+
+            <!-- Col 2: Description -->
+            <div class="flex flex-col justify-between px-8">
+              <div>
+                <p class="dd-desc-title text-[10px] font-bold text-brand-primary uppercase tracking-[0.15em] font-body transition-all duration-150"
+                   data-default="${item.label}">${item.label}</p>
+                <p class="dd-desc-body mt-3 text-sm text-ndic-secondary leading-relaxed font-body transition-all duration-150"
+                   data-default="${item.description}">${item.description}</p>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="bg-gray-300 mx-0"></div>
+
+            <!-- Col 3: Image -->
+            <div class="pl-6">
+              <div class="w-full h-full min-h-[140px] rounded-lg overflow-hidden bg-[#c8c8dc]">
+                <img src="${item.image}" alt="${item.label}" class="w-full h-full object-cover"
+                  onerror="this.style.display='none';this.parentElement.style.background='#c8c8dc'"/>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </li>
+  `;
+  }
+
+  _navItems(active) {
+    return this._navConfig()
+      .map((item) => this._navItem(item, active))
+      .join("");
+  }
+
+  _drawerLinks() {
+    const CARET = `<svg class="drawer-caret transition-transform duration-200" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`;
+    return this._navConfig()
+      .map(
+        (item) => `
+      <div class="drawer-section border-b border-ndic-border">
+        <button class="drawer-toggle w-full flex items-center justify-between py-3 font-body font-semibold text-sm text-ndic-text hover:text-brand-primary transition-colors" aria-expanded="false">
+          <span>${item.label}</span>
+          ${CARET}
+        </button>
+        <div class="drawer-sub overflow-hidden max-h-0 transition-all duration-250 ease-in-out">
+          <div class="pb-2 flex flex-col gap-0.5">
+            ${item.items
+              .map(
+                (sub) => `
+              <a href="${sub.href}" class="flex items-center gap-3 px-2 py-2 rounded-md hover:bg-[#EAEAF2] transition-colors">
+                <div class="w-6 h-6 rounded bg-[#EEF0FF] flex items-center justify-center flex-shrink-0">${sub.icon}</div>
+                <span class="font-body text-sm text-ndic-text">${sub.title}</span>
+              </a>
+            `,
+              )
+              .join("")}
+          </div>
+        </div>
+      </div>
+    `,
+      )
+      .join("");
+  }
+
   _template(active) {
     return `
       <header class="sticky top-0 z-50 font-body flex">
@@ -52,11 +392,8 @@ class NavBar extends HTMLElement {
                role="navigation" aria-label="Main navigation">
 
             <!-- Desktop links (centered) -->
-            <ul class="hidden lg:flex items-center gap-8 list-none m-0 p-0 flex-1 justify-center">
-              <li><a href=""   class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("about", active)}">About Us</a></li>
-              <li><a href="#"  class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("protection", active)}">Your Protection</a></li>
-              <li><a href="#"  class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("media", active)}">Media</a></li>
-              <li><a href="#"  class="font-body font-semibold text-sm pb-0.5 transition-colors ${this._isActive("tools", active)}">Tools</a></li>
+            <ul class="hidden lg:flex items-center list-none m-0 p-0 flex-1 justify-center self-stretch relative">
+              ${this._navItems(active)}
             </ul>
 
             <!-- Desktop right actions -->
@@ -70,8 +407,13 @@ class NavBar extends HTMLElement {
                   class="w-0 opacity-0 pointer-events-none transition-all duration-300 ease-in-out bg-transparent text-sm text-ndic-text outline-none px-0 py-1.5"
                 />
                 <button id="desktop-search-btn" aria-label="Search" class="text-ndic-secondary hover:text-brand-primary transition-colors px-2 py-1.5">
-                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Search icon -->
+                  <svg id="desktop-search-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.4995 15.5288C15.8395 15.1912 16.3851 15.1912 16.7251 15.5288L18.9722 17.3432H19.0112C19.4656 17.8027 19.4657 18.5479 19.0112 19.0073C18.5567 19.4668 17.8194 19.4667 17.3647 19.0073L15.4995 16.8696C15.3234 16.6921 15.2241 16.4511 15.2241 16.1997C15.2241 15.9481 15.3232 15.7064 15.4995 15.5288ZM9.3042 1.75926C11.3051 1.75926 13.2242 2.56269 14.6392 3.99266C16.0541 5.42279 16.849 7.36274 16.8491 9.38524C16.8491 13.5971 13.4713 17.0122 9.3042 17.0122C5.13723 17.0121 1.75928 13.5971 1.75928 9.38524C1.75946 5.17357 5.13735 1.75938 9.3042 1.75926Z" fill="#2C2E81" fill-opacity="0.5"/>
+                  </svg>
+                  <!-- Close icon (hidden by default) -->
+                  <svg id="desktop-close-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C2E81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                   </svg>
                 </button>
               </div>
@@ -128,10 +470,7 @@ class NavBar extends HTMLElement {
             </button>
           </div>
           <nav class="flex flex-col flex-1 px-6 py-4">
-            <a href="index.html" class="font-body font-semibold text-sm text-ndic-text py-3 border-b border-ndic-border hover:text-brand-primary transition-colors">About Us</a>
-            <a href="#"          class="font-body font-semibold text-sm text-ndic-text py-3 border-b border-ndic-border hover:text-brand-primary transition-colors">Your Protection</a>
-            <a href="#"          class="font-body font-semibold text-sm text-ndic-text py-3 border-b border-ndic-border hover:text-brand-primary transition-colors">Media</a>
-            <a href="#"          class="font-body font-semibold text-sm text-ndic-text py-3 border-b border-ndic-border hover:text-brand-primary transition-colors">Tools</a>
+            ${this._drawerLinks()}
             <a href="#" class="mt-6 font-body font-semibold text-[13px] text-brand-primary border border-brand-primary rounded-full px-4 py-2 text-center hover:bg-brand-primary hover:text-white transition-colors block">
               Contact Care Center
             </a>
@@ -146,6 +485,57 @@ class NavBar extends HTMLElement {
   }
 
   _init() {
+    // Dropdown link hover — update description column
+    this.querySelectorAll(".nav-item").forEach((navItem) => {
+      const titleEl = navItem.querySelector(".dd-desc-title");
+      const bodyEl = navItem.querySelector(".dd-desc-body");
+      if (!titleEl || !bodyEl) return;
+
+      navItem.querySelectorAll(".dd-link").forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+          titleEl.textContent = link.dataset.itemTitle;
+          bodyEl.textContent = link.dataset.itemDesc;
+        });
+        link.addEventListener("mouseleave", () => {
+          titleEl.textContent = titleEl.dataset.default;
+          bodyEl.textContent = bodyEl.dataset.default;
+        });
+      });
+    });
+
+    // Mobile drawer accordion
+    this.querySelectorAll(".drawer-toggle").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const sub = btn.nextElementSibling;
+        const caret = btn.querySelector(".drawer-caret");
+        const open = btn.getAttribute("aria-expanded") === "true";
+        // close all others
+        this.querySelectorAll(".drawer-toggle").forEach((b) => {
+          b.setAttribute("aria-expanded", "false");
+          b.nextElementSibling.style.maxHeight = "0";
+          b.querySelector(".drawer-caret").style.transform = "";
+        });
+        if (!open) {
+          btn.setAttribute("aria-expanded", "true");
+          sub.style.maxHeight = sub.scrollHeight + "px";
+          caret.style.transform = "rotate(180deg)";
+        }
+      });
+    });
+
+    // Scroll-aware header
+    const header = this.querySelector("header");
+    const accentBar = this.querySelector(".nav-accent-bar")?.parentElement;
+    const rightPanel = header?.querySelector(".flex-1.flex.flex-col");
+
+    const onScroll = () => {
+      const scrolled = window.scrollY > 8;
+      header.style.boxShadow = scrolled ? "0 4px 24px rgba(28,30,90,0.13)" : "";
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
     const hamburger = document.getElementById("ndic-hamburger");
     const drawer = document.getElementById("ndic-drawer");
     const close = document.getElementById("ndic-close");
@@ -181,24 +571,21 @@ class NavBar extends HTMLElement {
     const desktopSearchBtn = document.getElementById("desktop-search-btn");
     const desktopSearchInput = document.getElementById("desktop-search-input");
 
+    const searchIcon = document.getElementById("desktop-search-icon");
+    const closeIcon  = document.getElementById("desktop-close-icon");
+
     const expandDesktop = () => {
-      desktopSearchInput.classList.remove(
-        "w-0",
-        "opacity-0",
-        "pointer-events-none",
-        "px-0",
-      );
+      desktopSearchInput.classList.remove("w-0", "opacity-0", "pointer-events-none", "px-0");
       desktopSearchInput.classList.add("w-48", "opacity-100", "px-2");
+      searchIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
       desktopSearchInput.focus();
     };
     const collapseDesktop = () => {
-      desktopSearchInput.classList.add(
-        "w-0",
-        "opacity-0",
-        "pointer-events-none",
-        "px-0",
-      );
+      desktopSearchInput.classList.add("w-0", "opacity-0", "pointer-events-none", "px-0");
       desktopSearchInput.classList.remove("w-48", "opacity-100", "px-2");
+      searchIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
     };
 
     desktopSearchBtn?.addEventListener("click", () => {
@@ -278,11 +665,11 @@ class FooterBar extends HTMLElement {
           <div class="grid lg:grid-cols-6 gap-10">
 
             <!-- LEFT: Logo + Address -->
-            <div class="lg:col-span-2 lg:w-[60%]">
+            <div class="lg:col-span-2">
 
               <!-- Logo -->
-              <a href="index.html" class="flex items-center gap-2 mb-6" aria-label="NDIC Home">
-                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain" width="100" height="30" style="aspect-ratio: 10/3"/>
+              <a href="index.html" class="inline-block mb-6" aria-label="NDIC Home">
+                <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-[100px] md:w-[150px] object-contain" width="100" height="30"/>
               </a>
 
               <!-- Address -->
