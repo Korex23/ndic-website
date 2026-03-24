@@ -675,7 +675,7 @@ class FooterBar extends HTMLElement {
           <div class="grid lg:grid-cols-6 gap-10">
 
             <!-- LEFT: Logo + Address -->
-            <div class="lg:col-span-2">
+            <div class="lg:col-span-2 lg:w-[70%]">
 
               <!-- Logo -->
               <a href="index.html" class="inline-block mb-6" aria-label="NDIC Home">
@@ -683,12 +683,12 @@ class FooterBar extends HTMLElement {
               </a>
 
               <!-- Address -->
-              <p class="text-[14px] text-gray-200 leading-relaxed mb-4">
-                <span class="font-semibold text-white">Head Office:</span> Plot 447/448 Constitution avenue, 
+              <p class="text-[14px] text-gray-200 leading-relaxed mb-4 footer-address">
+                <span class="font-semibold text-white">Head Office:</span> Plot 447/448 Constitution avenue,
                 Central Business District, Abuja.
               </p>
 
-              <p class="text-[14px] text-gray-200 leading-relaxed">
+              <p class="text-[14px] text-gray-200 leading-relaxed footer-address">
                 <span class="font-semibold text-white">Lagos Office:</span> 23A Marina, Lagos. P.M.B 12881 Lagos, Nigeria.
               </p>
             </div>

@@ -5,280 +5,697 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="About NDIC — Nigeria Deposit Insurance Corporation. Learn about our mandate, governance, and mission."
+      content="About NDIC — Nigeria Deposit Insurance Corporation. Our mandate, history, and mission to protect Nigerian depositors."
     />
     <title>About Us — NDIC</title>
-
-    <!-- Google Fonts -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-01.png"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                primary: "#2C2E81",
-                mid: "#393CA7",
-                dark: "#1B2735",
-                overlay: "#181612",
-              },
-              surface: {
-                light: "#F5F5F5",
-                blue: "#E8F9FF",
-                cream: "#FCFBFC",
-              },
-              ndic: {
-                text: "#141313",
-                secondary: "#525252",
-                muted: "#777776",
-                dark: "#292929",
-              },
-              accent: {
-                gold: "#817F2C",
-                orange: "#FE9239",
-              },
-              "ndic-border": "#D9D9D9",
-            },
-            fontFamily: {
-              heading: ["Oxygen", "sans-serif"],
-              body: ['"Nunito Sans"', "sans-serif"],
-            },
-            maxWidth: {
-              content: "1280px",
-            },
-          },
-        },
-      };
-    </script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/tailwind.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body class="font-body text-ndic-text bg-white antialiased">
+  <body class="font-body bg-white text-ndic-text">
     <nav-bar active="about"></nav-bar>
 
     <main>
-      <!-- Page Hero -->
-      <section class="bg-brand-primary py-20 px-6 lg:px-8">
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 1 — HERO BANNER
+      ══════════════════════════════════════════════════════ -->
+      <section class="relative overflow-hidden hero-section">
+        <img
+          src="./assets/images/hero-building.webp"
+          alt="NDIC Headquarters Building"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
         <div
-          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] 2xl:max-w-[1480px] mx-auto"
-        >
-          <p
-            class="font-body font-semibold text-[11px] text-white/60 tracking-[0.15em] uppercase mb-2"
-          >
-            About Us
-          </p>
+          class="absolute inset-0"
+          style="
+            background: linear-gradient(
+              to right,
+              rgba(27, 39, 53, 0.92) 0%,
+              rgba(27, 39, 53, 0.55) 55%,
+              rgba(27, 39, 53, 0.15) 100%
+            );
+          "
+        ></div>
+        <div class="absolute inset-0 flex items-center justify-center">
           <h1
-            class="font-heading font-bold text-[2rem] lg:text-[3rem] text-white leading-tight max-w-2xl"
+            class="font-heading font-bold text-white text-center"
+            style="font-size: clamp(2.5rem, 6vw, 4.5rem)"
           >
-            Nigeria Deposit Insurance Corporation
+            ABOUT US
           </h1>
-          <div class="mt-4 w-16 h-[3px] bg-white opacity-50"></div>
         </div>
       </section>
 
-      <!-- Mission & Mandate -->
-      <section class="bg-white py-16 px-6 lg:px-8">
-        <div
-          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] 2xl:max-w-[1480px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
-        >
-          <div>
-            <h2
-              class="font-heading font-bold text-[1.75rem] text-ndic-text leading-tight mb-5"
-            >
-              Our Mandate
-            </h2>
-            <p
-              class="font-body text-[15px] text-ndic-secondary leading-[1.7] mb-4"
-            >
-              The Nigeria Deposit Insurance Corporation (NDIC) was established
-              under the NDIC Act of 2006 to provide deposit insurance and
-              related services for banks in order to promote confidence in the
-              banking system and protect depositors.
-            </p>
-            <p
-              class="font-body text-[15px] text-ndic-secondary leading-[1.7] mb-4"
-            >
-              As Nigeria's deposit insurer, the Corporation ensures that
-              depositors are compensated up to the insured limit in the event of
-              bank failure, fostering stability and trust in the financial
-              system.
-            </p>
-            <p class="font-body text-[15px] text-ndic-secondary leading-[1.7]">
-              The NDIC also acts as a receiver/liquidator of failed financial
-              institutions, helping to wind down insured institutions in an
-              orderly manner and maximising recoveries for all creditors.
-            </p>
-          </div>
-
-          <div class="space-y-6">
-            <!-- Stat cards -->
-            <div class="bg-surface-light rounded-lg p-6">
-              <p
-                class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1"
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 2 — INTRO / MISSION TEXT
+      ══════════════════════════════════════════════════════ -->
+      <section class="py-20">
+        <div class="ndic-container">
+          <div class="flex gap-10 xl:gap-40 items-start">
+            <!-- Left: narrow label column -->
+            <div class="hidden md:block flex-shrink-0 w-40 pt-2">
+              <span
+                class="inline-block px-5 py-2 w-[200px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap"
               >
-                Maximum Coverage
-              </p>
-              <p
-                class="font-heading font-bold text-[2rem] text-brand-primary leading-tight"
-              >
-                ₦5,000,000
-              </p>
-              <p class="font-body text-sm text-ndic-secondary mt-1">
-                Per depositor, per insured institution
-              </p>
+                Overview
+              </span>
             </div>
 
-            <div class="bg-surface-light rounded-lg p-6">
-              <p
-                class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1"
+            <!-- Right: heading + indented body -->
+            <div class="flex-1 min-w-0">
+              <h2
+                class="font-heading text-3xl md:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
               >
-                Established
-              </p>
-              <p
-                class="font-heading font-bold text-[2rem] text-brand-primary leading-tight"
+                Established to
+                <strong class="font-bold text-brand-primary"
+                  >protect depositors</strong
+                >
+                and <br />
+                <strong class="font-bold text-brand-primary"
+                  >strengthen confidence</strong
+                >
+                in the nation's <br />
+                financial system.
+              </h2>
+              <div
+                class="md:ml-[10%] mt-8 md:mt-10 space-y-5 max-w-3xl text-xl leading-relaxed text-ndic-secondary font-body"
               >
-                1988
-              </p>
-              <p class="font-body text-sm text-ndic-secondary mt-1">
-                Protecting Nigeria's depositors for over 35 years
-              </p>
-            </div>
-
-            <div class="bg-surface-light rounded-lg p-6">
-              <p
-                class="font-body font-bold text-[11px] text-ndic-muted tracking-widest uppercase mb-1"
-              >
-                Insured Banks
-              </p>
-              <p
-                class="font-heading font-bold text-[2rem] text-brand-primary leading-tight"
-              >
-                All Licensed
-              </p>
-              <p class="font-body text-sm text-ndic-secondary mt-1">
-                Commercial, microfinance, mortgage and payment banks
-              </p>
+                <p>
+                  The Nigeria Deposit Insurance Corporation (NDIC) is an
+                  independent agency of the Federal Government of Nigeria
+                  established to protect depositors and strengthen confidence in
+                  the nation's financial system.
+                </p>
+                <p>
+                  The Corporation plays a critical role in ensuring the
+                  stability of the banking sector by providing deposit
+                  insurance, supervising financial institutions, and managing
+                  bank failures effectively.
+                </p>
+                <p>
+                  Through its operations, NDIC safeguards depositors' funds and
+                  contributes to a resilient and trustworthy financial
+                  ecosystem.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- How We Help strip -->
-      <section class="bg-brand-primary py-14 px-6 lg:px-8">
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 3 — ACHIEVEMENTS / STATISTICS
+      ══════════════════════════════════════════════════════ -->
+      <section id="stats-section">
         <div
-          class="sm:max-w-[540px] md:max-w-[720px] min-[860px]:max-w-[820px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] 2xl:max-w-[1480px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+          class="max-w-content border-t border-b border-ndic-text pt-6 pb-9 mx-auto px-6 md:px-8"
         >
-          <div>
-            <h2
-              class="font-heading font-bold text-[1.5rem] lg:text-[2rem] text-white leading-snug"
+          <div class="max-w-4xl mx-auto">
+            <h3
+              class="font-body text-xl font-bold text-brand-primary text-center mb-8"
             >
-              How we help protect<br />your funds.
-            </h2>
-            <div class="mt-5 w-12 h-[3px] bg-white opacity-60"></div>
+              Achievement
+            </h3>
           </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto">
+            <div>
+              <p class="text-sm font-body text-ndic-muted mb-1">
+                #Years of Operation
+              </p>
+              <p
+                class="stat-number font-heading text-6xl md:text-7xl font-bold text-ndic-text leading-none tabular-nums block"
+                data-target="167"
+                data-prefix=""
+                data-suffix=""
+              >
+                0
+              </p>
+            </div>
+
+            <div>
+              <p class="text-sm font-body text-ndic-muted mb-1">
+                #Max Insured Sum
+              </p>
+              <p
+                class="stat-number font-heading text-6xl md:text-7xl font-bold text-ndic-text leading-none tabular-nums block"
+                data-target="167"
+                data-prefix=""
+                data-suffix=""
+              >
+                0
+              </p>
+            </div>
+
+            <div>
+              <p class="text-sm font-body text-ndic-muted mb-1">
+                #Claims Paid Rate
+              </p>
+              <p
+                class="stat-number font-heading text-6xl md:text-7xl font-bold text-ndic-text leading-none tabular-nums block"
+                data-target="167"
+                data-prefix=""
+                data-suffix=""
+              >
+                0
+              </p>
+            </div>
+            <div>
+              <p class="text-sm font-body text-ndic-muted mb-1">
+                #Banks Covered
+              </p>
+              <p
+                class="stat-number font-heading text-6xl md:text-7xl font-bold text-ndic-text leading-none tabular-nums block"
+                data-target="167"
+                data-prefix=""
+                data-suffix=""
+              >
+                0
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 4 — IMAGE GALLERY (HORIZONTAL SCROLL)
+      ══════════════════════════════════════════════════════ -->
+      <div id="gallery-sticky-wrapper">
+        <div
+          id="gallery-sticky"
+          class="sticky top-0 h-screen overflow-hidden bg-white flex flex-col justify-center pb-8"
+        >
+          <!-- Card track — same top, varying heights -->
           <div
-            class="flex flex-row gap-4 justify-center lg:justify-end flex-wrap"
+            id="gallery-track"
+            class="flex-shrink-0 flex items-start gap-4 overflow-visible"
+            style="will-change: transform"
           >
             <div
-              class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
-              style="
-                border: 1.5px solid rgba(255, 255, 255, 0.3);
-                background: rgba(255, 255, 255, 0.07);
-              "
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 320px"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              <img
+                src="./assets/images/event-award-c.webp"
+                alt="Award Night NDIC"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Award Night NDIC
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 27 2025</p>
+              </div>
+            </div>
+
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 460px"
+            >
+              <img
+                src="./assets/images/event-signing-c.webp"
+                alt="Partnership Signing"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Partnership Signing
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 350px"
+            >
+              <img
+                src="./assets/images/event-group-women.webp"
+                alt="Staff Recognition"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Staff Recognition
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 240px"
+            >
+              <img
+                src="./assets/images/event-office-group-c.webp"
+                alt="Internal Meeting"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Internal Meeting
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 320px"
+            >
+              <img
+                src="./assets/images/event-banner-c.webp"
+                alt="NDIC Appointment Ceremony"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  NDIC Appointment Ceremony
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 420px"
+            >
+              <img
+                src="./assets/images/event-speaker.webp"
+                alt="Management Address"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Management Address
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress bar + counter -->
+          <!-- <div class="flex-shrink-0 flex items-center gap-4 mt-8 px-12">
+            <div class="flex-1 h-0.5 bg-ndic-border rounded-sm">
+              <div
+                id="gallery-progress"
+                class="h-full w-0 bg-brand-dark rounded-sm"
+                style="transition: width 0.05s linear"
+              ></div>
+            </div>
+            <span
+              id="gallery-counter"
+              class="font-body text-xs text-ndic-muted min-w-[36px] text-right"
+              >1 / 6</span
+            >
+          </div> -->
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 5 — OUR HISTORY (FADE-SWAP SLIDES)
+      ══════════════════════════════════════════════════════ -->
+      <!---->
+      <!-- <div id="history-sticky-wrapper">
+        <div id="history-sticky" class="sticky top-0 h-screen bg-white">
+          <div class="history-slide active">
+            <div
+              class="mx-auto px-6 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1280px]"
+            >
+              <div class="relative pt-4">
+                <span class="slide-year">1988</span>
+                <div class="relative z-[1]">
+                  <span class="about-pill inline-block mb-4"
+                    >BACKGROUND &amp; ESTABLISHMENT</span
+                  >
+                  <h2
+                    class="font-heading font-bold leading-tight mb-5 text-ndic-text"
+                    style="font-size: clamp(1.75rem, 3vw, 2.4rem)"
+                  >
+                    The Birth of NDIC
+                  </h2>
+                  <p
+                    class="font-body leading-relaxed mb-4 text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    The Nigeria Deposit Insurance Corporation was established by
+                    Decree No. 22 of 1988 in response to the fragility of the
+                    Nigerian banking sector. Inspired by similar institutions in
+                    developed economies, NDIC was created to protect depositors
+                    from losses arising from bank failures.
+                  </p>
+                  <p
+                    class="font-body leading-relaxed text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    NDIC commenced full operations in 1989, becoming one of the
+                    first deposit insurance schemes in Sub-Saharan Africa — a
+                    landmark step in Nigeria's financial sector development.
+                  </p>
+                  <div class="flex gap-2 mt-8">
+                    <div class="h-dot on"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative hidden lg:block">
+                <div
+                  class="slide-backdrop"
+                  style="background: rgba(44, 46, 129, 0.07)"
+                ></div>
+                <img
+                  src="./assets/images/hero-building.webp"
+                  alt="NDIC Headquarters"
+                  class="slide-img relative rounded-xl w-full object-cover"
                 />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-              </svg>
-              <span
-                class="font-body font-bold text-[11px] text-white tracking-widest uppercase"
-                >Mandate</span
-              >
+              </div>
             </div>
+          </div>
+
+          <div class="history-slide">
             <div
-              class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
-              style="
-                border: 1.5px solid rgba(255, 255, 255, 0.3);
-                background: rgba(255, 255, 255, 0.07);
-              "
+              class="mx-auto px-6 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1280px]"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <polyline points="9 12 11 14 15 10" />
-              </svg>
-              <span
-                class="font-body font-bold text-[11px] text-white tracking-widest uppercase"
-                >Protection</span
-              >
+              <div class="relative pt-4">
+                <span class="slide-year">1989</span>
+                <div class="relative z-[1]">
+                  <span class="about-pill blue inline-block mb-4"
+                    >THE BANKING CRISIS ERA</span
+                  >
+                  <h2
+                    class="font-heading font-bold leading-tight mb-5 text-ndic-text"
+                    style="font-size: clamp(1.75rem, 3vw, 2.4rem)"
+                  >
+                    Navigating the Distress Years
+                  </h2>
+                  <p
+                    class="font-body leading-relaxed mb-4 text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    The late 1980s to mid-1990s saw unprecedented banking sector
+                    distress in Nigeria. Dozens of institutions faced insolvency
+                    due to poor governance, insider abuse, and macroeconomic
+                    shocks. NDIC stepped in to manage closures and reimburse
+                    insured depositors.
+                  </p>
+                  <p
+                    class="font-body leading-relaxed text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    By 1995, NDIC had paid claims to hundreds of thousands of
+                    depositors, demonstrating the critical role of deposit
+                    insurance in maintaining public confidence during systemic
+                    stress.
+                  </p>
+                  <div class="flex gap-2 mt-8">
+                    <div class="h-dot"></div>
+                    <div class="h-dot on"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative hidden lg:block">
+                <div
+                  class="slide-backdrop"
+                  style="background: rgba(254, 146, 57, 0.07)"
+                ></div>
+                <img
+                  src="./assets/images/news-handshake.webp"
+                  alt="NDIC officials"
+                  class="slide-img relative rounded-xl w-full object-cover"
+                />
+              </div>
             </div>
+          </div>
+
+          <div class="history-slide">
             <div
-              class="flex flex-col items-center justify-center gap-3 rounded-xl p-6 min-w-[130px]"
-              style="
-                border: 1.5px solid rgba(255, 255, 255, 0.3);
-                background: rgba(255, 255, 255, 0.07);
-              "
+              class="mx-auto px-6 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1280px]"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="3" y1="22" x2="21" y2="22" />
-                <line x1="6" y1="18" x2="6" y2="11" />
-                <line x1="10" y1="18" x2="10" y2="11" />
-                <line x1="14" y1="18" x2="14" y2="11" />
-                <line x1="18" y1="18" x2="18" y2="11" />
-                <polygon points="12 2 20 7 4 7" />
-              </svg>
-              <span
-                class="font-body font-bold text-[11px] text-white tracking-widest uppercase"
-                >Institution</span
-              >
+              <div class="relative pt-4">
+                <span class="slide-year">1995</span>
+                <div class="relative z-[1]">
+                  <span class="about-pill inline-block mb-4"
+                    >EARLY INTERVENTION MEASURES</span
+                  >
+                  <h2
+                    class="font-heading font-bold leading-tight mb-5 text-ndic-text"
+                    style="font-size: clamp(1.75rem, 3vw, 2.4rem)"
+                  >
+                    Building Resilience
+                  </h2>
+                  <p
+                    class="font-body leading-relaxed mb-4 text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    Between 1995 and 2004, NDIC developed robust early warning
+                    systems to identify at-risk banks before failure. The
+                    Deposit Insurance System (DIS) was refined and the Mandatory
+                    Distress Resolution (MDR) framework introduced.
+                  </p>
+                  <p
+                    class="font-body leading-relaxed text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    These tools allowed NDIC to intervene proactively —
+                    providing technical assistance, recommending management
+                    changes, and working with the CBN to facilitate timely
+                    resolution before depositor losses occurred.
+                  </p>
+                  <div class="flex gap-2 mt-8">
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot on"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative hidden lg:block">
+                <div
+                  class="slide-backdrop"
+                  style="background: rgba(44, 46, 129, 0.07)"
+                ></div>
+                <img
+                  src="./assets/images/event-signing.webp"
+                  alt="NDIC signing ceremony"
+                  class="slide-img relative rounded-xl w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="history-slide">
+            <div
+              class="mx-auto px-6 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1280px]"
+            >
+              <div class="relative pt-4">
+                <span class="slide-year">2005</span>
+                <div class="relative z-[1]">
+                  <span class="about-pill blue inline-block mb-4"
+                    >BANKING CONSOLIDATION</span
+                  >
+                  <h2
+                    class="font-heading font-bold leading-tight mb-5 text-ndic-text"
+                    style="font-size: clamp(1.75rem, 3vw, 2.4rem)"
+                  >
+                    The Consolidation Era
+                  </h2>
+                  <p
+                    class="font-body leading-relaxed mb-4 text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    In 2005, the CBN launched a landmark banking consolidation
+                    programme. The number of commercial banks shrank from 89 to
+                    25 as weaker institutions merged or were absorbed. NDIC
+                    protected depositors throughout the entire transition.
+                  </p>
+                  <p
+                    class="font-body leading-relaxed text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    The exercise strengthened Nigeria's banking capital base,
+                    improved governance standards, and positioned the sector to
+                    better withstand external shocks — with NDIC as the safety
+                    net underpinning depositor confidence throughout.
+                  </p>
+                  <div class="flex gap-2 mt-8">
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot on"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative hidden lg:block">
+                <div
+                  class="slide-backdrop"
+                  style="background: rgba(254, 146, 57, 0.07)"
+                ></div>
+                <img
+                  src="./assets/images/event-speaker.webp"
+                  alt="NDIC address"
+                  class="slide-img relative rounded-xl w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="history-slide">
+            <div
+              class="mx-auto px-6 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1280px]"
+            >
+              <div class="relative pt-4">
+                <span class="slide-year">2006</span>
+                <div class="relative z-[1]">
+                  <span class="about-pill inline-block mb-4"
+                    >DEPOSIT INSURANCE EXTENDED</span
+                  >
+                  <h2
+                    class="font-heading font-bold leading-tight mb-5 text-ndic-text"
+                    style="font-size: clamp(1.75rem, 3vw, 2.4rem)"
+                  >
+                    Broader Coverage
+                  </h2>
+                  <p
+                    class="font-body leading-relaxed mb-4 text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    From 2006 to 2019, NDIC progressively extended deposit
+                    insurance coverage beyond commercial banks to microfinance
+                    banks, primary mortgage banks, and mobile money operators —
+                    bringing millions more Nigerians under the protection
+                    umbrella.
+                  </p>
+                  <p
+                    class="font-body leading-relaxed text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    This expansion reflected Nigeria's growing financial
+                    inclusion agenda and NDIC's evolving mandate as the central
+                    safety-net institution for all licensed deposit-taking
+                    financial intermediaries.
+                  </p>
+                  <div class="flex gap-2 mt-8">
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot on"></div>
+                    <div class="h-dot"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative hidden lg:block">
+                <div
+                  class="slide-backdrop"
+                  style="background: rgba(44, 46, 129, 0.07)"
+                ></div>
+                <img
+                  src="./assets/images/event-group-women.webp"
+                  alt="NDIC staff"
+                  class="slide-img relative rounded-xl w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="history-slide">
+            <div
+              class="mx-auto px-6 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1280px]"
+            >
+              <div class="relative pt-4">
+                <span class="slide-year">2023</span>
+                <div class="relative z-[1]">
+                  <span class="about-pill blue inline-block mb-4"
+                    >LEGACY &amp; IMPACT</span
+                  >
+                  <h2
+                    class="font-heading font-bold leading-tight mb-5 text-ndic-text"
+                    style="font-size: clamp(1.75rem, 3vw, 2.4rem)"
+                  >
+                    A Stronger Safety Net
+                  </h2>
+                  <p
+                    class="font-body leading-relaxed mb-4 text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    The NDIC Act 2023 ushered in a new era — raising the maximum
+                    insured sum to ₦5 million per depositor per bank,
+                    introducing enhanced resolution powers, and strengthening
+                    NDIC's mandate for the digital banking age.
+                  </p>
+                  <p
+                    class="font-body leading-relaxed text-[15px] text-ndic-secondary"
+                    style="line-height: 1.85"
+                  >
+                    Today, NDIC stands as a cornerstone of Nigeria's financial
+                    safety net, covering over 3,000 financial institutions and
+                    protecting millions of depositors across commercial,
+                    microfinance, mortgage, and mobile money sectors.
+                  </p>
+                  <div class="flex gap-2 mt-8">
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot"></div>
+                    <div class="h-dot on"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative hidden lg:block">
+                <div
+                  class="slide-backdrop"
+                  style="background: rgba(254, 146, 57, 0.07)"
+                ></div>
+                <img
+                  src="./assets/images/event-banner.webp"
+                  alt="NDIC event banner"
+                  class="slide-img relative rounded-xl w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div> -->
     </main>
 
     <footer-bar></footer-bar>
 
-    <script src="components/components.js"></script>
-    <script src="js/app.js" defer></script>
+    <script src="./components/components.js"></script>
+    <script src="./js/about.js"></script>
   </body>
 </html>

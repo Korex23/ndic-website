@@ -202,6 +202,13 @@ h4 {
   width: 100%;
 }
 
+/* ── Footer address width ── */
+@media (min-width: 1024px) {
+  .footer-address {
+    max-width: 100%;
+  }
+}
+
 /* ── Mobile nav drawer ── */
 .nav-drawer {
   transform: translateX(-100%);
@@ -278,4 +285,102 @@ h4 {
 }
 .media-card:hover img {
   transform: scale(1.04);
+}
+
+/* ── Full-viewport-width divider (overrides any parent max-width) ── */
+.vw-divider {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 1px;
+  background-color: #d9d9d9;
+}
+
+/* ── About page ── */
+.about-pill {
+  display: inline-block;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fe9239;
+  background: rgba(254, 146, 57, 0.1);
+  border: 1px solid rgba(254, 146, 57, 0.3);
+  border-radius: 9999px;
+  padding: 4px 14px;
+}
+.about-pill.blue {
+  color: #2c2e81;
+  background: rgba(44, 46, 129, 0.08);
+  border-color: rgba(44, 46, 129, 0.3);
+}
+
+.history-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  overflow: hidden;
+}
+.history-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.h-dot {
+  height: 4px;
+  width: 8px;
+  border-radius: 2px;
+  background: rgba(44, 46, 129, 0.2);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.h-dot.on {
+  background: #fe9239;
+  width: 24px;
+}
+
+.slide-year {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: clamp(6rem, 18vw, 11rem);
+  line-height: 1;
+  color: #141313;
+  opacity: 0.06;
+  position: absolute;
+  top: -10px;
+  left: -8px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.slide-img {
+  height: 400px;
+  z-index: 1;
+}
+
+.slide-backdrop {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 0;
+  border-radius: 0.75rem;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 55%);
+}
+
+.hero-section {
+  height: 420px;
+  border-bottom: 6px solid #2c2e81;
+  border-radius: 0 0 32px 32px;
 }
