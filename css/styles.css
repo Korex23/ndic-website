@@ -348,11 +348,30 @@ h4 {
   font-weight: 700;
   font-size: clamp(6rem, 18vw, 11rem);
   line-height: 1;
-  color: #141313;
-  opacity: 0.06;
+  color: #2c2e81;
+  opacity: 0.08;
   position: absolute;
   top: -10px;
   left: -8px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.vision {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(6rem, 18vw, 11rem);
+  line-height: 1;
+  color: #2c2e81;
+  opacity: 0.04;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+  white-space: nowrap;
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -361,6 +380,14 @@ h4 {
 .slide-img {
   height: 400px;
   z-index: 1;
+}
+
+.history-slide .slide-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.history-slide .slide-body li {
+  margin-bottom: 0.25rem;
 }
 
 .slide-backdrop {
@@ -380,7 +407,7 @@ h4 {
 }
 
 .hero-section {
-  height: 420px;
+  height: 280px;
   border-bottom: 6px solid #2c2e81;
   border-radius: 0 0 32px 32px;
 }
