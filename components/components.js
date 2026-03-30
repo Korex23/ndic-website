@@ -59,37 +59,37 @@ class NavBar extends HTMLElement {
             icon: I.overview,
             title: "Overview",
             desc: "Who we are and what we do",
-            href: "./about.html#overview",
+            href: "#overview",
           },
           {
             icon: I.history,
             title: "Our History",
             desc: "From 1988 to present day",
-            href: "./about.html#history",
+            href: "#history",
           },
           {
             icon: I.values,
             title: "Vision, Mission & Values",
             desc: "The principles that guide us",
-            href: "./about.html#values",
+            href: "#vision",
           },
           {
             icon: I.mandate,
             title: "Mandate, Powers & Functions",
             desc: "Our legal framework & authority",
-            href: "./about.html#mandate",
+            href: "#",
           },
           {
             icon: I.governance,
             title: "Leadership & Governance",
             desc: "Board, MD & executive team",
-            href: "./about.html#governance",
+            href: "#",
           },
           {
             icon: I.orgchart,
             title: "Organisation Structure",
             desc: "Departments & reporting lines",
-            href: "./about.html#structure",
+            href: "#",
           },
         ],
       },
@@ -273,8 +273,7 @@ class NavBar extends HTMLElement {
     <li class="nav-item group flex items-center self-stretch">
       <a href="${item.href}" class="nav-link font-body font-semibold text-sm transition-colors flex items-center gap-1 ${this._isActive(item.page, active)}">
         ${item.label}
-        ${CARET}
-      </a>
+        </a>
       <div class="absolute left-0 right-0 top-full z-50 opacity-0 pointer-events-none -translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-200 ease-out">
         <div class="bg-[#EAEAF2] shadow-xl">
           <div class="px-6 py-6 grid gap-0" style="grid-template-columns: 260px 1px 1fr 1px 220px;">
@@ -368,7 +367,7 @@ class NavBar extends HTMLElement {
         <div class="flex-1 flex flex-col border-b-2 border-brand-primary" style="background: #F5F5F5;">
 
           <!-- Accent bar: h-2 on mobile, taller on desktop with contact info -->
-          <div class="h-2 lg:h-8 nav-accent-bar flex items-center justify-end pr-[2%]">
+          <div class="h-2 lg:h-8 bg-brand-primary flex items-center justify-end pr-[2%]">
             <!-- Contact info: desktop only -->
             <div class="hidden lg:flex items-center gap-6">
               <!-- Email -->

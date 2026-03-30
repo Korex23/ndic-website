@@ -16,13 +16,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Nunito+Sans:wght@400;600;700&family=Palanquin+Dark:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/tailwind.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body class="font-body bg-white text-ndic-text">
+  <body class="font-body bg-white text-ndic-text overflow-x-hidden">
     <nav-bar active="about"></nav-bar>
 
     <main>
@@ -34,6 +34,7 @@
           src="./assets/images/hero-building.webp"
           alt="NDIC Headquarters Building"
           class="absolute inset-0 w-full h-full object-cover"
+          height="300px"
         />
         <div
           class="absolute inset-0"
@@ -59,9 +60,11 @@
       <!-- ══════════════════════════════════════════════════════
            SECTION 2 — INTRO / MISSION TEXT
       ══════════════════════════════════════════════════════ -->
-      <section id="overview" class="py-20 md:py-28">
+      <section id="mission" class="py-16 md:py-20 lg:py-24 xl:py-28">
         <div class="ndic-container">
-          <div class="flex gap-10 xl:gap-60 items-start">
+          <div
+            class="flex lg:flex-row flex-col gap-10 lg:gap-32 xl:gap-60 items-start"
+          >
             <!-- Left: narrow label column -->
             <div class="flex-shrink-0 w-40 pt-2">
               <span
@@ -74,21 +77,21 @@
             <!-- Right: heading + indented body -->
             <div class="flex-1 min-w-0">
               <h2
-                class="font-heading text-3xl md:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
+                class="font-heading text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
               >
                 Established to
                 <strong class="font-bold text-brand-primary"
                   >protect depositors</strong
                 >
-                and <br />
+                and <br class="hidden lg:block" />
                 <strong class="font-bold text-brand-primary"
                   >strengthen confidence</strong
                 >
-                in the nation's <br />
+                in the nation's <br class="hidden lg:block" />
                 financial system.
               </h2>
               <div
-                class="md:ml-[10%] mt-8 md:mt-10 space-y-5 max-w-3xl text-xl leading-relaxed text-ndic-secondary font-body"
+                class="lg:ml-[6%] xl:ml-[10%] mt-6 md:mt-8 lg:mt-10 space-y-5 max-w-3xl md:text-lg sm:text-md text-sm lg:text-xl leading-relaxed text-ndic-secondary font-body"
               >
                 <p>
                   The Nigeria Deposit Insurance Corporation (NDIC) is an
@@ -240,22 +243,22 @@
       </section>
 
       <!-- ══════════════════════════════════════════════════════
-           SECTION 4 — IMAGE GALLERY (HORIZONTAL SCROLL)
+           SECTION 4 — IMAGE GALLERY (AUTO CAROUSEL)
       ══════════════════════════════════════════════════════ -->
-      <div id="gallery-sticky-wrapper">
-        <div
-          id="gallery-sticky"
-          class="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pb-8"
-          style="
-            background: linear-gradient(to bottom, #ffffff 60%, #f5f5f5 100%);
-          "
-        >
-          <!-- Card track — same top, varying heights -->
+      <section
+        class="py-12 md:py-16 overflow-hidden"
+        style="
+          background: linear-gradient(to bottom, #ffffff 60%, #f5f5f5 100%);
+        "
+      >
+        <div id="gallery-carousel" class="relative">
+          <!-- Track: duplicated for seamless infinite loop -->
           <div
-            id="gallery-track"
-            class="flex-shrink-0 flex items-start gap-4 overflow-visible"
+            id="gallery-auto-track"
+            class="flex items-start gap-4"
             style="will-change: transform"
           >
+            <!-- Original set -->
             <div
               class="gallery-card relative overflow-hidden flex-shrink-0"
               style="width: 300px; height: 320px"
@@ -274,7 +277,6 @@
                 <p class="font-body text-[10px] text-white/60">Nov 27 2025</p>
               </div>
             </div>
-
             <div
               class="gallery-card relative overflow-hidden flex-shrink-0"
               style="width: 300px; height: 460px"
@@ -293,7 +295,6 @@
                 <p class="font-body text-[10px] text-white/60">Nov 2025</p>
               </div>
             </div>
-
             <div
               class="gallery-card relative overflow-hidden flex-shrink-0"
               style="width: 300px; height: 350px"
@@ -312,7 +313,6 @@
                 <p class="font-body text-[10px] text-white/60">Nov 2025</p>
               </div>
             </div>
-
             <div
               class="gallery-card relative overflow-hidden flex-shrink-0"
               style="width: 300px; height: 240px"
@@ -331,7 +331,6 @@
                 <p class="font-body text-[10px] text-white/60">Nov 2025</p>
               </div>
             </div>
-
             <div
               class="gallery-card relative overflow-hidden flex-shrink-0"
               style="width: 300px; height: 320px"
@@ -350,7 +349,115 @@
                 <p class="font-body text-[10px] text-white/60">Nov 2025</p>
               </div>
             </div>
-
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 420px"
+            >
+              <img
+                src="./assets/images/event-speaker.webp"
+                alt="Management Address"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Management Address
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 320px"
+            >
+              <img
+                src="./assets/images/event-award-c.webp"
+                alt="Award Night NDIC"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Award Night NDIC
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 27 2025</p>
+              </div>
+            </div>
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 460px"
+            >
+              <img
+                src="./assets/images/event-signing-c.webp"
+                alt="Partnership Signing"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Partnership Signing
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 350px"
+            >
+              <img
+                src="./assets/images/event-group-women.webp"
+                alt="Staff Recognition"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Staff Recognition
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 240px"
+            >
+              <img
+                src="./assets/images/event-office-group-c.webp"
+                alt="Internal Meeting"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  Internal Meeting
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
+            <div
+              class="gallery-card relative overflow-hidden flex-shrink-0"
+              style="width: 300px; height: 320px"
+            >
+              <img
+                src="./assets/images/event-banner-c.webp"
+                alt="NDIC Appointment Ceremony"
+                class="w-full h-full object-cover object-center block"
+                loading="lazy"
+              />
+              <div class="card-overlay"></div>
+              <div class="absolute bottom-3.5 left-3.5">
+                <p class="font-body font-semibold text-white text-xs">
+                  NDIC Appointment Ceremony
+                </p>
+                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
+              </div>
+            </div>
             <div
               class="gallery-card relative overflow-hidden flex-shrink-0"
               style="width: 300px; height: 420px"
@@ -370,61 +477,40 @@
               </div>
             </div>
           </div>
-
-          <!-- Progress bar + counter -->
-          <!-- <div class="flex-shrink-0 flex items-center gap-4 mt-8 px-12">
-            <div class="flex-1 h-0.5 bg-ndic-border rounded-sm">
-              <div
-                id="gallery-progress"
-                class="h-full w-0 bg-brand-dark rounded-sm"
-                style="transition: width 0.05s linear"
-              ></div>
-            </div>
-            <span
-              id="gallery-counter"
-              class="font-body text-xs text-ndic-muted min-w-[36px] text-right"
-              >1 / 6</span
-            >
-          </div> -->
         </div>
-      </div>
+      </section>
 
       <!-- ══════════════════════════════════════════════════════
            SECTION 5 — OUR HISTORY (FADE-SWAP SLIDES)
       ══════════════════════════════════════════════════════ -->
-      <div id="history" class="bg-surface-light">
+      <div id="history"></div>
       <div id="history-sticky-wrapper" class="bg-surface-light">
-        <div class="ndic-container bg-surface-light pt-8 pb-4">
-          <span
-            class="inline-block px-5 py-2 w-[200px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap"
-          >
-            Our History
-          </span>
-        </div>
-        <div id="history-sticky" class="sticky top-0 h-screen bg-surface-light">
-          <!-- slides rendered by about.js → historySlides array -->
+        <div id="history-sticky" class="bg-surface-light relative">
+          <!-- slides + pill rendered by about.js -->
         </div>
       </div>
-      </div><!-- /#history -->
-
       <!-- ══════════════════════════════════════════════════════
            SECTION 6 - VISION
       ══════════════════════════════════════════════════════ -->
 
-      <div id="values" class="mt-20 md:mt-28 mb-4">
-        <div class="grid grid-cols-5">
+      <div id="vision" class="mt-20 md:mt-28 mb-4">
+        <div class="grid grid-cols-1 gap-10 xl:gap-0 xl:grid-cols-5">
           <div
             id="vision-watermark"
             class="col-span-2 relative flex items-center justify-center"
           >
             <span class="vision"> Vision </span>
-            <p class="text-6xl text-brand-mid font-semibold">Vision</p>
+            <p class="text-6xl text-brand-mid font-semibold text-center w-full">
+              Vision
+            </p>
           </div>
           <div
             id="vision-text"
-            class="col-span-3 bg-brand-mid px-10 py-20 rounded-tl-3xl"
+            class="col-span-3 bg-brand-mid px-10 lg:py-16 md:py-12 py-8 xl:py-20 xl:rounded-tl-3xl"
           >
-            <p class="font-body text-white text-6xl">
+            <p
+              class="font-body text-white text-3xl md:text-3xl lg:text-4xl xl:text-5xl"
+            >
               To be one of the
               <span class="font-bold"> best Deposit Insurers </span>
               in the World.
@@ -436,12 +522,12 @@
            SECTION 6 - MISSION
       ══════════════════════════════════════════════════════ -->
       <div class="my-20 md:my-28">
-        <div class="grid grid-cols-5">
+        <div class="grid grid-cols-1 gap-10 xl:gap-0 xl:grid-cols-5">
           <div
             id="mission-text"
-            class="col-span-3 bg-brand-mid px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 py-16 rounded-br-3xl"
+            class="col-span-3 order-2 xl:order-1 bg-brand-mid px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 lg:py-16 md:py-12 py-8 xl:py-20 xl:rounded-br-3xl"
           >
-            <p class="font-body text-white text-3xl">
+            <p class="font-body text-white md:text-2xl text-lg lg:text-3xl">
               To protect depositors and contribute to the stability of the
               financial system through effective supervision of insured
               institutions, provision of financial/technical assistance to
@@ -459,37 +545,41 @@
           </div>
           <div
             id="mission-watermark"
-            class="col-span-2 relative flex items-center justify-center"
+            class="col-span-2 order-1 xl:order-2 relative flex items-center justify-center"
           >
             <span class="vision"> Mission </span>
-            <p class="text-6xl text-brand-mid font-semibold">Mission</p>
+            <p class="text-6xl text-brand-mid font-semibold text-center w-full">
+              Mission
+            </p>
           </div>
         </div>
       </div>
 
       <!-- ══════════════════════════════════════════════════════
-           SECTION 6 - MISSION
+           SECTION 7 - CORE BELIEFS
       ══════════════════════════════════════════════════════ -->
       <section class="bg-surface-light py-16 md:py-20 mt-10">
         <div class="ndic-container mx-auto">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 gap-12 xl:gap-16 items-start"
+            class="grid grid-cols-1 md:grid-cols-2 px-0 sm:px-8 md:px-10 lg:px-12 xl:px-14 gap-12 xl:gap-16 items-start"
           >
             <!-- Left: text -->
             <div>
               <h2
-                class="font-heading text-5xl xl:text-6xl font-light text-ndic-text leading-tight"
+                class="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-[58px] font-light text-ndic-text leading-tight"
               >
                 Core Values &amp; Beliefs
               </h2>
 
-              <p class="font-body text-xl text-ndic-text leading-relaxed mt-5">
+              <p
+                class="font-body text-sm md:text-base lg:text-lg text-ndic-text leading-relaxed mt-5"
+              >
                 To be effective in the discharge of its mandate, the Corporation
                 is guided by the following core values and beliefs:
               </p>
 
               <ul
-                class="mt-4 pl-20 list-disc space-y-2 font-body text-xl text-ndic-text leading-relaxed"
+                class="mt-4 pl-10 xl:pl-20 list-disc space-y-2 font-body :text-sm md:text-base lg:text-lg text-ndic-text leading-relaxed"
               >
                 <li>
                   <span class="font-semibold">Teamwork:</span> We work together

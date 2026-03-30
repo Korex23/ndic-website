@@ -315,15 +315,44 @@ h4 {
   border-color: rgba(44, 46, 129, 0.3);
 }
 
+#history-sticky {
+  overflow: hidden;
+}
+
+.history-fixed-img {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  width: 42%;
+  pointer-events: none;
+  z-index: 1;
+  line-height: 0;
+  display: none;
+}
+.history-fixed-img img {
+  display: block;
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px 16px 0 0;
+}
+@media (min-width: 1024px) {
+  .history-fixed-img {
+    display: block;
+    right: var(--container-px);
+  }
+}
+
 .history-slide {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.6s ease;
   pointer-events: none;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 .history-slide.active {
   opacity: 1;
@@ -346,7 +375,7 @@ h4 {
 .slide-year {
   font-family: "Oxygen", sans-serif;
   font-weight: 700;
-  font-size: clamp(6rem, 18vw, 11rem);
+  font-size: clamp(3rem, 18vw, 11rem);
   line-height: 1;
   color: #2c2e81;
   opacity: 0.08;
@@ -357,10 +386,16 @@ h4 {
   user-select: none;
   z-index: 0;
 }
+@media (min-width: 768px) {
+  .slide-year {
+    font-size: clamp(6rem, 18vw, 11rem);
+  }
+}
 .vision {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Palanquin Dark", sans-serif;
   font-weight: 700;
-  font-size: clamp(6rem, 18vw, 11rem);
+  font-size: clamp(8rem, 22vw, 14rem);
+  letter-spacing: -0.085em;
   line-height: 1;
   color: #2c2e81;
   opacity: 0.04;
