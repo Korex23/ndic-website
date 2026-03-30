@@ -59,19 +59,19 @@ class NavBar extends HTMLElement {
             icon: I.overview,
             title: "Overview",
             desc: "Who we are and what we do",
-            href: "#overview",
+            href: "./about.html/#overview",
           },
           {
             icon: I.history,
             title: "Our History",
             desc: "From 1988 to present day",
-            href: "#history",
+            href: "./about.html/#history",
           },
           {
             icon: I.values,
             title: "Vision, Mission & Values",
             desc: "The principles that guide us",
-            href: "#vision",
+            href: "./about.html/#vision",
           },
           {
             icon: I.mandate,
