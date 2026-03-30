@@ -102,7 +102,7 @@ var historySlides = [
     <li>Asset recovery of ₦3.3 billion by 1996 under the Failed Banks Decree</li>
   </ul>
   <p class="mt-2">These actions helped prevent a system-wide financial collapse and restored confidence in the banking system.</p>`,
-    imgSrc: "./assets/images/event-signing.webp",
+    imgSrc: "./assets/images/event-signing-c.webp",
     imgAlt: "NDIC intervention",
     backdrop: "rgba(44, 46, 129, 0.07)",
   },
@@ -131,7 +131,7 @@ var historySlides = [
     <li>Ensuring safer and more resilient banking practices</li>
     <li>Providing a structured and effective response to bank failures</li>
   </ul>`,
-    imgSrc: "./assets/images/event-banner.webp",
+    imgSrc: "./assets/images/event-banner-c.webp",
     imgAlt: "NDIC legacy",
     backdrop: "rgba(44, 46, 129, 0.07)",
   },
@@ -216,8 +216,8 @@ var historySlides = [
     track.appendChild(slide);
   });
 
-  // ── container height — 80vh so no excess white space ──
-  var STICKY_H = Math.round(window.innerHeight * 0.8);
+  // ── container height — matches about.js ─────────────
+  var STICKY_H = Math.min(window.innerHeight, 960);
   container.style.height = STICKY_H + "px";
   container.style.overflow = "hidden";
 
@@ -243,14 +243,13 @@ var historySlides = [
       scrollTrigger: {
         trigger: wrapper,
         pin: true,
-        // lg+: smooth 1s lag; md-: near-instant so snap feels complete, no half-slide views
-        scrub: isLgInit ? 1 : 0.2,
+        scrub: 0.1,
         start: "top top",
         snap: {
           snapTo: 1 / (panels.length - 1),
-          duration: { min: 0.2, max: 0.5 },
-          ease: "power2.inOut",
-          delay: 0.05,
+          duration: { min: 0.1, max: 0.25 },
+          ease: "power2.out",
+          delay: 0,
         },
         end: function () {
           return "+=" + (panels.length - 1) * window.innerWidth;
