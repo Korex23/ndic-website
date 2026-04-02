@@ -196,7 +196,7 @@ var historySlides = [
   pill.className =
     "absolute lg:top-10 top-5 left-0 right-0 z-20 ndic-container pt-8 pointer-events-none";
   pill.innerHTML =
-    '<span class="inline-block px-5 py-2 w-[200px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap">Our History</span>';
+    '<span class="inline-block px-5 py-2 w-[180px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap">Our History</span>';
   container.insertBefore(pill, container.firstChild);
 
   // Fixed image container — one img per slide, stacked absolutely
