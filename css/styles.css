@@ -74,7 +74,7 @@ h4 {
   padding-right: 5%;
 }
 .nav-logo-panel {
-  padding-left: 10%;
+  padding-left: 2%;
 }
 @media (min-width: 1024px) {
   .ndic-container {
@@ -82,7 +82,7 @@ h4 {
     padding-right: var(--container-px);
   }
   .nav-logo-panel {
-    padding-left: 3%;
+    padding-left: 2%;
   }
 }
 
@@ -399,14 +399,12 @@ h4 {
   line-height: 1;
   color: #2c2e81;
   opacity: 0.04;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 0;
+  position: relative;
+  display: block;
   width: 100%;
   text-align: center;
-  transform: translateY(-50%);
   white-space: nowrap;
+  overflow: hidden;
   pointer-events: none;
   user-select: none;
   z-index: 0;

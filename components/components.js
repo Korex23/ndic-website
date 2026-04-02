@@ -59,19 +59,19 @@ class NavBar extends HTMLElement {
             icon: I.overview,
             title: "Overview",
             desc: "Who we are and what we do",
-            href: "./about.html/#overview",
+            href: "./about.html#overview",
           },
           {
             icon: I.history,
             title: "Our History",
             desc: "From 1988 to present day",
-            href: "./about.html/#history",
+            href: "./about.html#history",
           },
           {
             icon: I.values,
             title: "Vision, Mission & Values",
             desc: "The principles that guide us",
-            href: "./about.html/#vision",
+            href: "./about.html#vision",
           },
           {
             icon: I.mandate,
@@ -352,19 +352,10 @@ class NavBar extends HTMLElement {
 
   _template(active) {
     return `
-      <header class="sticky top-0 z-50 font-body flex">
+      <header class="sticky top-0 z-50 font-body flex flex-col border-b-2 border-brand-primary" style="background: #F5F5F5;">
 
-        <!-- Logo panel: white bg stretches to left edge and top -->
-        <div class="bg-white flex flex-shrink-0 self-stretch">
-          <div class="nav-logo-panel flex items-center py-1">
-            <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="h-8 lg:h-full w-auto object-contain" width="107" height="32"/>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right panel: accent bar + nav links -->
-        <div class="flex-1 flex flex-col border-b-2 border-brand-primary" style="background: #F5F5F5;">
+        <!-- Accent bar + nav links as a single column -->
+        <div class="flex-1 flex flex-col">
 
           <!-- Accent bar: h-2 on mobile, taller on desktop with contact info -->
           <div class="h-2 lg:h-8 bg-brand-primary flex items-center justify-end pr-[2%]">
@@ -389,6 +380,13 @@ class NavBar extends HTMLElement {
 
           <nav class="h-12 lg:h-20 flex items-center pr-[2%]"
                role="navigation" aria-label="Main navigation">
+
+            <!-- Logo (inline in nav row) -->
+            <div class="nav-logo-panel flex-shrink-0 flex items-center">
+              <a href="index.html" class="flex items-center" aria-label="NDIC Home">
+                <img src="./assets/logo/logo_blue.png" alt="NDIC Logo" class="w-[100px] lg:w-[150px] object-contain" width="100" height="30"/>
+              </a>
+            </div>
 
             <!-- Desktop links (centered) -->
             <ul class="hidden lg:flex items-center list-none m-0 p-0 flex-1 justify-center self-stretch relative">
@@ -458,7 +456,7 @@ class NavBar extends HTMLElement {
           <div class="h-2 bg-brand-primary w-full"></div>
           <div class="flex items-center justify-between px-6 h-16 border-b border-ndic-border">
             <a href="index.html" class="flex items-center" aria-label="NDIC Home">
-              <img src="./assets/logo/logo.webp" alt="NDIC Logo" class="w-20 h-20 object-contain" width="80" height="24"/>
+              <img src="./assets/logo/logo_blue.png" alt="NDIC Logo" class="w-20 h-auto object-contain" width="80" height="24"/>
             </a>
             <button id="ndic-close" aria-label="Close menu" class="text-ndic-secondary">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"

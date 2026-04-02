@@ -174,12 +174,12 @@ var historySlides = [
         s.year +
         "</span>" +
         '<div class="relative z-[1]">' +
-        '<h2 class="font-heading leading-tight text-brand-dark text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[58px]">' +
+        '<h2 class="font-heading leading-tight text-brand-dark text-2xl sm:text-3xl md:text-4xl lg:text-5xl">' +
         s.heading +
         "</h2>" +
         "</div>" +
         "</div>" +
-        '<div class="slide-body font-body text-xs sm:text-sm md:text-xl lg:text-lg text-ndic-secondary" style="line-height: 1.85">' +
+        '<div class="slide-body font-body text-xs sm:text-sm md:text-xl lg:text-[16px] text-ndic-secondary" style="line-height: 1.85">' +
         s.body +
         "</div>" +
         '<div class="flex gap-2 mt-4 md:mt-6">' +
@@ -202,7 +202,8 @@ var historySlides = [
   // Fixed image container — one img per slide, stacked absolutely
   var fixedImg = document.createElement("div");
   fixedImg.className = "history-fixed-img";
-  fixedImg.style.cssText += "overflow:hidden;height:440px;border-radius:16px 16px 0 0;";
+  fixedImg.style.cssText +=
+    "overflow:hidden;height:440px;border-radius:16px 16px 0 0;";
   container.appendChild(fixedImg);
 
   // Map each slide to an available image
@@ -222,8 +223,12 @@ var historySlides = [
       "position:absolute;inset:0;width:100%;height:100%;" +
       "object-fit:cover;object-position:center top;display:block;" +
       "transition:transform 0.85s cubic-bezier(0.25,0.46,0.45,0.94),opacity 0.85s ease;" +
-      "transform:" + (i === 0 ? "translateX(0) scale(1)" : "translateX(60px) scale(1.03)") + ";" +
-      "opacity:" + (i === 0 ? "1" : "0") + ";";
+      "transform:" +
+      (i === 0 ? "translateX(0) scale(1)" : "translateX(60px) scale(1.03)") +
+      ";" +
+      "opacity:" +
+      (i === 0 ? "1" : "0") +
+      ";";
     fixedImg.appendChild(img);
     return img;
   });
