@@ -225,7 +225,7 @@ const accordionData = [
     .map(
       (item) => `
         <div class="accordion-item">
-          <button class="accordion-trigger w-full py-5 text-left hover:scale-[1.025]" aria-expanded="${item.open}">
+          <button class="accordion-trigger w-full py-5 text-left" aria-expanded="${item.open}">
             <div class="label-col">
               <span class="active bg-brand-primary w-3 h-3 rounded-sm border-2 flex-shrink-0"></span>
               <span class="font-body font-bold text-[18px] sm:text-[20px] text-ndic-text tracking-wider uppercase px-2">

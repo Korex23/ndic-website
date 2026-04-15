@@ -77,7 +77,7 @@
             <!-- Right: heading + indented body -->
             <div class="flex-1 min-w-0">
               <h2
-                class="font-heading text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
+                class="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
               >
                 Established to
                 <strong class="font-bold text-brand-primary"
@@ -121,31 +121,7 @@
       ══════════════════════════════════════════════════════ -->
       <section id="stats-section" class="mb-20 md:mb-28">
         <div class="max-w-content mx-auto px-6 md:px-8">
-          <svg
-            width="100%"
-            height="1"
-            viewBox="0 0 1200 1"
-            preserveAspectRatio="none"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient
-                id="fade-top"
-                gradientUnits="userSpaceOnUse"
-                x1="0"
-                y1="0"
-                x2="1200"
-                y2="0"
-              >
-                <stop offset="0%" stop-color="#5D727C" stop-opacity="0" />
-                <stop offset="12%" stop-color="#5D727C" stop-opacity="1" />
-                <stop offset="88%" stop-color="#5D727C" stop-opacity="1" />
-                <stop offset="100%" stop-color="#5D727C" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-            <line y1="0.5" x2="1200" y2="0.5" stroke="url(#fade-top)" />
-          </svg>
+          <div style="height:1px;background:linear-gradient(to right,rgba(93,114,124,0) 0%,rgba(93,114,124,1) 12%,rgba(93,114,124,1) 88%,rgba(93,114,124,0) 100%);"></div>
         </div>
         <div class="max-w-content pt-6 pb-9 mx-auto px-6 md:px-8">
           <div class="max-w-4xl mx-auto">
@@ -214,269 +190,7 @@
           </div>
         </div>
         <div class="max-w-content mx-auto px-6 md:px-8">
-          <svg
-            width="100%"
-            height="1"
-            viewBox="0 0 1200 1"
-            preserveAspectRatio="none"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient
-                id="fade-bottom"
-                gradientUnits="userSpaceOnUse"
-                x1="0"
-                y1="0"
-                x2="1200"
-                y2="0"
-              >
-                <stop offset="0%" stop-color="#5D727C" stop-opacity="0" />
-                <stop offset="12%" stop-color="#5D727C" stop-opacity="1" />
-                <stop offset="88%" stop-color="#5D727C" stop-opacity="1" />
-                <stop offset="100%" stop-color="#5D727C" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-            <line y1="0.5" x2="1200" y2="0.5" stroke="url(#fade-bottom)" />
-          </svg>
-        </div>
-      </section>
-
-      <!-- ══════════════════════════════════════════════════════
-           SECTION 4 — IMAGE GALLERY (AUTO CAROUSEL)
-      ══════════════════════════════════════════════════════ -->
-      <section
-        class="py-12 md:py-16 overflow-hidden"
-        style="
-          background: linear-gradient(to bottom, #ffffff 60%, #f5f5f5 100%);
-        "
-      >
-        <div id="gallery-carousel" class="relative">
-          <!-- Track: duplicated for seamless infinite loop -->
-          <div
-            id="gallery-auto-track"
-            class="flex items-start gap-4"
-            style="will-change: transform"
-          >
-            <!-- Original set -->
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 320px"
-            >
-              <img
-                src="./assets/images/event-award-c.webp"
-                alt="Award Night NDIC"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Award Night NDIC
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 27 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 460px"
-            >
-              <img
-                src="./assets/images/event-signing-c.webp"
-                alt="Partnership Signing"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Partnership Signing
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 350px"
-            >
-              <img
-                src="./assets/images/event-group-women.webp"
-                alt="Staff Recognition"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Staff Recognition
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 240px"
-            >
-              <img
-                src="./assets/images/event-office-group-c.webp"
-                alt="Internal Meeting"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Internal Meeting
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 320px"
-            >
-              <img
-                src="./assets/images/event-banner-c.webp"
-                alt="NDIC Appointment Ceremony"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  NDIC Appointment Ceremony
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 420px"
-            >
-              <img
-                src="./assets/images/event-speaker.webp"
-                alt="Management Address"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Management Address
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <!-- Duplicate set for seamless loop -->
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 320px"
-            >
-              <img
-                src="./assets/images/event-award-c.webp"
-                alt="Award Night NDIC"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Award Night NDIC
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 27 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 460px"
-            >
-              <img
-                src="./assets/images/event-signing-c.webp"
-                alt="Partnership Signing"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Partnership Signing
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 350px"
-            >
-              <img
-                src="./assets/images/event-group-women.webp"
-                alt="Staff Recognition"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Staff Recognition
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 240px"
-            >
-              <img
-                src="./assets/images/event-office-group-c.webp"
-                alt="Internal Meeting"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Internal Meeting
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 320px"
-            >
-              <img
-                src="./assets/images/event-banner-c.webp"
-                alt="NDIC Appointment Ceremony"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  NDIC Appointment Ceremony
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-            <div
-              class="gallery-card relative overflow-hidden flex-shrink-0"
-              style="width: 300px; height: 420px"
-            >
-              <img
-                src="./assets/images/event-speaker.webp"
-                alt="Management Address"
-                class="w-full h-full object-cover object-center block"
-                loading="lazy"
-              />
-              <div class="card-overlay"></div>
-              <div class="absolute bottom-3.5 left-3.5">
-                <p class="font-body font-semibold text-white text-xs">
-                  Management Address
-                </p>
-                <p class="font-body text-[10px] text-white/60">Nov 2025</p>
-              </div>
-            </div>
-          </div>
+          <div style="height:1px;background:linear-gradient(to right,rgba(93,114,124,0) 0%,rgba(93,114,124,1) 12%,rgba(93,114,124,1) 88%,rgba(93,114,124,0) 100%);"></div>
         </div>
       </section>
 
@@ -522,7 +236,7 @@
             class="col-span-3 bg-brand-mid px-10 lg:py-16 md:py-12 py-8 xl:py-20 xl:rounded-tl-3xl"
           >
             <p
-              class="font-body text-white text-3xl md:text-3xl lg:text-4xl xl:text-5xl"
+              class="font-body text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
             >
               To be one of the
               <span class="font-bold"> best Deposit Insurers </span>
@@ -607,7 +321,7 @@
               </p>
 
               <ul
-                class="mt-4 pl-10 xl:pl-20 list-disc space-y-2 font-body :text-sm md:text-base lg:text-lg text-ndic-text leading-relaxed"
+                class="mt-4 pl-3 list-disc space-y-2 font-body :text-sm md:text-base lg:text-lg text-ndic-text leading-relaxed"
               >
                 <li>
                   <span class="font-semibold">Teamwork:</span> We work together
@@ -650,6 +364,737 @@
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="mandate" class="pt-16 md:pt-20 lg:pt-24 xl:pt-28">
+        <div class="ndic-container">
+          <div class="flex flex-col gap-14 items-start">
+            <!-- Label -->
+            <div class="flex-shrink-0 w-40 pt-2">
+              <span
+                class="inline-block px-5 py-2 w-[180px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap"
+              >
+                Mandate and Power
+              </span>
+            </div>
+
+            <!-- Heading -->
+            <div class="flex-1 min-w-0 px-0 sm:px-8 md:px-10 lg:px-12 xl:px-14">
+              <h2
+                class="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
+              >
+                Mandate and power at NDIC reflect our commitment to safeguarding
+                deposits and preserving trust in the banking system.
+              </h2>
+            </div>
+
+            <!-- Image + expandable list card -->
+            <div
+              class="mandate-card px-0 sm:px-12 md:px-16 lg:px-20 xl:px-24 w-full"
+            >
+              <!-- Left: image -->
+              <div class="mandate-image-col">
+                <img
+                  src="./assets/images/hero-building.webp"
+                  alt="NDIC Building"
+                  class="w-full h-full object-cover object-center"
+                  onerror="
+                    this.closest('.mandate-image-col').style.background =
+                      '#E8F9FF'
+                  "
+                />
+              </div>
+
+              <!-- Right: inline read-more items -->
+              <div class="mandate-items-col" id="mandate-items">
+                <div class="mandate-item">
+                  <p
+                    class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                  >
+                    <strong>Deposit Insurance.&nbsp;</strong
+                    ><span
+                      class="mandate-body"
+                      data-full="The NDIC provides deposit insurance for all depositors of licensed Deposit Money Banks (DMBs), Primary Mortgage Banks (PMBs), and Microfinance Banks (MFBs). In the event of bank failure, depositors are paid their insured funds up to the maximum insured sum, thereby mitigating the risk of loss and maintaining public confidence in the banking system."
+                    ></span>
+                  </p>
+                </div>
+                <hr class="mandate-divider" />
+                <div class="mandate-item">
+                  <p
+                    class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                  >
+                    <strong>Bank Supervision.&nbsp;</strong
+                    ><span
+                      class="mandate-body"
+                      data-full="The Corporation complements the supervisory activities of the Central Bank of Nigeria by examining insured institutions to ensure that they adopt safe and sound practices that minimise the risk of failure. Through off-site surveillance and on-site examination, NDIC monitors the financial condition of insured banks and promotes early corrective action."
+                    ></span>
+                  </p>
+                </div>
+                <hr class="mandate-divider" />
+                <div class="mandate-item">
+                  <p
+                    class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                  >
+                    <strong>Failure Resolution.&nbsp;</strong
+                    ><span
+                      class="mandate-body"
+                      data-full="The NDIC is empowered to assist in the resolution of failing or failed banks through the most cost-effective and least disruptive option available. Resolution tools include open-bank assistance, purchase and assumption transactions, bridge bank arrangements, and the pay-out of insured deposits to protect depositors and preserve financial stability."
+                    ></span>
+                  </p>
+                </div>
+                <hr class="mandate-divider" />
+                <div class="mandate-item">
+                  <p
+                    class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                  >
+                    <strong>Bank Liquidation.&nbsp;</strong
+                    ><span
+                      class="mandate-body"
+                      data-full="Upon revocation of a bank's licence by the Central Bank of Nigeria, the NDIC assumes the role of liquidator of the failed institution. As liquidator, the Corporation is responsible for the realisation of assets, settlement of liabilities, and payment of creditors in an equitable and orderly manner, ensuring an efficient wind-down of the failed bank."
+                    ></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="functions"
+        class="py-16 md:py-20 lg:py-24 xl:py-28 overflow-hidden"
+      >
+        <div class="">
+          <div class="flex flex-col items-start">
+            <!-- Label -->
+            <div class="flex-shrink-0 w-40 pt-2 b-14 ndic-container">
+              <span
+                class="inline-block px-5 py-2 w-[180px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap"
+              >
+                Functions
+              </span>
+            </div>
+
+            <!-- Heading -->
+            <div class="ndic-container mt-14">
+              <div class="flex-1 min-w-0 ml-[6%] xl:ml-[10%]">
+                <h2
+                  class="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
+                >
+                  In line with Section 2 of the Nigeria Deposit Insurance
+                  Corporation Act 2006, the Corporation performs the following
+                  <span class="text-brand-primary font-bold"> functions. </span>
+                </h2>
+              </div>
+            </div>
+            <div class="pl-[7%]">
+              <div class="mandate-card px-0 w-full">
+                <div class="mandate-items-col" id="mandate-items">
+                  <div style="padding-right: 30px; padding-left: 30px">
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 18px 0 0;
+                      "
+                    >
+                      <span
+                        style="
+                          font-family: var(--font-heading);
+                          font-size: 32px;
+                          font-weight: 700;
+                          color: #141313;
+                          flex-shrink: 0;
+                          line-height: 1;
+                          width: 44px;
+                          text-align: center;
+                        "
+                        >01</span
+                      >
+                      <div style="flex: 1">
+                        <p
+                          class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                        >
+                          <span
+                            class="mandate-body"
+                            data-full="The NDIC provides deposit insurance for all depositors of licensed Deposit Money Banks (DMBs), Primary Mortgage Banks (PMBs), and Microfinance Banks (MFBs). In the event of bank failure, depositors are paid their insured funds up to the maximum insured sum, thereby mitigating the risk of loss and maintaining public confidence in the banking system."
+                          ></span>
+                        </p>
+                        <hr class="mandate-divider" style="margin-top: 18px" />
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 18px 0 0;
+                      "
+                    >
+                      <span
+                        style="
+                          font-family: var(--font-heading);
+                          font-size: 32px;
+                          font-weight: 700;
+                          color: #141313;
+                          flex-shrink: 0;
+                          line-height: 1;
+                          width: 44px;
+                          text-align: center;
+                        "
+                        >02</span
+                      >
+                      <div style="flex: 1">
+                        <p
+                          class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                        >
+                          <span
+                            class="mandate-body"
+                            data-full="Insuring all deposit liabilities of licensed banks and other insured financial institutions operating in Nigeria, in order to strengthen Insuring all deposit liabilities of licensed banks and other insured financial institutions operating in Nigeria, in order to strengthen "
+                          ></span>
+                        </p>
+                        <hr class="mandate-divider" style="margin-top: 18px" />
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 18px 0 0;
+                      "
+                    >
+                      <span
+                        style="
+                          font-family: var(--font-heading);
+                          font-size: 32px;
+                          font-weight: 700;
+                          color: #141313;
+                          flex-shrink: 0;
+                          line-height: 1;
+                          width: 44px;
+                          text-align: center;
+                        "
+                        >03</span
+                      >
+                      <div style="flex: 1">
+                        <p
+                          class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                        >
+                          <span
+                            class="mandate-body"
+                            data-full="The NDIC is empowered to assist in the resolution of failing or failed banks through the most cost-effective and least disruptive option available. Resolution tools include open-bank assistance, purchase and assumption transactions, bridge bank arrangements, and the pay-out of insured deposits to protect depositors and preserve financial stability."
+                          ></span>
+                        </p>
+                        <hr class="mandate-divider" style="margin-top: 18px" />
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 18px 0 18px;
+                      "
+                    >
+                      <span
+                        style="
+                          font-family: var(--font-heading);
+                          font-size: 32px;
+                          font-weight: 700;
+                          color: #141313;
+                          flex-shrink: 0;
+                          line-height: 1;
+                          width: 44px;
+                          text-align: center;
+                        "
+                        >04</span
+                      >
+                      <div style="flex: 1">
+                        <p
+                          class="font-body text-sm sm:text-lg text-ndic-text leading-relaxed"
+                        >
+                          <span
+                            class="mandate-body"
+                            data-full="Upon revocation of a bank's licence by the Central Bank of Nigeria, the NDIC assumes the role of liquidator of the failed institution. As liquidator, the Corporation is responsible for the realisation of assets, settlement of liabilities, and payment of creditors in an equitable and orderly manner, ensuring an efficient wind-down of the failed bank."
+                          ></span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mandate-image-col lg:pt-28"
+                  style="
+                    flex: 0 0 40%;
+                    height: 450px;
+                    transform: translateY(50px);
+                  "
+                >
+                  <img
+                    src="./assets/images/hero-building.webp"
+                    alt="NDIC Building"
+                    class="w-full h-full object-cover object-center"
+                    onerror="
+                      this.closest('.mandate-image-col').style.background =
+                        '#E8F9FF'
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 9b - Organisational Structure
+      ══════════════════════════════════════════════════════ -->
+      <section
+        id="org-structure"
+        style="background: #3b3f9e"
+        class="py-16 md:py-20 lg:py-24"
+      >
+        <div class="ndic-container my-10">
+          <!-- Pill badge -->
+          <div class="flex-shrink-0 w-44 pt-2 mb-10">
+            <span
+              class="inline-block px-5 py-2 w-[200px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap"
+            >
+              Organizational Structure
+            </span>
+          </div>
+          <!-- Heading -->
+          <h2
+            style="
+              font-family: var(--font-heading);
+              font-weight: 300;
+              font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+              color: #fff;
+              line-height: 1.3;
+            "
+            class="ml-[6%] xl:ml-[10%]"
+          >
+            Our organisational structure ensures <br />
+            effective governance and accountability.
+          </h2>
+        </div>
+
+        <!-- Chart rendered by JS -->
+        <div id="org-chart-root" class="ndic-container">
+          <div
+            id="org-chart-grid"
+            style="display: grid; grid-template-columns: 1fr 1fr 1fr"
+          >
+            <!-- populated by about.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 10 - Board Members
+      ══════════════════════════════════════════════════════ -->
+      <section id="board" class="pt-16 md:pt-20 lg:pt-24 xl:pt-28">
+        <div class="ndic-container">
+          <div class="flex flex-col gap-14 items-start">
+            <!-- Left: narrow label column -->
+            <div class="flex-shrink-0 w-40 pt-2">
+              <span
+                class="inline-block px-5 py-2 w-[180px] text-center border border-brand-primary rounded-md bg-[#EAEAF2] text-sm text-ndic-text font-body whitespace-nowrap"
+              >
+                Serving Board Members
+              </span>
+            </div>
+
+            <!-- Right: heading + indented body -->
+            <div class="flex-1 min-w-0 ml-[6%] xl:ml-[10%]">
+              <h2
+                class="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-ndic-text"
+              >
+                Meet the serving board members (Interim <br />
+                Management Committee) guiding the Corporation&apos;s
+                <br />leadership and direction.
+              </h2>
+            </div>
+            <section class="py-6 overflow-hidden w-full">
+              <div id="board-members-carousel" class="relative">
+                <!-- Track: duplicated for seamless infinite loop -->
+                <div
+                  id="board-members-track"
+                  class="flex items-start gap-6"
+                  style="will-change: transform"
+                >
+                  <!-- Original set -->
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-award-c.webp"
+                        alt="Mr. Bello Hassan"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Mr. Bello Hassan
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Managing Director / CEO
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-signing-c.webp"
+                        alt="Mrs. Patricia Okafor"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Mrs. Patricia Okafor
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Executive Director, Operations
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-group-women.webp"
+                        alt="Alhaji Umar Yakubu"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Alhaji Umar Yakubu
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Executive Director, Finance
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-office-group-c.webp"
+                        alt="Dr. Aminu Babangida"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Dr. Aminu Babangida
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Executive Director, Corporate Services
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-banner-c.webp"
+                        alt="Mrs. Adaeze Nwosu"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Mrs. Adaeze Nwosu
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Non-Executive Director
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-speaker.webp"
+                        alt="Chief Emeka Eze"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Chief Emeka Eze
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Non-Executive Director
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Duplicate set for seamless loop -->
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-award-c.webp"
+                        alt="Mr. Bello Hassan"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Mr. Bello Hassan
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Managing Director / CEO
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-signing-c.webp"
+                        alt="Mrs. Patricia Okafor"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Mrs. Patricia Okafor
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Executive Director, Operations
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-group-women.webp"
+                        alt="Alhaji Umar Yakubu"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Alhaji Umar Yakubu
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Executive Director, Finance
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-office-group-c.webp"
+                        alt="Dr. Aminu Babangida"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Dr. Aminu Babangida
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Executive Director, Corporate Services
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-banner-c.webp"
+                        alt="Mrs. Adaeze Nwosu"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Mrs. Adaeze Nwosu
+                      </p>
+                      <p
+                        class="font-body text-[11px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Non-Executive Director
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="board-member-card flex-shrink-0"
+                    style="width: 300px"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                      style="height: 380px"
+                    >
+                      <img
+                        src="./assets/images/event-speaker.webp"
+                        alt="Chief Emeka Eze"
+                        class="w-full h-full object-cover object-top block"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="pt-3">
+                      <p
+                        class="font-body font-semibold text-[24px] text-brand-dark leading-snug"
+                      >
+                        Chief Emeka Eze
+                      </p>
+                      <p
+                        class="font-body text-[20px] text-ndic-muted uppercase tracking-wider mt-0.5"
+                      >
+                        Non-Executive Director
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 11 - Past Board Members (ACCORDION)
+      ══════════════════════════════════════════════════════ -->
+
+      <section id="board-members" class="bg-surface-light py-16">
+        <div class="ndic-container">
+          <!-- Header -->
+          <div
+            class="flex flex-row items-center justify-between gap-4 sm:gap-8 mb-6"
+          >
+            <div class="px-6 md:px-8 lg:px-10 xl:px-12">
+              <h2
+                class="font-heading font-normal text-[1.6rem] sm:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] min-[1400px]:text-[3rem] text-ndic-text mt-1 leading-tight"
+              >
+                Recognising the contributions of <br />
+                past board members.
+              </h2>
+            </div>
+          </div>
+
+          <!-- Accordion -->
+          <div
+            id="board-members-accordion"
+            class="divide-y divide-ndic-border pl-6 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14 pr-6 sm:pr-8 md:pr-10 lg:pr-16 xl:pr-[7%]"
+            style="overflow: visible"
+          ></div>
         </div>
       </section>
     </main>
