@@ -840,6 +840,10 @@ video {
   margin-top: 2rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -2421,6 +2425,10 @@ video {
 
   .lg\:pt-28 {
     padding-top: 7rem;
+  }
+
+  .lg\:pl-\[7\%\] {
+    padding-left: 7%;
   }
 
   .lg\:text-3xl {
