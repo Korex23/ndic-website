@@ -1012,6 +1012,18 @@ video {
   width: 1px;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-\[85\%\] {
+  width: 85%;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
