@@ -591,6 +591,12 @@ h4 {
 
 /* ── Org chart responsive scaling ── */
 @media (max-width: 768px) {
+  #org-chart-grid > div {
+    align-items: stretch;
+  }
+  #org-chart-grid .org-box {
+    height: 100%;
+  }
   .org-box {
     font-size: 0.72rem;
     padding: 3px 5px;
