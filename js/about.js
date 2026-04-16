@@ -827,25 +827,21 @@ const boardMembersData = [
 })();
 
 // ══════════════════════════════════════════════════════
-// ORG CHART — render from data + click path highlighting
+// ORG CHART — render from data + hierarchical highlighting
 // ══════════════════════════════════════════════════════
 (function () {
   var DIVIDER = "divider";
-  var ACCENT = "#ffffff";
-  var V_NORMAL = "1px solid rgba(255,255,255,0.15)";
-  var V_ACTIVE = "2px solid " + ACCENT;
-
   var DIVIDER_NORMAL_BG =
     "linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.55) 12%,rgba(255,255,255,0.55) 88%,rgba(255,255,255,0) 100%)";
+  var CELL_BASE =
+    "padding:12px 16px;display:flex;align-items:center;justify-content:center;";
+  var BORDER_R = "border-right:1px solid rgba(255,255,255,0.15);";
 
-  var DIVIDER_PATH = {
-    center:
-      "linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.35) 30%,rgba(255,255,255,0.9) 41%,rgba(255,255,255,0.9) 59%,rgba(255,255,255,0.35) 70%,rgba(255,255,255,0) 100%)",
-    left: "linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 8%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.35) 70%,rgba(255,255,255,0) 100%)",
-    right:
-      "linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.35) 30%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.9) 92%,rgba(255,255,255,0) 100%)",
-    both: "linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 8%,rgba(255,255,255,0.9) 92%,rgba(255,255,255,0) 100%)",
-  };
+  // ── Hierarchy color classes ──────────────────────────
+  // L1 = the clicked box (bright white)
+  // L2 = direct children / same-row peers (orange accent)
+  // L3 = grandchildren / departments (subtle blue tint)
+  var ALL_LEVELS = ["active-l1", "active-l2", "active-l3", "state-white", "state-orange", "state-green", "state-red"];
 
   var rows = [
     [null, { text: "Board of Directors", role: "board" }, null],
@@ -862,62 +858,77 @@ const boardMembersData = [
       { text: "Executive Director (Operations)", role: "ed-ops" },
     ],
     DIVIDER,
-    [
-      "Finance Department",
-      "Strategy Development Department",
-      "Insurance and Surveillance Department",
-    ],
+    ["Finance Department", "Strategy Development Department", "Insurance and Surveillance Department"],
     DIVIDER,
-    [
-      "Human Resource Department",
-      "Research, Policy & International Relations Department",
-      "Bank Examination Department",
-    ],
+    ["Human Resource Department", "Research, Policy & International Relations Department", "Bank Examination Department"],
     DIVIDER,
-    [
-      "Performance Management Department",
-      "Procurement & Management Services Department",
-      "Claims Resolution Department",
-    ],
+    ["Performance Management Department", "Procurement & Management Services Department", "Claims Resolution Department"],
     DIVIDER,
-    [
-      "NDIC Academy",
-      "Enterprise Risk Management Department",
-      "Asset Management Department",
-    ],
+    ["NDIC Academy", "Enterprise Risk Management Department", "Asset Management Department"],
     DIVIDER,
-    [
-      "Engineering & Technical Services Department",
-      "Legal Department",
-      "Information Technology Department",
-    ],
+    ["Engineering & Technical Services Department", "Legal Department", "Information Technology Department"],
     DIVIDER,
-    [
-      "Establishment Office Lagos",
-      "Communications & Public Relations Department",
-      "Special Insured Institutions Department",
-    ],
+    ["Establishment Office Lagos", "Communications & Public Relations Department", "Special Insured Institutions Department"],
     DIVIDER,
     [null, null, "Zonal Offices"],
   ];
 
-  var CELL_BASE =
-    "padding:12px 16px;display:flex;align-items:center;justify-content:center;";
-  var BORDER_R = "border-right:" + V_NORMAL + ";";
-
+  // Box references
   var boardBox, mdBox, edCorpBox, edOpsBox;
-  var wrappers = {}; // e.g. wrappers['r0c0'], wrappers['r1c1']
-  var divider12, divider23;
-  var dividerCount = 0;
+  var internalAuditBox, boardSecBox, mdsOfficeBox;
+  var deptByCol = [[], [], []]; // department boxes grouped by column (rowIdx >= 3)
   var rowIdx = 0;
+
+  function setLevel(box, level) {
+    if (!box) return;
+    ALL_LEVELS.forEach(function (c) { box.classList.remove(c); });
+    if (level) box.classList.add(level);
+  }
+
+  function clearAll() {
+    var allBoxes = [boardBox, mdBox, edCorpBox, edOpsBox, internalAuditBox, boardSecBox, mdsOfficeBox];
+    deptByCol.forEach(function (col) { col.forEach(function (b) { allBoxes.push(b); }); });
+    allBoxes.forEach(function (b) {
+      if (!b) return;
+      ALL_LEVELS.forEach(function (c) { b.classList.remove(c); });
+    });
+  }
+
+  function applyHighlight(role) {
+    clearAll();
+
+    if (role === "board") {
+      setLevel(boardBox, "state-white");
+      setLevel(internalAuditBox, "state-orange");
+      setLevel(mdBox, "state-orange");
+      setLevel(boardSecBox, "state-orange");
+    }
+
+    if (role === "md") {
+      setLevel(mdBox, "state-orange");
+      setLevel(edCorpBox, "state-green");
+      setLevel(edOpsBox, "state-green");
+      setLevel(mdsOfficeBox, "state-red");
+      deptByCol[1].forEach(function (b) { setLevel(b, "state-red"); });
+    }
+
+    if (role === "ed-corp") {
+      setLevel(edCorpBox, "state-green");
+      deptByCol[0].forEach(function (b) { setLevel(b, "state-red"); });
+    }
+
+    if (role === "ed-ops") {
+      setLevel(edOpsBox, "state-green");
+      deptByCol[2].forEach(function (b) { setLevel(b, "state-red"); });
+    }
+  }
 
   function buildCell(cell, col) {
     var text = cell && typeof cell === "object" ? cell.text : cell;
     var role = cell && typeof cell === "object" ? cell.role : null;
     var wrapper = document.createElement("div");
-    var hasBorderR = col < 2;
-    wrapper.setAttribute("style", CELL_BASE + (hasBorderR ? BORDER_R : ""));
-    if (rowIdx < 3 && hasBorderR) wrappers["r" + rowIdx + "c" + col] = wrapper;
+    wrapper.setAttribute("style", CELL_BASE + (col < 2 ? BORDER_R : ""));
+
     if (text) {
       var box = document.createElement("div");
       box.className = "org-box";
@@ -925,10 +936,16 @@ const boardMembersData = [
       if (role) {
         box.dataset.role = role;
         box.style.cursor = "pointer";
-        if (role === "board") boardBox = box;
-        if (role === "md") mdBox = box;
-        if (role === "ed-corp") edCorpBox = box;
-        if (role === "ed-ops") edOpsBox = box;
+        if (role === "board")   boardBox   = box;
+        if (role === "md")      mdBox      = box;
+        if (role === "ed-corp") edCorpBox  = box;
+        if (role === "ed-ops")  edOpsBox   = box;
+      } else {
+        // Track non-role boxes by position
+        if (rowIdx === 1 && col === 0) internalAuditBox = box;
+        if (rowIdx === 1 && col === 2) boardSecBox      = box;
+        if (rowIdx === 2 && col === 1) mdsOfficeBox     = box;
+        if (rowIdx >= 3) deptByCol[col].push(box);
       }
       wrapper.appendChild(box);
     }
@@ -941,105 +958,20 @@ const boardMembersData = [
   rows.forEach(function (row) {
     if (row === DIVIDER) {
       var d = document.createElement("div");
-      d.setAttribute(
-        "style",
-        "grid-column:1/-1;height:1px;background:" + DIVIDER_NORMAL_BG,
-      );
+      d.setAttribute("style", "grid-column:1/-1;height:1px;background:" + DIVIDER_NORMAL_BG);
       grid.appendChild(d);
-      dividerCount++;
-      if (dividerCount === 1) divider12 = d;
-      if (dividerCount === 2) divider23 = d;
       return;
     }
-    row.forEach(function (cell, col) {
-      grid.appendChild(buildCell(cell, col));
-    });
+    row.forEach(function (cell, col) { grid.appendChild(buildCell(cell, col)); });
     rowIdx++;
   });
-
-  function setHDivider(el, type) {
-    if (!el) return;
-    el.style.background = type ? DIVIDER_PATH[type] : DIVIDER_NORMAL_BG;
-    el.style.height = type ? "2px" : "1px";
-  }
-
-  function setVDivider(key, on) {
-    var w = wrappers[key];
-    if (!w) return;
-    w.style.borderRight = on ? V_ACTIVE : V_NORMAL;
-  }
-
-  function setBorder(box, side, on) {
-    if (!box) return;
-    box.style["border" + side] = on ? "2px solid " + ACCENT : "";
-  }
-
-  function clearAll() {
-    [boardBox, mdBox, edCorpBox, edOpsBox].forEach(function (b) {
-      if (!b) return;
-      b.classList.remove("active");
-      b.style.borderTop = b.style.borderBottom = "";
-    });
-    setHDivider(divider12, null);
-    setHDivider(divider23, null);
-    ["r0c0", "r0c1", "r1c0", "r1c1", "r2c0", "r2c1"].forEach(function (k) {
-      setVDivider(k, false);
-    });
-  }
-
-  function applyHighlight(role) {
-    clearAll();
-    var lightRoles =
-      role === "board" || role === "md"
-        ? ["board", "md", "ed-corp", "ed-ops"]
-        : ["board", "md", role];
-
-    [boardBox, mdBox, edCorpBox, edOpsBox].forEach(function (b) {
-      if (b && lightRoles.indexOf(b.dataset.role) !== -1)
-        b.classList.add("active");
-    });
-
-    // Horizontal dividers
-    setHDivider(divider12, "center");
-    setBorder(boardBox, "Bottom", true);
-    setBorder(mdBox, "Top", true);
-
-    var d23 =
-      role === "board" || role === "md"
-        ? "both"
-        : role === "ed-corp"
-          ? "left"
-          : "right";
-    setHDivider(divider23, d23);
-    setBorder(mdBox, "Bottom", true);
-    if (role === "board" || role === "md" || role === "ed-corp")
-      setBorder(edCorpBox, "Top", true);
-    if (role === "board" || role === "md" || role === "ed-ops")
-      setBorder(edOpsBox, "Top", true);
-
-    // Vertical dividers — both walls of center col for Board & MD rows
-    setVDivider("r0c0", true);
-    setVDivider("r0c1", true);
-    setVDivider("r1c0", true);
-    setVDivider("r1c1", true);
-    // Branch walls in ED row
-    if (role === "board" || role === "md" || role === "ed-corp")
-      setVDivider("r2c0", true);
-    if (role === "board" || role === "md" || role === "ed-ops")
-      setVDivider("r2c1", true);
-  }
 
   var activeRole = null;
   grid.addEventListener("click", function (e) {
     var box = e.target.closest(".org-box[data-role]");
     if (!box) return;
     var role = box.dataset.role;
-    if (activeRole === role) {
-      activeRole = null;
-      clearAll();
-    } else {
-      activeRole = role;
-      applyHighlight(role);
-    }
+    if (activeRole === role) { activeRole = null; clearAll(); }
+    else { activeRole = role; applyHighlight(role); }
   });
 })();
